@@ -1,0 +1,55 @@
+-- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/angel/0710_code/build/hiwin_dual_arm
+-- Install configuration: ""
+-- Up-to-date: /home/angel/0710_code/install/hiwin_dual_arm/share/ament_index/resource_index/package_run_dependencies/hiwin_dual_arm
+-- Installing: /home/angel/0710_code/install/hiwin_dual_arm/share/ament_index/resource_index/parent_prefix_path/hiwin_dual_arm
+-- Installing: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/environment/ament_prefix_path.sh
+-- Installing: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/environment/ament_prefix_path.dsv
+-- Installing: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/environment/path.sh
+-- Installing: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/environment/path.dsv
+-- Up-to-date: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/local_setup.bash
+-- Up-to-date: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/local_setup.sh
+-- Up-to-date: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/local_setup.zsh
+-- Installing: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/local_setup.dsv
+-- Installing: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/package.dsv
+-- Up-to-date: /home/angel/0710_code/install/hiwin_dual_arm/share/ament_index/resource_index/packages/hiwin_dual_arm
+-- Installing: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/cmake/hiwin_dual_armConfig.cmake
+-- Up-to-date: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/cmake/hiwin_dual_armConfig-version.cmake
+-- Up-to-date: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/package.xml
+-- Up-to-date: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/launch
+-- Up-to-date: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/launch/static_virtual_joint_tfs.launch.py
+-- Up-to-date: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/launch/move_group.launch.py
+-- Up-to-date: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/launch/setup_assistant.launch.py
+-- Up-to-date: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/launch/test1.launch.py
+-- Up-to-date: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/launch/warehouse_db.launch.py
+-- Up-to-date: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/launch/demo.launch.py
+-- Up-to-date: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/launch/moveit_rviz.launch.py
+-- Up-to-date: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/launch/spawn_controllers.launch.py
+-- Up-to-date: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/launch/brain.launch.py
+-- Up-to-date: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/launch/rsp.launch.py
+-- Up-to-date: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/config
+-- Up-to-date: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/config/moveit_controllers.yaml
+-- Up-to-date: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/config/dual_hiwin.ros2_control.xacro
+-- Up-to-date: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/config/moveit_controllers .yaml.txt
+-- Up-to-date: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/config/ros2_controllers.yaml
+-- Up-to-date: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/config/ros2_controllers_copy.yaml
+-- Up-to-date: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/config/dual_arm_alm_newton_planning.yaml
+-- Up-to-date: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/config/moveit_controllers_copy.yaml
+-- Up-to-date: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/config/joint_limits.yaml
+-- Up-to-date: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/config/dual_arm_lag_cg_planning.yaml
+-- Up-to-date: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/config/pilz_cartesian_limits.yaml
+-- Up-to-date: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/config/moveit.rviz
+-- Up-to-date: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/config/dual_arm_alm_gd_planning.yaml
+-- Up-to-date: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/config/dual_hiwin.srdf
+-- Up-to-date: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/config/dual_arm_lag_gd_planning.yaml
+-- Up-to-date: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/config/dual_hiwin.urdf.xacro
+-- Up-to-date: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/config/ompl_planning.yaml
+-- Up-to-date: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/config/initial_positions.yaml
+-- Up-to-date: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/config/sensors_3d.yaml
+-- Up-to-date: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/config/kinematics.yaml
+-- Up-to-date: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/config/dual_arm_alm_cg_planning.yaml
+-- Up-to-date: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/config/dual_arm_lag_newton_planning.yaml
+-- Up-to-date: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/.setup_assistant

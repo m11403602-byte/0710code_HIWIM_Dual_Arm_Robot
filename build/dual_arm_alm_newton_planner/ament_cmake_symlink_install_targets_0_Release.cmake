@@ -1,0 +1,1 @@
+ament_cmake_symlink_install_targets("TARGET_FILES" "/home/angel/0710_code/build/dual_arm_alm_newton_planner/libdual_arm_alm_newton_planner.so" "TARGETS" "dual_arm_alm_newton_planner" "ARCHIVE_DESTINATION" "lib" "LIBRARY_DESTINATION" "lib" "RUNTIME_DESTINATION" "bin")

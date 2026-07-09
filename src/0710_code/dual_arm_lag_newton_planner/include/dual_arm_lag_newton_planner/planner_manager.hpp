@@ -62,7 +62,7 @@ public:
   int         export_level_   = 0;      // [NEW] 0=不匯出, 1=標配 6 檔, 2=完整 9 檔
   // [NEW] 純 Lagrangian 參數 (預設 = Gradient_v2 值)
   double lag_wd_ = 1.0; double lag_lam0_ = 30.0; double lag_s0_ = 1.0;
-  double lag_tol_phys_ = 0.01; double lag_tol_stable_ = 0.005; double lag_tol_stat_ = 0.1; int lag_max_iter_ = 500;
+  double lag_tol_phys_ = 0.01; double lag_tol_stable_ = 0.01; double lag_tol_stat_ = 0.1; int lag_max_iter_ = 500;
 
 private:
   rclcpp::Node::SharedPtr node_;
@@ -82,7 +82,7 @@ public:
                   const rclcpp::Node::SharedPtr& node,
                   const std::string& parameter_namespace) override;
 
-  std::string getDescription() const override { return "Dual-Arm Avoidance Planner (Lagrangian-GD)"; }
+  std::string getDescription() const override { return "Dual-Arm Avoidance Planner (Lagrangian-Newton)"; }
 
   void getPlanningAlgorithms(std::vector<std::string>& algs) const override;
 
@@ -122,7 +122,7 @@ private:
   mutable bool        solver_verbose_ = false;  // [NEW] 內層 verbose log
   mutable int         export_level_   = 0;      // [NEW] 匯出等級
   mutable double lag_wd_ = 1.0; mutable double lag_lam0_ = 30.0; mutable double lag_s0_ = 1.0;
-  mutable double lag_tol_phys_ = 0.01; mutable double lag_tol_stable_ = 0.005; mutable double lag_tol_stat_ = 0.1; mutable int lag_max_iter_ = 500;
+  mutable double lag_tol_phys_ = 0.01; mutable double lag_tol_stable_ = 0.01; mutable double lag_tol_stat_ = 0.1; mutable int lag_max_iter_ = 500;
 };
 
 }  // namespace dual_arm_lag_newton_planner

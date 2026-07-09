@@ -185,25 +185,30 @@ bool DualArmLagGdPlannerManager::initialize(const moveit::core::RobotModelConstP
 // 從參數伺服器重讀所有參數 (yaml/rqt 改了下次規劃即生效)
 void DualArmLagGdPlannerManager::load_parameters() const
 {
-  const std::string ns = parameter_namespace_.empty() ? "" : (parameter_namespace_ + ".");
-  node_->get_parameter_or(ns + "path_weight",         path_weight_,         0.5);
-  node_->get_parameter_or(ns + "danger_threshold",    danger_threshold_,    0.35);
-  node_->get_parameter_or(ns + "collision_tolerance", collision_tolerance_, 0.15);
-  node_->get_parameter_or(ns + "fix_tolerance",       fix_tolerance_,       0.1);
-  node_->get_parameter_or(ns + "max_refinement_iter", max_refinement_iter_, 15);
-  node_->get_parameter_or(ns + "smooth_w",            smooth_w_,            0.3);
-  node_->get_parameter_or(ns + "smooth_w_H",          smooth_w_H_,          1.0);
-  node_->get_parameter_or(ns + "smooth_w_T",          smooth_w_T_,          1.0);
-  node_->get_parameter_or(ns + "smooth_w_neighbor",   smooth_w_neighbor_,   1.0);
-  node_->get_parameter_or(ns + "joint_prefix_A",      joint_prefix_A_,      std::string("big_joint_"));
-  node_->get_parameter_or(ns + "joint_prefix_B",      joint_prefix_B_,      std::string("small_joint_"));
-  node_->get_parameter_or(ns + "time_optimal",        time_optimal_,        true);
-  node_->get_parameter_or(ns + "path_total_time",     path_total_time_,     20.0);
-  node_->get_parameter_or(ns + "min_time_interval",   min_time_interval_,   0.05);
-  node_->get_parameter_or(ns + "export_csv_prefix",   export_csv_prefix_,   std::string("./lag_data"));   // [NEW]
-  node_->get_parameter_or(ns + "export_level",        export_level_,        0);                 // [NEW]
-  node_->get_parameter_or(ns + "lag_lam0",            lag_lam0_,            30.0);
-  node_->get_parameter_or(ns + "lag_max_iter",        lag_max_iter_,        500);
+  // [REVISE] 確保從正確的命名空間讀取參數
+  // parameter_namespace_ 是由 move_group 根據 planning_pipelines.yaml 中的管線名稱傳入的
+  // 例如 "dual_arm_lag_gd"
+  if (!node_->has_parameter(parameter_namespace_ + ".path_weight")) {
+      RCLCPP_WARN(node_->get_logger(), "Planner '%s' is not configured. Using default parameters.", parameter_namespace_.c_str());
+  }
+  node_->get_parameter_or(parameter_namespace_ + ".path_weight",         path_weight_,         0.5);
+  node_->get_parameter_or(parameter_namespace_ + ".danger_threshold",    danger_threshold_,    0.35);
+  node_->get_parameter_or(parameter_namespace_ + ".collision_tolerance", collision_tolerance_, 0.15);
+  node_->get_parameter_or(parameter_namespace_ + ".fix_tolerance",       fix_tolerance_,       0.1);
+  node_->get_parameter_or(parameter_namespace_ + ".max_refinement_iter", max_refinement_iter_, 15);
+  node_->get_parameter_or(parameter_namespace_ + ".smooth_w",            smooth_w_,            0.3);
+  node_->get_parameter_or(parameter_namespace_ + ".smooth_w_H",          smooth_w_H_,          1.0);
+  node_->get_parameter_or(parameter_namespace_ + ".smooth_w_T",          smooth_w_T_,          1.0);
+  node_->get_parameter_or(parameter_namespace_ + ".smooth_w_neighbor",   smooth_w_neighbor_,   1.0);
+  node_->get_parameter_or(parameter_namespace_ + ".joint_prefix_A",      joint_prefix_A_,      std::string("big_joint_"));
+  node_->get_parameter_or(parameter_namespace_ + ".joint_prefix_B",      joint_prefix_B_,      std::string("small_joint_"));
+  node_->get_parameter_or(parameter_namespace_ + ".time_optimal",        time_optimal_,        true);
+  node_->get_parameter_or(parameter_namespace_ + ".path_total_time",     path_total_time_,     20.0);
+  node_->get_parameter_or(parameter_namespace_ + ".min_time_interval",   min_time_interval_,   0.05);
+  node_->get_parameter_or(parameter_namespace_ + ".export_csv_prefix",   export_csv_prefix_,   std::string("./lag_data"));
+  node_->get_parameter_or(parameter_namespace_ + ".export_level",        export_level_,        0);
+  node_->get_parameter_or(parameter_namespace_ + ".lag_lam0",            lag_lam0_,            30.0);
+  node_->get_parameter_or(parameter_namespace_ + ".lag_max_iter",        lag_max_iter_,        500);
 }
 
 void DualArmLagGdPlannerManager::getPlanningAlgorithms(std::vector<std::string>& algs) const

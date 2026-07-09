@@ -83,7 +83,7 @@
 │  │  V ← V + alpha·d                                               │  │
 │  │        ▼                                                       │  │
 │  │  收斂判定: max_D ≤ danger_threshold + lag_tol_phys_margin(=0.01)│ │
-│  │           && |Δmax_D| ≤ lag_tol_stable(=0.005)                 │  │
+│  │           && |Δmax_D| ≤ lag_tol_stable(=0.01)                  │  │
 │  │           (stationarity 刻意停用 — KKT 鞍點下 ‖G‖ 不收斂)        │  │
 │  │      ──否──▶ 繼續下一步                                         │  │
 │  └── 是 ──▶ 回傳 V* = [X*; λ*; S*]、SolverLog ──────────────────┘  │

@@ -82,7 +82,7 @@
 │  │  V ← V + d   (alpha = 1, 純 Newton 步)                         │  │
 │  │        ▼                                                       │  │
 │  │  收斂判定: max_D ≤ danger_threshold + lag_tol_phys_margin(=0.01)│ │
-│  │           && |Δmax_D| ≤ lag_tol_stable(=0.005)                 │  │
+│  │           && |Δmax_D| ≤ lag_tol_stable(=0.01)                  │  │
 │  │           && ‖G‖ ≤ lag_tol_stat(=0.1)   (⚠ Newton 啟用)         │  │
 │  │      ──否──▶ 繼續下一步                                         │  │
 │  └── 是 ──▶ 回傳 V* = [X*; λ*; S*]、SolverLog ──────────────────┘  │

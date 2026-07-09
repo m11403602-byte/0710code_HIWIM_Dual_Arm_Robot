@@ -1,0 +1,2 @@
+Invoking command in '/home/angel/0710_code/build/dual_arm_alm_newton_planner': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/angel/0710_code/build/dual_arm_alm_newton_planner -- -j8 -l8
+Invoked command in '/home/angel/0710_code/build/dual_arm_alm_newton_planner' returned '2': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/angel/0710_code/build/dual_arm_alm_newton_planner -- -j8 -l8

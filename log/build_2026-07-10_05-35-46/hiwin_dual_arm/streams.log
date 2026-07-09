@@ -1,0 +1,71 @@
+[0.016s] Invoking command in '/home/angel/0710_code/build/hiwin_dual_arm': AMENT_PREFIX_PATH=/home/angel/0710_code/install/hiwin_description CMAKE_PREFIX_PATH=/home/angel/0710_code/install/hiwin_description DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/angel/0710_code/build/hiwin_dual_arm -- -j8 -l8
+[1.116s] -- The C compiler identification is GNU 13.3.0
+[1.778s] -- The CXX compiler identification is GNU 13.3.0
+[1.836s] -- Detecting C compiler ABI info
+[2.009s] -- Detecting C compiler ABI info - done
+[2.020s] -- Check for working C compiler: /usr/bin/cc - skipped
+[2.023s] -- Detecting C compile features
+[2.023s] -- Detecting C compile features - done
+[2.031s] -- Detecting CXX compiler ABI info
+[2.172s] -- Detecting CXX compiler ABI info - done
+[2.180s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[2.181s] -- Detecting CXX compile features
+[2.182s] -- Detecting CXX compile features - done
+[2.184s] -- Found ament_cmake: 2.5.5 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[2.408s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[2.697s] -- Configuring done (2.5s)
+[2.699s] -- Generating done (0.0s)
+[2.702s] -- Build files have been written to: /home/angel/0710_code/build/hiwin_dual_arm
+[2.725s] Invoked command in '/home/angel/0710_code/build/hiwin_dual_arm' returned '0': AMENT_PREFIX_PATH=/home/angel/0710_code/install/hiwin_description CMAKE_PREFIX_PATH=/home/angel/0710_code/install/hiwin_description DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/angel/0710_code/build/hiwin_dual_arm -- -j8 -l8
+[2.731s] Invoking command in '/home/angel/0710_code/build/hiwin_dual_arm': AMENT_PREFIX_PATH=/home/angel/0710_code/install/hiwin_description CMAKE_PREFIX_PATH=/home/angel/0710_code/install/hiwin_description DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/angel/0710_code/build/hiwin_dual_arm
+[2.738s] -- Install configuration: ""
+[2.738s] -- Up-to-date: /home/angel/0710_code/install/hiwin_dual_arm/share/ament_index/resource_index/package_run_dependencies/hiwin_dual_arm
+[2.738s] -- Installing: /home/angel/0710_code/install/hiwin_dual_arm/share/ament_index/resource_index/parent_prefix_path/hiwin_dual_arm
+[2.738s] -- Installing: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/environment/ament_prefix_path.sh
+[2.738s] -- Up-to-date: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/environment/ament_prefix_path.dsv
+[2.739s] -- Installing: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/environment/path.sh
+[2.739s] -- Up-to-date: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/environment/path.dsv
+[2.739s] -- Up-to-date: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/local_setup.bash
+[2.739s] -- Up-to-date: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/local_setup.sh
+[2.739s] -- Up-to-date: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/local_setup.zsh
+[2.739s] -- Up-to-date: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/local_setup.dsv
+[2.739s] -- Installing: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/package.dsv
+[2.739s] -- Up-to-date: /home/angel/0710_code/install/hiwin_dual_arm/share/ament_index/resource_index/packages/hiwin_dual_arm
+[2.740s] -- Installing: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/cmake/hiwin_dual_armConfig.cmake
+[2.740s] -- Up-to-date: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/cmake/hiwin_dual_armConfig-version.cmake
+[2.740s] -- Up-to-date: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/package.xml
+[2.740s] -- Up-to-date: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/launch
+[2.740s] -- Up-to-date: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/launch/static_virtual_joint_tfs.launch.py
+[2.740s] -- Up-to-date: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/launch/move_group.launch.py
+[2.740s] -- Up-to-date: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/launch/setup_assistant.launch.py
+[2.740s] -- Up-to-date: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/launch/test1.launch.py
+[2.740s] -- Up-to-date: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/launch/warehouse_db.launch.py
+[2.741s] -- Up-to-date: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/launch/demo.launch.py
+[2.741s] -- Up-to-date: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/launch/moveit_rviz.launch.py
+[2.741s] -- Up-to-date: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/launch/spawn_controllers.launch.py
+[2.741s] -- Up-to-date: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/launch/brain.launch.py
+[2.741s] -- Up-to-date: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/launch/rsp.launch.py
+[2.741s] -- Up-to-date: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/config
+[2.741s] -- Up-to-date: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/config/moveit_controllers.yaml
+[2.741s] -- Up-to-date: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/config/dual_hiwin.ros2_control.xacro
+[2.741s] -- Up-to-date: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/config/moveit_controllers .yaml.txt
+[2.741s] -- Up-to-date: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/config/ros2_controllers.yaml
+[2.741s] -- Up-to-date: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/config/ros2_controllers_copy.yaml
+[2.742s] -- Installing: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/config/dual_arm_alm_newton_planning.yaml
+[2.742s] -- Up-to-date: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/config/moveit_controllers_copy.yaml
+[2.742s] -- Up-to-date: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/config/joint_limits.yaml
+[2.742s] -- Installing: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/config/dual_arm_lag_cg_planning.yaml
+[2.742s] -- Up-to-date: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/config/pilz_cartesian_limits.yaml
+[2.742s] -- Up-to-date: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/config/moveit.rviz
+[2.742s] -- Installing: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/config/dual_arm_alm_gd_planning.yaml
+[2.742s] -- Up-to-date: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/config/dual_hiwin.srdf
+[2.742s] -- Installing: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/config/dual_arm_lag_gd_planning.yaml
+[2.742s] -- Up-to-date: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/config/dual_hiwin.urdf.xacro
+[2.742s] -- Up-to-date: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/config/ompl_planning.yaml
+[2.742s] -- Up-to-date: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/config/initial_positions.yaml
+[2.742s] -- Up-to-date: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/config/sensors_3d.yaml
+[2.742s] -- Up-to-date: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/config/kinematics.yaml
+[2.742s] -- Installing: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/config/dual_arm_alm_cg_planning.yaml
+[2.742s] -- Installing: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/config/dual_arm_lag_newton_planning.yaml
+[2.743s] -- Up-to-date: /home/angel/0710_code/install/hiwin_dual_arm/share/hiwin_dual_arm/.setup_assistant
+[2.743s] Invoked command in '/home/angel/0710_code/build/hiwin_dual_arm' returned '0': AMENT_PREFIX_PATH=/home/angel/0710_code/install/hiwin_description CMAKE_PREFIX_PATH=/home/angel/0710_code/install/hiwin_description DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/angel/0710_code/build/hiwin_dual_arm

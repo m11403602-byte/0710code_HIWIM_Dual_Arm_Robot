@@ -1,7 +1,1 @@
-from moveit_configs_utils import MoveItConfigsBuilder
-from moveit_configs_utils.launches import generate_spawn_controllers_launch
-
-
-def generate_launch_description():
-    moveit_config = MoveItConfigsBuilder("dual_hiwin", package_name="hiwin_dual_arm").to_moveit_configs()
-    return generate_spawn_controllers_launch(moveit_config)
+/home/angel/0710_code/src/0710_code/hiwin_dual_arm/launch/spawn_controllers.launch.py

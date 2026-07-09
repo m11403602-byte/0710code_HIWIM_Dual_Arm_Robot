@@ -1,0 +1,32 @@
+### 1. 專案首次設定 (整個專案只需要做一次) ###
+
+# 初始化本地 Git 倉庫
+git init
+
+# 將本地倉庫與遠端 GitHub 倉庫連結
+# **注意**: 請將 'your-username' 和 'your-repository' 換成您自己的 GitHub 使用者名稱和倉庫名稱
+git remote add origin https://github.com/m11403602-byte/0710code_HIWIM_Dual_Arm_Robot.git
+
+# 檢查遠端是否設定成功 (可選)
+git remote -v
+
+### 2. 日常開發與推送 ###
+
+# 將所有變更的檔案加入暫存區
+git add .
+
+# 提交變更到本地倉庫，並附上描述訊息
+git commit -m "在這裡寫下您的更新說明，例如：新增 OMPL 規劃器"
+
+### 3. 處理與遠端的同步問題 (若推送失敗) ###
+
+# 如果 `git push` 失敗並提示遠端有您本地沒有的變更 (non-fast-forward error)
+# 請先拉取遠端的變更並與本地合併。`--allow-unrelated-histories` 僅在首次拉取時需要。
+git pull origin main --allow-unrelated-histories
+
+# 如果 `pull` 因為編輯器問題而中斷，請手動完成合併提交
+git commit -m "Merge remote-tracking branch 'origin/main'"
+
+# 最後，將您本地的 `master` 分支推送到遠端的 `main` 分支，並設定追蹤關係
+git push -u origin master:main
+

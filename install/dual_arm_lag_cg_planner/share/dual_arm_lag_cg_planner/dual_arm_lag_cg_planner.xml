@@ -1,9 +1,1 @@
-<library path="dual_arm_lag_cg_planner">
-  <class name="dual_arm_lag_cg_planner/DualArmLagCgPlannerManager"
-         type="dual_arm_lag_cg_planner::DualArmLagCgPlannerManager"
-         base_class_type="planning_interface::PlannerManager">
-    <description>
-      Dual-arm collision avoidance planner using ALM + CG-FR inner solver.
-    </description>
-  </class>
-</library>
+/home/angel/0710_code/src/0710_code/dual_arm_lag_cg_planner/dual_arm_lag_cg_planner.xml

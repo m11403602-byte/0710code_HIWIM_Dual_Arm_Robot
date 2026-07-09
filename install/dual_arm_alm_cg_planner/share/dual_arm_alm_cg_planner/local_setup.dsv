@@ -1,3 +1,1 @@
-source;share/dual_arm_alm_cg_planner/environment/ament_prefix_path.sh
-source;share/dual_arm_alm_cg_planner/environment/library_path.sh
-source;share/dual_arm_alm_cg_planner/environment/path.sh
+/home/angel/0710_code/build/dual_arm_alm_cg_planner/ament_cmake_environment_hooks/local_setup.dsv

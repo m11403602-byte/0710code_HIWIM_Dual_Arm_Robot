@@ -201,7 +201,7 @@ private:
   double lam0_             = 30.0;   // λ_0  ⚠ 註解寫 10, 實際 code = 30
   double s0_               = 1.0;    // S_0  (S²=1)
   double TOL_PHYS_MARGIN_  = 0.01;   // max_D ≤ θ + margin
-  double TOL_STABLE_       = 0.005;  // |Δmax_D| ≤ TOL_STABLE
+  double TOL_STABLE_       = 0.01;   // |Δmax_D| ≤ TOL_STABLE (原 MATLAB 值 0.005, 調整為 0.01)
   int    max_solver_iter_  = 500;
 
 

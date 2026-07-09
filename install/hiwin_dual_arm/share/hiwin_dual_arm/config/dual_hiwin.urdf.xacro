@@ -1,14 +1,1 @@
-<?xml version="1.0"?>
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="dual_hiwin">
-    <xacro:arg name="initial_positions_file" default="initial_positions.yaml" />
-
-    <!-- Import dual_hiwin urdf file -->
-    <xacro:include filename="$(find hiwin_description)/urdf/dual_hiwin_arms.urdf.xacro" />
-
-    <!-- Import control_xacro -->
-    <xacro:include filename="dual_hiwin.ros2_control.xacro" />
-
-
-    <xacro:dual_hiwin_ros2_control name="FakeSystem" initial_positions_file="$(arg initial_positions_file)"/>
-
-</robot>
+/home/angel/0710_code/src/0710_code/hiwin_dual_arm/config/dual_hiwin.urdf.xacro

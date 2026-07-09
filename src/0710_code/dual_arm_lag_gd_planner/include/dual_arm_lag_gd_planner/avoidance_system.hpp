@@ -121,7 +121,7 @@ private:
   double lag_lam0_       = 30.0;    // λ_0 (⚠ 註解寫 10, 實際 code = 30)
   double lag_s0_         = 1.0;     // S_0 (S²=1)
   double lag_tol_phys_   = 0.01;    // max_D ≤ θ + margin
-  double lag_tol_stable_ = 0.005;   // |Δmax_D| ≤ TOL_STABLE
+  double lag_tol_stable_ = 0.01;   // |Δmax_D| ≤ TOL_STABLE
   int    lag_max_iter_   = 500;
   std::vector<double> refinement_history_;
   std::vector<double> time_ms_;            // 每輪內層耗時
