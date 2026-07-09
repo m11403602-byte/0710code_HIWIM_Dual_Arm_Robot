@@ -1,0 +1,86 @@
+[0.023s] Invoking command in '/home/angel/0710_code/build/dual_arm_lag_cg_planner': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/angel/0710_code/src/0710_code/dual_arm_lag_cg_planner -DCMAKE_INSTALL_PREFIX=/home/angel/0710_code/install/dual_arm_lag_cg_planner
+[0.102s] -- The C compiler identification is GNU 11.4.0
+[0.158s] -- The CXX compiler identification is GNU 11.4.0
+[0.172s] -- Detecting C compiler ABI info
+[0.245s] -- Detecting C compiler ABI info - done
+[0.262s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.262s] -- Detecting C compile features
+[0.262s] -- Detecting C compile features - done
+[0.266s] -- Detecting CXX compiler ABI info
+[0.355s] -- Detecting CXX compiler ABI info - done
+[0.362s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.362s] -- Detecting CXX compile features
+[0.363s] -- Detecting CXX compile features - done
+[0.367s] -- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.579s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.730s] -- Found rclcpp: 16.0.19 (/opt/ros/humble/share/rclcpp/cmake)
+[0.806s] -- Found rosidl_generator_c: 3.1.8 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.816s] -- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.828s] -- Found rosidl_generator_cpp: 3.1.8 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.842s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.862s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.921s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.925s] -- Found rmw_fastrtps_cpp: 6.2.10 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[1.040s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[1.072s] -- Found FastRTPS: /opt/ros/humble/include  
+[1.123s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.136s] -- Looking for pthread.h
+[1.223s] -- Looking for pthread.h - found
+[1.223s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[1.311s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[1.312s] -- Found Threads: TRUE  
+[1.367s] -- Found pluginlib: 5.1.3 (/opt/ros/humble/share/pluginlib/cmake)
+[1.413s] -- Found moveit_core: 2.5.9 (/opt/ros/humble/share/moveit_core/cmake)
+[1.469s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: chrono date_time filesystem iostreams program_options regex serialization system thread 
+[1.524s] -- Found parameter_traits: 0.7.1 (/opt/ros/humble/share/parameter_traits/cmake)
+[1.548s] -- Found rclcpp_lifecycle: 16.0.19 (/opt/ros/humble/share/rclcpp_lifecycle/cmake)
+[1.583s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: filesystem 
+[1.703s] -- library: /usr/lib/x86_64-linux-gnu/libcurl.so
+[1.788s] -- Found Eigen3: TRUE (found version "3.4.0") 
+[1.788s] -- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+[2.157s] -- Configuring done
+[2.201s] -- Generating done
+[2.202s] -- Build files have been written to: /home/angel/0710_code/build/dual_arm_lag_cg_planner
+[2.225s] Invoked command in '/home/angel/0710_code/build/dual_arm_lag_cg_planner' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/angel/0710_code/src/0710_code/dual_arm_lag_cg_planner -DCMAKE_INSTALL_PREFIX=/home/angel/0710_code/install/dual_arm_lag_cg_planner
+[2.225s] Invoking command in '/home/angel/0710_code/build/dual_arm_lag_cg_planner': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/angel/0710_code/build/dual_arm_lag_cg_planner -- -j8 -l8
+[3.414s] [ 20%] [32mBuilding CXX object CMakeFiles/dual_arm_lag_cg_planner.dir/src/planner_manager.cpp.o[0m
+[3.414s] [ 40%] [32mBuilding CXX object CMakeFiles/dual_arm_lag_cg_planner.dir/src/cg_solver.cpp.o[0m
+[3.414s] [ 60%] [32mBuilding CXX object CMakeFiles/dual_arm_lag_cg_planner.dir/src/avoidance_system.cpp.o[0m
+[3.414s] [ 80%] [32mBuilding CXX object CMakeFiles/dual_arm_lag_cg_planner.dir/src/data_io.cpp.o[0m
+[61.540s] [100%] [32m[1mLinking CXX shared library libdual_arm_lag_cg_planner.so[0m
+[61.693s] [100%] Built target dual_arm_lag_cg_planner
+[61.723s] Invoked command in '/home/angel/0710_code/build/dual_arm_lag_cg_planner' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/angel/0710_code/build/dual_arm_lag_cg_planner -- -j8 -l8
+[61.724s] Invoking command in '/home/angel/0710_code/build/dual_arm_lag_cg_planner': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/angel/0710_code/build/dual_arm_lag_cg_planner
+[61.727s] -- Install configuration: "Release"
+[61.728s] -- Installing: /home/angel/0710_code/install/dual_arm_lag_cg_planner/share/dual_arm_lag_cg_planner/dual_arm_lag_cg_planner.xml
+[61.850s] -- Installing: /home/angel/0710_code/install/dual_arm_lag_cg_planner/lib/libdual_arm_lag_cg_planner.so
+[61.851s] -- Set runtime path of "/home/angel/0710_code/install/dual_arm_lag_cg_planner/lib/libdual_arm_lag_cg_planner.so" to ""
+[61.851s] -- Installing: /home/angel/0710_code/install/dual_arm_lag_cg_planner/include
+[61.851s] -- Installing: /home/angel/0710_code/install/dual_arm_lag_cg_planner/include/dual_arm_lag_cg_planner
+[61.851s] -- Installing: /home/angel/0710_code/install/dual_arm_lag_cg_planner/include/dual_arm_lag_cg_planner/avoidance_system.hpp
+[61.851s] -- Installing: /home/angel/0710_code/install/dual_arm_lag_cg_planner/include/dual_arm_lag_cg_planner/cg_solver.hpp
+[61.851s] -- Installing: /home/angel/0710_code/install/dual_arm_lag_cg_planner/include/dual_arm_lag_cg_planner/data_io.hpp
+[61.851s] -- Installing: /home/angel/0710_code/install/dual_arm_lag_cg_planner/include/dual_arm_lag_cg_planner/planner_manager.hpp
+[61.901s] -- Installing: /home/angel/0710_code/install/dual_arm_lag_cg_planner/share/dual_arm_lag_cg_planner/config
+[61.901s] -- Installing: /home/angel/0710_code/install/dual_arm_lag_cg_planner/share/dual_arm_lag_cg_planner/config/dual_arm_lag_cg_planning.yaml
+[61.902s] -- Installing: /home/angel/0710_code/install/dual_arm_lag_cg_planner/share/dual_arm_lag_cg_planner/environment/library_path.sh
+[61.902s] -- Installing: /home/angel/0710_code/install/dual_arm_lag_cg_planner/share/dual_arm_lag_cg_planner/environment/library_path.dsv
+[61.902s] -- Installing: /home/angel/0710_code/install/dual_arm_lag_cg_planner/share/ament_index/resource_index/package_run_dependencies/dual_arm_lag_cg_planner
+[61.902s] -- Installing: /home/angel/0710_code/install/dual_arm_lag_cg_planner/share/ament_index/resource_index/parent_prefix_path/dual_arm_lag_cg_planner
+[61.902s] -- Installing: /home/angel/0710_code/install/dual_arm_lag_cg_planner/share/dual_arm_lag_cg_planner/environment/ament_prefix_path.sh
+[61.902s] -- Installing: /home/angel/0710_code/install/dual_arm_lag_cg_planner/share/dual_arm_lag_cg_planner/environment/ament_prefix_path.dsv
+[61.902s] -- Installing: /home/angel/0710_code/install/dual_arm_lag_cg_planner/share/dual_arm_lag_cg_planner/environment/path.sh
+[61.903s] -- Installing: /home/angel/0710_code/install/dual_arm_lag_cg_planner/share/dual_arm_lag_cg_planner/environment/path.dsv
+[61.903s] -- Installing: /home/angel/0710_code/install/dual_arm_lag_cg_planner/share/dual_arm_lag_cg_planner/local_setup.bash
+[61.903s] -- Installing: /home/angel/0710_code/install/dual_arm_lag_cg_planner/share/dual_arm_lag_cg_planner/local_setup.sh
+[61.903s] -- Installing: /home/angel/0710_code/install/dual_arm_lag_cg_planner/share/dual_arm_lag_cg_planner/local_setup.zsh
+[61.903s] -- Installing: /home/angel/0710_code/install/dual_arm_lag_cg_planner/share/dual_arm_lag_cg_planner/local_setup.dsv
+[61.904s] -- Installing: /home/angel/0710_code/install/dual_arm_lag_cg_planner/share/dual_arm_lag_cg_planner/package.dsv
+[61.904s] -- Installing: /home/angel/0710_code/install/dual_arm_lag_cg_planner/share/ament_index/resource_index/packages/dual_arm_lag_cg_planner
+[61.904s] -- Installing: /home/angel/0710_code/install/dual_arm_lag_cg_planner/share/ament_index/resource_index/moveit_core__pluginlib__plugin/dual_arm_lag_cg_planner
+[61.904s] -- Installing: /home/angel/0710_code/install/dual_arm_lag_cg_planner/share/dual_arm_lag_cg_planner/cmake/ament_cmake_export_libraries-extras.cmake
+[61.904s] -- Installing: /home/angel/0710_code/install/dual_arm_lag_cg_planner/share/dual_arm_lag_cg_planner/cmake/ament_cmake_export_dependencies-extras.cmake
+[61.904s] -- Installing: /home/angel/0710_code/install/dual_arm_lag_cg_planner/share/dual_arm_lag_cg_planner/cmake/dual_arm_lag_cg_plannerConfig.cmake
+[61.904s] -- Installing: /home/angel/0710_code/install/dual_arm_lag_cg_planner/share/dual_arm_lag_cg_planner/cmake/dual_arm_lag_cg_plannerConfig-version.cmake
+[61.904s] -- Installing: /home/angel/0710_code/install/dual_arm_lag_cg_planner/share/dual_arm_lag_cg_planner/package.xml
+[61.906s] Invoked command in '/home/angel/0710_code/build/dual_arm_lag_cg_planner' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/angel/0710_code/build/dual_arm_lag_cg_planner

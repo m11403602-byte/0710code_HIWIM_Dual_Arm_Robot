@@ -1,0 +1,9 @@
+<library path="dual_arm_alm_newton_planner">
+  <class name="dual_arm_alm_newton_planner/DualArmAlmNewtonPlannerManager"
+         type="dual_arm_alm_newton_planner::DualArmAlmNewtonPlannerManager"
+         base_class_type="planning_interface::PlannerManager">
+    <description>
+      Dual-arm collision avoidance planner using ALM + Newton inner solver (LDLT).
+    </description>
+  </class>
+</library>

@@ -1,0 +1,9 @@
+/home/angel/0710_code/build/hiwin_dual_arm/CMakeFiles/uninstall.dir
+/home/angel/0710_code/build/hiwin_dual_arm/CMakeFiles/hiwin_dual_arm_uninstall.dir
+/home/angel/0710_code/build/hiwin_dual_arm/CMakeFiles/test.dir
+/home/angel/0710_code/build/hiwin_dual_arm/CMakeFiles/edit_cache.dir
+/home/angel/0710_code/build/hiwin_dual_arm/CMakeFiles/rebuild_cache.dir
+/home/angel/0710_code/build/hiwin_dual_arm/CMakeFiles/list_install_components.dir
+/home/angel/0710_code/build/hiwin_dual_arm/CMakeFiles/install.dir
+/home/angel/0710_code/build/hiwin_dual_arm/CMakeFiles/install/local.dir
+/home/angel/0710_code/build/hiwin_dual_arm/CMakeFiles/install/strip.dir

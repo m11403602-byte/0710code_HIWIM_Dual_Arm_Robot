@@ -1,0 +1,35 @@
+以下是開啟使用者的界面單純模擬看軌跡是否有異常
+網域統一設
+export ROS_DOMAIN_ID=24
+echo $ROS_DOMAIN_ID
+
+上銀手臂ROS2 RVIZ的相關指令
+進入虛擬環境ROS2 humble
+distrobox enter hiwin-humble-env
+啟動安裝檔案_在這個容器下要把原本的環境清理掉
+unset ROS_VERSION
+unset ROS_ROOT
+unset AMENT_PREFIX_PATH
+unset CMAKE_PREFIX_PATH
+unset COLCON_PREFIX_PATH
+載入環境
+source /opt/ros/humble/setup.bash 
+
+# 確保所有 hiwin_ros2 的原始碼都存在於 src/ 目錄下
+if [ -d "hiwin_ros2" ]; then
+    echo "正在複製 hiwin_ros2 packages 到 src/ 目錄下..."
+    cp -r hiwin_ros2/* src/
+    echo "複製完畢。"
+fi
+
+# 刪除快取與產出資料夾
+echo "正在清除舊的 build, install, 和 log 目錄..."
+rm -rf build/ install/ log/
+echo "清除完畢。"
+
+# 編譯工作區中的所有 packages
+echo "正在編譯工作區中的所有 packages..."
+colcon build --symlink-install
+
+載入資料環境
+source install/setup.bash
