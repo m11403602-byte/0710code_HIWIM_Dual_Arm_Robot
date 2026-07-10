@@ -3,6 +3,41 @@
 // =====================================================================
 //   ⚠ MATLAB 1-indexed -> C++ 0-indexed: targets/索引全程 0-indexed,
 //     僅在對應 MATLAB 公式時註明
+//
+//   本檔只被 planner_manager.cpp 的 solve() 用到（見該檔開頭的
+//   「完整呼叫順序」表 B2 步驟 3）。本檔自己內部的呼叫順序如下：
+//
+//   ★ AvoidanceSystem 生命週期（由外部 solve() 觸發）★
+//   ---------------------------------------------------------------
+//   1. 建構子 AvoidanceSystem(...)                          (本檔 L~100)
+//        └─ generate_initial_trajectory()                   (本檔 L~135)
+//             └─ clamped_cubic_spline() [static 工具]        (本檔 L~27)
+//        （此時只有一條「起點→終點」的初始軌跡，還沒檢查碰撞）
+//
+//   2. solve() 呼叫 set_lag_params() 灌入 yaml 參數，再呼叫：
+//      run_optimization()                                    (本檔 L~482)
+//        ├─ check_collision(初始軌跡)                        (本檔 L~176)
+//        │    → 若起點/終點本身就太危險 → 直接失敗 return
+//        │    → 若整段都安全            → 直接成功 return (不用進迴圈)
+//        └─ 否則進入「外層修復迴圈」，每輪依序:
+//             ┌─ (a) find_collision_targets(目前的 D)         (本檔 L~220)
+//             │      → 找最危險的一段, 取 5 個特徵點
+//             │        [Head, q1, peak, q3, Tail]
+//             ├─ (b) run_solver_global(targets)                (本檔 L~307)
+//             │      → 內部建立 CgSolver, 呼叫 solver.run_lag()
+//             │        (見 cg_solver.cpp 開頭的呼叫順序表)
+//             │      → 只優化 5 點中間的 3 個內部點 (q1/peak/q3)
+//             ├─ (c) regenerate_trajectory_global(優化結果)     (本檔 L~343)
+//             │      → 拿新的 3 個點, 重新 Spline 一次「整段」軌跡
+//             ├─ (d) check_collision(新軌跡)                    (本檔 L~176)
+//             │      → 還有碰撞 → 回到 (a) 進下一輪
+//             │      → 沒碰撞了 → 迴圈結束, 回傳成功
+//             └─ 輪數到 max_refinement_iter_ 仍有碰撞 → 回傳失敗
+//
+//   3. solve() 事後如需要，呼叫 export_unified()                (本檔 L~573)
+//      → 把 run_optimization() 過程中記錄的每輪資料寫成 CSV
+//        （呼叫 data_io.cpp 的 write_csv / write_csv_labeled）
+//   ---------------------------------------------------------------
 // =====================================================================
 #include "dual_arm_lag_cg_planner/avoidance_system.hpp"
 #include "dual_arm_lag_cg_planner/data_io.hpp"
@@ -19,7 +54,9 @@ namespace dual_arm_lag_cg_planner
 {
 
 // =====================================================================
-// Clamped Cubic Spline (取代 MATLAB spline 的 clamped 模式)
+// 【呼叫順序 1a / 2c-內部】Clamped Cubic Spline (取代 MATLAB spline 的 clamped 模式)
+//   static 工具函式，被 generate_initial_trajectory()（產生第一條軌跡）
+//   和 regenerate_trajectory_global()（每輪修復後重建軌跡）共用
 // =====================================================================
 // [MATLAB] spline(t, [v0, Y, v1], tq): 給端點斜率 -> clamped cubic
 //   標準解法: 解三對角系統求各 knot 二階導 M, 再分段 Hermite 求值
@@ -95,7 +132,11 @@ Eigen::MatrixXd AvoidanceSystem::clamped_cubic_spline(const Eigen::VectorXd& t_k
 }
 
 // =====================================================================
-// 建構函數 (= MATLAB System v3 建構函數)
+// 【呼叫順序 1】建構函數 — 由 planner_manager.cpp 的 solve() 第 3 步 new 出來
+//   (= MATLAB System v3 建構函數)
+//   做完這個建構子之後，物件裡已經有一條「起點→終點」的初始軌跡
+//   (trajectory_ori_)，但還沒做任何碰撞檢查/優化 — 真正的工作在
+//   之後呼叫的 run_optimization() 才開始
 // =====================================================================
 AvoidanceSystem::AvoidanceSystem(const Eigen::MatrixXd& A_waypoints,
                                  const Eigen::MatrixXd& B_waypoints,
@@ -130,7 +171,10 @@ AvoidanceSystem::AvoidanceSystem(const Eigen::MatrixXd& A_waypoints,
 }
 
 // =====================================================================
-// generate_initial_trajectory: Clamped Cubic Spline (2 waypoints)
+// 【呼叫順序 1a】generate_initial_trajectory — 建構子內部呼叫，只跑一次
+//   只有起點/終點兩個 waypoint，中間用 clamped_cubic_spline 內插出
+//   一條平滑初始軌跡（此時完全不管會不會碰撞）
+//   Clamped Cubic Spline (2 waypoints)
 // =====================================================================
 void AvoidanceSystem::generate_initial_trajectory()
 {
@@ -171,7 +215,13 @@ void AvoidanceSystem::generate_initial_trajectory()
 }
 
 // =====================================================================
-// check_collision (B 方案: 動態探 D 長度)
+// 【呼叫順序 2 / 2d】check_collision — 被 run_optimization() 呼叫兩種時機:
+//   (1) 迴圈開始前, 檢查初始軌跡有沒有碰撞
+//   (2) 每輪修復完 regenerate_trajectory_global() 之後, 檢查新軌跡
+//   內部對軌跡「每一個時間步」都重跑一次 FK+危險因子計算 (compute_step_D)，
+//   逐點呼叫 CgSolver 的 static 工具 (robot_arm_bubble_RA610/RA605 →
+//   calc_df → get_collision_masks)，取每步的最大危險值 path_D_max
+//   (B 方案: 動態探 D 長度)
 // =====================================================================
 void AvoidanceSystem::check_collision(const Trajectory& traj,
                                       Eigen::VectorXd& path_D_max, bool& is_collision,
@@ -215,7 +265,11 @@ void AvoidanceSystem::check_collision(const Trajectory& traj,
 }
 
 // =====================================================================
-// find_collision_targets: 找最危險段 + 5 個特徵點 (0-indexed)
+// 【呼叫順序 2a】find_collision_targets — 每輪修復迴圈開頭第一件事
+//   輸入是 check_collision() 算出來的「每步最大危險值」陣列，本函式
+//   純數學挑選：先找出最危險的連續一段，再從段內取 5 個特徵點
+//   [Head, q1, peak, q3, Tail]；不涉及任何 FK/碰撞計算
+//   找最危險段 + 5 個特徵點 (0-indexed)
 // =====================================================================
 CollisionIndices AvoidanceSystem::find_collision_targets(const Eigen::VectorXd& path_D) const
 {
@@ -302,7 +356,12 @@ CollisionIndices AvoidanceSystem::find_collision_targets(const Eigen::VectorXd& 
 }
 
 // =====================================================================
-// run_solver_global: 呼叫內層 GD (純 Lagrangian)
+// 【呼叫順序 2b】run_solver_global — 每輪修復迴圈第二步，橋接外層/內層
+//   拿 find_collision_targets() 給的 5 個特徵點索引，取出對應的關節角
+//   組成 5x12 矩陣，建立一個「新的」CgSolver 物件並呼叫 run_lag()
+//   （見 cg_solver.cpp 開頭的呼叫順序表）；跑完把結果攤平回
+//   Xa_opt/Xb_opt (只有中間 3 個點被優化，頭尾 2 個點原封不動)
+//   呼叫內層 CG (純 Lagrangian)
 // =====================================================================
 void AvoidanceSystem::run_solver_global(const Trajectory& traj, const std::vector<int>& targets,
                                         Eigen::MatrixXd& Xa_opt, Eigen::MatrixXd& Xb_opt,
@@ -338,7 +397,11 @@ void AvoidanceSystem::run_solver_global(const Trajectory& traj, const std::vecto
 }
 
 // =====================================================================
-// regenerate_trajectory_global: 局部 Spline 重建 + C1 邊界斜率對齊
+// 【呼叫順序 2c】regenerate_trajectory_global — 每輪修復迴圈第三步
+//   拿 run_solver_global() 優化好的 3 個中間點，加回原本的 Head/Tail，
+//   對這 5 個點重新做一次 clamped_cubic_spline()，把「危險段」整段
+//   軌跡换成新的、安全的一段，並跟前後沒動過的軌跡拼接回完整軌跡
+//   局部 Spline 重建 + C1 邊界斜率對齊
 // =====================================================================
 Trajectory AvoidanceSystem::regenerate_trajectory_global(const Trajectory& old_traj,
                                                          const Eigen::MatrixXd& Xa_opt,
@@ -477,7 +540,12 @@ Trajectory AvoidanceSystem::regenerate_trajectory_global(const Trajectory& old_t
 }
 
 // =====================================================================
-// run_optimization: 碰撞修復主迴圈 (含起終點前置檢查)
+// 【呼叫順序 2】run_optimization — 由 planner_manager.cpp 的 solve() 呼叫
+//   這是整個外層系統的「主控制流程」，依序呼叫 check_collision() →
+//   find_collision_targets() → run_solver_global() →
+//   regenerate_trajectory_global() → check_collision()，
+//   如此反覆最多 max_refinement_iter_ 輪，直到沒有碰撞或輪數用盡
+//   碰撞修復主迴圈 (含起終點前置檢查)
 // =====================================================================
 void AvoidanceSystem::run_optimization()
 {
@@ -562,7 +630,11 @@ void AvoidanceSystem::run_optimization()
 }
 
 // =====================================================================
-// export_unified: 整合匯出 [NEW] (= 舊四匯出器去重重組, 對外唯一入口)
+// 【呼叫順序 3】export_unified — solve() 跑完 run_optimization() 後才呼叫
+//   (可選, 由 yaml 的 export_level 開關控制; 預設關閉)
+//   純粹是把 run_optimization() 過程中累積在 iter_log_ 的資料倒出成
+//   CSV 檔，不影響任何規劃結果，失敗也不會讓規劃失敗
+//   整合匯出 [NEW] (= 舊四匯出器去重重組, 對外唯一入口)
 //   目錄: <prefix>/<unix秒>_<SOLVER>/  (每次規劃一個子目錄)
 //   level 0: 完全不匯出 (總開關)
 //   level 1 (論文標配 6 檔): meta / summary / inner / danger_final /

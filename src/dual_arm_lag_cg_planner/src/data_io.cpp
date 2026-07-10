@@ -1,6 +1,10 @@
 // =====================================================================
 // data_io.cpp — CSV 寫入工具實作
 // =====================================================================
+//   最底層、最單純的檔案：只有兩個對外函式 write_csv / write_csv_labeled，
+//   只被 avoidance_system.cpp 的 export_unified()（【呼叫順序 3】）呼叫，
+//   本身不呼叫任何其他 .cpp 的函式，是整條呼叫鏈的末端
+// =====================================================================
 #include "dual_arm_lag_cg_planner/data_io.hpp"
 
 #include <fstream>
@@ -32,6 +36,8 @@ static void write_header(std::ofstream& f, const std::vector<std::string>& heade
   f << "\n";
 }
 
+// 【呼叫順序 3-a】write_csv — export_unified() 大部分 CSV (meta/summary/
+//   inner/danger_final/danger_rounds 等) 都呼叫這個；每列自動加逗號分隔
 void write_csv(const std::string& path,
                const std::vector<std::string>& header,
                const Eigen::MatrixXd& mat)
@@ -53,6 +59,8 @@ void write_csv(const std::string& path,
   }
 }
 
+// 【呼叫順序 3-b】write_csv_labeled — export_unified() 的 targets.csv 等
+//   「每列要帶文字標籤」(如 Head/q1/peak/q3/Tail) 的 CSV 呼叫這個版本
 void write_csv_labeled(const std::string& path,
                        const std::vector<std::string>& header,
                        const std::vector<std::string>& row_labels,

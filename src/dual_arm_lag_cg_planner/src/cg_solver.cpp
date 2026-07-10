@@ -1,10 +1,52 @@
 // =====================================================================
-// cg_solver.cpp — 第 1 層 純 Lagrangian 梯度下降求解器實作
+// cg_solver.cpp — 第 1 層 純 Lagrangian 共軛梯度求解器實作
 //   = MATLAB Dual_Arm_Lagrangian_Gradient_v2
 // =====================================================================
 //   幾何層 (球常數 / transmatrix / calc_df / mask / FK) 與 ALM、Newton
 //   譜系位元一致 (同一套機器人模型, 已逐項對照 v2 MATLAB 驗證)。
 //   solver 數學層 (L / G / line_search / run_lag) 照 Con_v2 移植。
+//
+//   本檔只被 avoidance_system.cpp 的 run_solver_global() 用到（每輪外層
+//   修復迴圈都會 new 一個新的 CgSolver）。檔案內容分兩塊：
+//     (a) 純數學/幾何 static 工具（不依賴物件狀態，任何人都能呼叫）
+//     (b) CgSolver 物件本身的建構與優化流程
+//
+//   ★ 完整呼叫順序（一次 CgSolver 生命週期）★
+//   ---------------------------------------------------------------
+//   0. [靜態工具, 誰都能呼叫, 不需要先 new CgSolver]
+//        make_rotation / make_translation      (L~69, L~84)  FK 用的基本矩陣
+//        calc_df                                (L~96)        球對危險因子公式
+//        get_collision_masks                    (L~119)       16x18 跨臂 mask
+//        robot_arm_bubble_RA610 / RA605          (L~136, L~180) 正向運動學 + 包覆球
+//
+//   1. 建構子 CgSolver(X, ...)                    (L~224)
+//        └─ rebuild_initial_V_()                  (L~283)
+//             → 組出決策變數初值 V0 = [X0; λ0; S0]
+//        （此時尚未優化，只是把資料準備好）
+//
+//   2. avoidance_system.cpp 呼叫 set_lag_params() → 也會觸發
+//      rebuild_initial_V_() 重建一次 V0（用新參數覆蓋建構子的預設值）
+//
+//   3. avoidance_system.cpp 呼叫 run_lag()          (L~530)  ← 主迴圈
+//        每一次迭代 it = 1..max_solver_iter_ 依序:
+//        (1) compute_D_cache(Xn)                    (L~341)
+//              └─ 對每個中間點呼叫 compute_Dm()       (L~307)
+//                   └─ robot_arm_bubble_RA610/RA605 + calc_df (步驟 0 的工具)
+//              → 順便用有限差分算出 D 對每個關節的敏感度 (D_plus)
+//        (2) compute_G(Xn, D_base, D_plus)           (L~385)  KKT 殘差 G
+//              └─ compute_G_smooth()                  (L~364)
+//                   └─ cost_function_F()                (L~436)
+//                        └─ cost_function_F_split()       (L~444)
+//                             └─ cost_Xm() (A臂, B臂各一次)  (L~462)
+//        (3) CG 方向 d = -G 或 Fletcher-Reeves 更新 (主迴圈內聯, 非獨立函式)
+//        (4) line_search_newton_1d(Xn, d)             (L~491)  找步長 α
+//              └─ 迴圈內反覆呼叫 cost_function_L()      (L~421)
+//                   └─ cost_function_F() + compute_Dx_all() (L~329)
+//                        └─ compute_Dm() (對每個中間點)
+//        (5) Xn ← Xn + α·d，記錄本輪各項殘差/成本到 SolverLog
+//        (6) 收斂判定 (phys_ok && stable_ok) → 是就 break，回傳 SolverLog
+//   ---------------------------------------------------------------
+//   數學符號對照、KKT 推導細節見 CODE_WALKTHROUGH.md。
 // =====================================================================
 #include "dual_arm_lag_cg_planner/cg_solver.hpp"
 
@@ -64,7 +106,10 @@ const std::vector<BubbleDef> CgSolver::BUBBLES_B = {
 };
 
 // =====================================================================
-// transmatrix → make_rotation / make_translation  (= MATLAB transmatrix)
+// 【呼叫順序 0】transmatrix → make_rotation / make_translation
+//   最底層的基本工具，被下面 robot_arm_bubble_RA610/RA605 疊乘組出
+//   完整正向運動學鏈；沒有任何函式依賴它們，可獨立測試
+//   (= MATLAB transmatrix)
 // =====================================================================
 Eigen::Matrix4d CgSolver::make_rotation(char axis, double angle_deg)
 {
@@ -91,7 +136,9 @@ Eigen::Matrix4d CgSolver::make_translation(char axis, double dist_mm)
 }
 
 // =====================================================================
-// calc_df: 球對危險因子 sj = exp( ln(0.5)/(R_i+R_j)^2 · d^2 )
+// 【呼叫順序 0】calc_df — 被 compute_Dm() 呼叫，算「一組球 vs 另一組球」
+//   兩兩之間的危險因子矩陣；本身不知道機器人，純幾何距離公式
+//   球對危險因子 sj = exp( ln(0.5)/(R_i+R_j)^2 · d^2 )
 // =====================================================================
 Eigen::MatrixXd CgSolver::calc_df(const Eigen::VectorXd& R1, const Eigen::VectorXd& R2,
                                   const Eigen::MatrixXd& P1, const Eigen::MatrixXd& P2)
@@ -114,7 +161,11 @@ Eigen::MatrixXd CgSolver::calc_df(const Eigen::VectorXd& R1, const Eigen::Vector
 }
 
 // =====================================================================
-// get_collision_masks: 16x18 跨臂 mask (連桿級 cAB 展開到球級, K_AB=180)
+// 【呼叫順序 0】get_collision_masks — 被建構子 (一次) 與 check_collision()
+//   的內部 lambda (每個時間步一次) 呼叫，決定 16x18 顆球中「哪些球對」
+//   才需要真的檢查距離（例如兩臂底座附近的球，物理上不可能碰到，
+//   直接跳過省算力）
+//   16x18 跨臂 mask (連桿級 cAB 展開到球級, K_AB=180)
 // =====================================================================
 Eigen::Array<bool, 16, 18> CgSolver::get_collision_masks()
 {
@@ -131,7 +182,11 @@ Eigen::Array<bool, 16, 18> CgSolver::get_collision_masks()
 }
 
 // =====================================================================
-// RA610 FK: 16 球 (4 底盤 + 12 手臂) + T_ee
+// 【呼叫順序 0】RA610 FK — 被 compute_Dm()（內層每次要算 D 都要重算一次
+//   FK）與 avoidance_system.cpp 的 check_collision() 呼叫
+//   輸入 6 個關節角 J[6]，用 make_translation/make_rotation 疊乘出整條
+//   運動學鏈，再把每顆包覆球從「連桿局部座標」轉到「世界座標」
+//   16 球 (4 底盤 + 12 手臂) + T_ee
 // =====================================================================
 void CgSolver::robot_arm_bubble_RA610(const Eigen::Matrix4d& T_base, const double J[6],
                                       Eigen::MatrixXd& bubble, Eigen::VectorXd& r,
@@ -175,7 +230,9 @@ void CgSolver::robot_arm_bubble_RA610(const Eigen::Matrix4d& T_base, const doubl
 }
 
 // =====================================================================
-// RA605 FK: 18 球 (8 底盤 + 10 手臂) + T_ee
+// 【呼叫順序 0】RA605 FK — 與上面 RA610 FK 對稱，同樣被 compute_Dm() /
+//   check_collision() 呼叫，只是換一組連桿長度與球表 (B 臂專用)
+//   18 球 (8 底盤 + 10 手臂) + T_ee
 // =====================================================================
 void CgSolver::robot_arm_bubble_RA605(const Eigen::Matrix4d& T_base, const double J[6],
                                       Eigen::MatrixXd& bubble, Eigen::VectorXd& r,
@@ -219,7 +276,12 @@ void CgSolver::robot_arm_bubble_RA605(const Eigen::Matrix4d& T_base, const doubl
 }
 
 // =====================================================================
-// 建構函數 (= MATLAB Dual_Arm_Lagrangian_Gradient_v2 建構函數)
+// 【呼叫順序 1】建構函數 — 由 avoidance_system.cpp 的 run_solver_global()
+//   每輪外層修復都 new 一個新的 CgSolver (不重複使用舊物件)
+//   做的事：算出決策變數維度 (M_/num_D_/num_X_/num_C_/total_dim_)、
+//   記住頭尾兩個不動的邊界點 (X_H_/X_T_)、記住中間點的原始角度做平滑
+//   參考 (oriPos_)，最後呼叫 rebuild_initial_V_() 組出優化起始值 V0
+//   (= MATLAB Dual_Arm_Lagrangian_Gradient_v2 建構函數)
 // =====================================================================
 CgSolver::CgSolver(const Eigen::MatrixXd& X,
                    const Eigen::Matrix4d& robotA_base,
@@ -277,8 +339,12 @@ CgSolver::CgSolver(const Eigen::MatrixXd& X,
 }
 
 // =====================================================================
-// rebuild_initial_V_: 以當前 oriPos / lam0_ / s0_ 重建 V_0
-//   建構子 + set_lag_params 共用 (yaml 注入後須重建)
+// 【呼叫順序 1a / 2】rebuild_initial_V_ — 被兩處呼叫:
+//   (1) 建構子最後一步 (用預設 lam0_/s0_)
+//   (2) set_lag_params() 被 avoidance_system 呼叫時 (用 yaml 真正的值
+//       覆蓋掉建構子預設值，重新組一次 V0)
+//   run_lag() 開始迭代前，V0 一定是這個函式組出來的最新版本
+//   以當前 oriPos / lam0_ / s0_ 重建 V_0
 // =====================================================================
 void CgSolver::rebuild_initial_V_()
 {
@@ -301,7 +367,12 @@ void CgSolver::rebuild_initial_V_()
 }
 
 // =====================================================================
-// compute_Dm: 第 m 點 (0-indexed) 危險因子向量 (num_D)
+// 【呼叫順序 3-1】compute_Dm — run_lag() 主迴圈裡最常被呼叫的函式
+//   （直接被 compute_D_cache()/compute_Dx_all() 呼叫，
+//    間接透過它們被 run_lag() 每次迭代呼叫非常多次）
+//   給第 m 個中間點的 12 個關節角，做一次 FK (RA610+RA605) + calc_df，
+//   回傳這一點的危險因子向量 (num_D 維)
+//   第 m 點 (0-indexed) 危險因子向量 (num_D)
 //   X: num_X 維 X 向量 (非完整 V)
 // =====================================================================
 Eigen::VectorXd CgSolver::compute_Dm(const Eigen::VectorXd& X, int m) const
@@ -325,6 +396,9 @@ Eigen::VectorXd CgSolver::compute_Dm(const Eigen::VectorXd& X, int m) const
   return D_m;
 }
 
+// 【呼叫順序 3-1'】compute_Dx_all — 被 cost_function_L() 呼叫（線搜索
+//   評估目標函數時要拿全部約束值），對每個中間點呼叫一次 compute_Dm()
+//   後串接起來
 // [MATLAB] compute_Dx_all: 全 M 點串接 (num_C)
 Eigen::VectorXd CgSolver::compute_Dx_all(const Eigen::VectorXd& X) const
 {
@@ -335,7 +409,12 @@ Eigen::VectorXd CgSolver::compute_Dx_all(const Eigen::VectorXd& X) const
 }
 
 // =====================================================================
-// compute_D_cache: D_base (num_D x M) + D_plus (M 個 num_D x 12)
+// 【呼叫順序 3-1a】compute_D_cache — run_lag() 主迴圈「每次迭代第一步」
+//   呼叫；對每個中間點呼叫 compute_Dm() 算「現在的 D」(D_base)，
+//   再對每個關節做一次 +h 有限差分擾動、各呼叫一次 compute_Dm() 算出
+//   「D 對這個關節的敏感度」(D_plus)，這批快取資料會被下一步
+//   compute_G() 拿去算梯度，避免重複呼叫 FK
+//   D_base (num_D x M) + D_plus (M 個 num_D x 12)
 //   前向差分 (CG/GD 不需 D_minus); 對應 MATLAB compute_D_cache
 // =====================================================================
 void CgSolver::compute_D_cache(const Eigen::VectorXd& V,
@@ -359,7 +438,9 @@ void CgSolver::compute_D_cache(const Eigen::VectorXd& V,
 }
 
 // =====================================================================
-// compute_G_smooth: ∇_X f (前向差分; f 僅依賴 X)
+// 【呼叫順序 3-2a】compute_G_smooth — 被 compute_G() 呼叫，算平滑成本 f
+//   對每個關節的梯度 (有限差分)；每個關節都要呼叫一次 cost_function_F()
+//   ∇_X f (前向差分; f 僅依賴 X)
 // =====================================================================
 Eigen::VectorXd CgSolver::compute_G_smooth(const Eigen::VectorXd& V) const
 {
@@ -377,7 +458,11 @@ Eigen::VectorXd CgSolver::compute_G_smooth(const Eigen::VectorXd& V) const
 }
 
 // =====================================================================
-// compute_G: 完整 KKT 一階殘差 G = [G_X; G_λ; G_S]  (total_dim)
+// 【呼叫順序 3-2】compute_G — run_lag() 主迴圈「每次迭代第二步」呼叫
+//   用 compute_D_cache() 給的 D_base/D_plus (不用重算 FK) + 呼叫
+//   compute_G_smooth() 算出的 ∇f，組合出完整 KKT 一階殘差 G，這是
+//   後面 CG 搜索方向 d = -G 的直接輸入
+//   完整 KKT 一階殘差 G = [G_X; G_λ; G_S]  (total_dim)
 //   G_X = ∇f + w_d Σ λ_i ∇D_i        (stationarity)
 //   G_λ = w_d · (D − θ + S²)          (primal feasibility)
 //   G_S = 2 w_d · S ⊙ λ              (complementarity)
@@ -415,7 +500,10 @@ Eigen::VectorXd CgSolver::compute_G(const Eigen::VectorXd& V,
 }
 
 // =====================================================================
-// cost_function_L: L(V) = f(X) + w_d λᵀ (D − θ + S²)
+// 【呼叫順序 4-內部】cost_function_L — 被 line_search_newton_1d() 大量
+//   呼叫（1D Newton 線搜索每一步都要評估 3 次：f(a)、f(a+δ)、f(a-δ)）
+//   Lagrangian 值本身；同時把 Dx_all 帶出，減少重複計算
+//   L(V) = f(X) + w_d λᵀ (D − θ + S²)
 //   同時回傳 Dx_all (避免重複 FK)
 // =====================================================================
 double CgSolver::cost_function_L(const Eigen::VectorXd& V, Eigen::VectorXd& Dx_all_out) const
@@ -431,7 +519,10 @@ double CgSolver::cost_function_L(const Eigen::VectorXd& V, Eigen::VectorXd& Dx_a
 }
 
 // =====================================================================
-// cost_function_F: f = pw·fA + (1−pw)·fB
+// 【呼叫順序 3-2a-1 / 4-內部】cost_function_F — 薄包裝，被
+//   compute_G_smooth()（算梯度用）和 cost_function_L()（算 Lagrangian
+//   用）呼叫；本身只是呼叫下面的 cost_function_F_split() 再丟掉 fa/fb
+//   f = pw·fA + (1−pw)·fB
 // =====================================================================
 double CgSolver::cost_function_F(const Eigen::VectorXd& V) const
 {
@@ -440,6 +531,8 @@ double CgSolver::cost_function_F(const Eigen::VectorXd& V) const
   return f;
 }
 
+// 【呼叫順序 3-2a-2】cost_function_F_split — 真正算平滑成本的地方，
+//   對 A 臂、B 臂各呼叫一次 cost_Xm()，用 path_weight_ 加權合併
 // [NEW] 拆出 fa/fb 往外傳 (= MATLAB cost_function_F 內部值, 原僅 debug 印)
 void CgSolver::cost_function_F_split(const Eigen::VectorXd& V,
                                      double& f, double& fa, double& fb) const
@@ -457,7 +550,10 @@ void CgSolver::cost_function_F_split(const Eigen::VectorXd& V,
 }
 
 // =====================================================================
-// cost_Xm: 單臂平滑成本 (position prior + 頭尾 boundary + neighbor)
+// 【呼叫順序 3-2a-3】cost_Xm — 被 cost_function_F_split() 呼叫兩次
+//   (A 臂一次, B 臂一次)；是整條呼叫鏈的最底層，純算術不再往下呼叫
+//   任何東西，也不涉及碰撞/FK — 只管軌跡「平不平滑」
+//   單臂平滑成本 (position prior + 頭尾 boundary + neighbor)
 // =====================================================================
 double CgSolver::cost_Xm(const Eigen::MatrixXd& Xa, const Eigen::MatrixXd& Xori,
                          const Eigen::RowVectorXd& XH, const Eigen::RowVectorXd& XT) const
@@ -485,7 +581,10 @@ double CgSolver::cost_Xm(const Eigen::MatrixXd& Xa, const Eigen::MatrixXd& Xori,
 }
 
 // =====================================================================
-// line_search_newton_1d: 1D Newton 線搜索 φ(α)=L(V+α·d)
+// 【呼叫順序 4】line_search_newton_1d — run_lag() 主迴圈「每次迭代第四步」
+//   呼叫；給定當前點 V 和搜索方向 d，沿著這條線一維地用牛頓法找
+//   讓 φ(α)=L(V+α·d) 最小的步長 α（內部自己是一個小迴圈，最多 2000 步）
+//   1D Newton 線搜索 φ(α)=L(V+α·d)
 //   ⚠ LS_DELTA=0.01, MAX_INNER=2000 (≠ ALM 之 0.001/50)
 // =====================================================================
 double CgSolver::line_search_newton_1d(const Eigen::VectorXd& V, const Eigen::VectorXd& d,
@@ -524,7 +623,12 @@ double CgSolver::line_search_newton_1d(const Eigen::VectorXd& V, const Eigen::Ve
 }
 
 // =====================================================================
-// run_lag: 主迴圈 (CG Fletcher-Reeves + 1D Newton 線搜索)
+// 【呼叫順序 3】run_lag — 整個 CgSolver 的主迴圈，由
+//   avoidance_system.cpp 的 run_solver_global() 呼叫「一次」
+//   每次迭代依序呼叫: compute_D_cache() → compute_G() →
+//   (CG 方向, 迴圈內聯) → line_search_newton_1d() → 更新 Xn →
+//   收斂判定；下面 Step 1~12 的編號對應迴圈內程式碼段落
+//   主迴圈 (CG Fletcher-Reeves + 1D Newton 線搜索)
 //   = MATLAB Dual_Arm_Lagrangian_Con_v2.run_newton (C++ 更名 run_lag)
 // =====================================================================
 SolverLog CgSolver::run_lag()

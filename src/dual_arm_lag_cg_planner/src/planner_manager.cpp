@@ -1,5 +1,33 @@
 // =====================================================================
-// planner_manager.cpp — MoveIt2 插件實作
+// planner_manager.cpp — MoveIt2 插件實作 (= 整個插件的「大門」)
+// =====================================================================
+//   本檔是 MoveIt2 唯一會直接呼叫的地方；下面 avoidance_system.cpp /
+//   cg_solver.cpp 都是被本檔間接呼叫的「內部引擎」，不會被 MoveIt 碰到。
+//
+//   ★ 完整呼叫順序（一次規劃請求，由上而下）★
+//   ---------------------------------------------------------------
+//   [A] move_group 啟動時，只執行一次：
+//     A1. DualArmLagCgPlannerManager::initialize()      (本檔 L~167)
+//           └─ load_parameters()                         (本檔 L~186)
+//
+//   [B] 使用者在 RViz 按下「Plan」，每次規劃請求都重跑一次：
+//     B1. DualArmLagCgPlannerManager::getPlanningContext() (本檔 L~221)
+//           ├─ load_parameters()                          (重讀 yaml)
+//           └─ 建立 DualArmPlanningContext, 把參數搬進去
+//     B2. MoveIt 呼叫 context->solve(res)
+//           = DualArmPlanningContext::solve()              (本檔 L~18)
+//           ├─ 1) 取出 start/goal RobotState
+//           ├─ 2) radian → degree, 組出 A_wp/B_wp (2x6)
+//           ├─ 3) 建立 AvoidanceSystem (見 avoidance_system.cpp 開頭註解)
+//           ├─ 4) optimizer.set_lag_params() + run_optimization()
+//           │      ← 這一步做完所有避障最佳化, 是最耗時的部分
+//           ├─ 5) (可選) export_unified() 匯出 CSV
+//           ├─ 6) degree → radian, 組回 RobotTrajectory
+//           └─ 7) 時間參數化 (TOTG 或等間隔)，回傳給 MoveIt
+//   ---------------------------------------------------------------
+//   若想追完整演算法，讀完本檔後接著看 avoidance_system.cpp 開頭的
+//   呼叫順序表，再看 cg_solver.cpp 開頭的呼叫順序表。
+//   完整圖解版流程 + 數學公式，見同資料夾的 CODE_WALKTHROUGH.md。
 // =====================================================================
 #include "dual_arm_lag_cg_planner/planner_manager.hpp"
 #include <exception>   // [REVISE] 匯出 try/catch
@@ -13,7 +41,10 @@ namespace dual_arm_lag_cg_planner
 {
 
 // =====================================================================
-// PlanningContext::solve — 主規劃流程
+// 【呼叫順序 B2】PlanningContext::solve — 主規劃流程
+//   由 MoveIt2 的 move_group 節點直接呼叫 (使用者按 RViz「Plan」時觸發)
+//   內部依序做 1~7 步 (見檔案最上方 B2 小節)，第 4 步呼叫 AvoidanceSystem
+//   是整個規劃器真正在算避障軌跡的地方
 // =====================================================================
 bool DualArmPlanningContext::solve(planning_interface::MotionPlanResponse& res)
 {
@@ -147,7 +178,9 @@ bool DualArmPlanningContext::solve(planning_interface::MotionPlanResponse& res)
   return true;
 }
 
-// DetailedResponse 委託 (舊版模式)
+// 【呼叫順序 B2'】DetailedResponse 委託 (舊版 MoveIt API 相容用)
+//   有些舊版 MoveIt 呼叫端用這個簽名；內部直接轉呼叫上面的 solve()，
+//   不是另一套邏輯
 bool DualArmPlanningContext::solve(planning_interface::MotionPlanDetailedResponse& res)
 {
   planning_interface::MotionPlanResponse normal_res;
@@ -164,6 +197,8 @@ bool DualArmPlanningContext::solve(planning_interface::MotionPlanDetailedRespons
 // =====================================================================
 // PlannerManager
 // =====================================================================
+// 【呼叫順序 A1】initialize — move_group 啟動、載入這個插件時呼叫「一次」
+//   之後每次規劃並不會再呼叫這個函式；常駐參數的初值在這裡讀一次
 bool DualArmLagCgPlannerManager::initialize(const moveit::core::RobotModelConstPtr& model,
                                        const rclcpp::Node::SharedPtr& node,
                                        const std::string& parameter_namespace)
@@ -182,7 +217,10 @@ bool DualArmLagCgPlannerManager::initialize(const moveit::core::RobotModelConstP
   return true;
 }
 
-// 從參數伺服器重讀所有參數 (yaml/rqt 改了下次規劃即生效)
+// 【呼叫順序 A1a / B1a】load_parameters — 從參數伺服器重讀所有參數
+//   會被呼叫兩種時機: (1) initialize() 時一次 (2) 之後每次
+//   getPlanningContext() 都重呼叫一次，因此 yaml/rqt 改了參數，
+//   下次按 Plan 就會生效，不用重啟 move_group
 void DualArmLagCgPlannerManager::load_parameters() const
 {
   const std::string ns = parameter_namespace_.empty() ? "" : (parameter_namespace_ + ".");
@@ -206,18 +244,28 @@ void DualArmLagCgPlannerManager::load_parameters() const
   node_->get_parameter_or(ns + "lag_max_iter",        lag_max_iter_,        500);
 }
 
+// 【呼叫順序】getPlanningAlgorithms — MoveIt 查詢「這個插件支援哪些演算法名稱」
+//   用於 RViz Planning Library 下拉選單顯示（本規劃器固定只回報一種）
 void DualArmLagCgPlannerManager::getPlanningAlgorithms(std::vector<std::string>& algs) const
 {
   algs.clear();
   algs.push_back("DualArmAvoidanceLagCG");
 }
 
+// 【呼叫順序】setPlannerConfigurations — MoveIt 介面要求實作的空掛鉤
+//   本規劃器沒有「多套 per-config 參數」概念 (參數只從 yaml 讀一份)，故留空
 void DualArmLagCgPlannerManager::setPlannerConfigurations(
     const planning_interface::PlannerConfigurationMap& /*pcs*/)
 {
   // 本規劃器無額外 per-config 設定; 參數已在 initialize 讀入
 }
 
+// 【呼叫順序 B1】getPlanningContext — 每次規劃請求的入口
+//   RViz 按下「Plan」時 MoveIt 先呼叫這裡「準備」一個 Context，
+//   準備好之後 MoveIt 才會呼叫 context->solve()（見上方 solve() 的
+//   【呼叫順序 B2】註解）。這裡做的事：
+//     1) load_parameters() 重讀 yaml（讓每次規劃都用最新參數）
+//     2) new 一個 DualArmPlanningContext，把讀到的參數逐一搬進去
 planning_interface::PlanningContextPtr DualArmLagCgPlannerManager::getPlanningContext(
     const planning_scene::PlanningSceneConstPtr& planning_scene,
     const planning_interface::MotionPlanRequest& req,
@@ -261,6 +309,9 @@ planning_interface::PlanningContextPtr DualArmLagCgPlannerManager::getPlanningCo
   return context;
 }
 
+// 【呼叫順序】canServiceRequest — MoveIt 在選規劃器前先問「你能接這個請求嗎」
+//   本規劃器只認「有關節目標」的請求 (joint goal constraints)，
+//   Cartesian/姿態目標一律回 false，MoveIt 會改用其他規劃器
 bool DualArmLagCgPlannerManager::canServiceRequest(
     const planning_interface::MotionPlanRequest& req) const
 {
