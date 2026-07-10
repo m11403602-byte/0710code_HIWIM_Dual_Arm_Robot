@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Release-8f4b13017fe219fd7c26.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Release",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "dual_arm_alm_newton_planner",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "dual_arm_alm_newton_planner::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-dual_arm_alm_newton_planner-Release-48d73d3c3cd697d4d8de.json",
+					"name" : "dual_arm_alm_newton_planner",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "dual_arm_alm_newton_planner_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-dual_arm_alm_newton_planner_uninstall-Release-dd497736171559dd52b4.json",
+					"name" : "dual_arm_alm_newton_planner_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-Release-8385af1a6f75c64469a2.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/angel/ros2_ws/build/dual_arm_alm_newton_planner",
+		"source" : "/home/angel/ros2_ws/src/For_hiwin_dual_arm/dual_arm_alm_newton_planner"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

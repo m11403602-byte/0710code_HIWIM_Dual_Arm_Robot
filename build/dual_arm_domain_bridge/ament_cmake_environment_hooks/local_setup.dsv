@@ -1,0 +1,2 @@
+source;share/dual_arm_domain_bridge/environment/ament_prefix_path.sh
+source;share/dual_arm_domain_bridge/environment/path.sh

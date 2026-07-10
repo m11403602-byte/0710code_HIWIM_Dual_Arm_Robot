@@ -1,1 +1,0 @@
-/home/angel/ros2_ws/src/hiwin_dual_arm/launch/test1.launch.py

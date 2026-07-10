@@ -21,7 +21,6 @@
 /home/angel/ros2_ws/install/hiwin_dual_arm/share/hiwin_dual_arm/launch/setup_assistant.launch.py
 /home/angel/ros2_ws/install/hiwin_dual_arm/share/hiwin_dual_arm/launch/spawn_controllers.launch.py
 /home/angel/ros2_ws/install/hiwin_dual_arm/share/hiwin_dual_arm/launch/static_virtual_joint_tfs.launch.py
-/home/angel/ros2_ws/install/hiwin_dual_arm/share/hiwin_dual_arm/launch/test1.launch.py
 /home/angel/ros2_ws/install/hiwin_dual_arm/share/hiwin_dual_arm/launch/warehouse_db.launch.py
 /home/angel/ros2_ws/install/hiwin_dual_arm/share/hiwin_dual_arm/config/dual_arm_alm_cg_planning.yaml
 /home/angel/ros2_ws/install/hiwin_dual_arm/share/hiwin_dual_arm/config/dual_arm_alm_gd_planning.yaml
@@ -36,9 +35,7 @@
 /home/angel/ros2_ws/install/hiwin_dual_arm/share/hiwin_dual_arm/config/joint_limits.yaml
 /home/angel/ros2_ws/install/hiwin_dual_arm/share/hiwin_dual_arm/config/kinematics.yaml
 /home/angel/ros2_ws/install/hiwin_dual_arm/share/hiwin_dual_arm/config/moveit.rviz
-/home/angel/ros2_ws/install/hiwin_dual_arm/share/hiwin_dual_arm/config/moveit_controllers .yaml.txt
 /home/angel/ros2_ws/install/hiwin_dual_arm/share/hiwin_dual_arm/config/moveit_controllers.yaml
-/home/angel/ros2_ws/install/hiwin_dual_arm/share/hiwin_dual_arm/config/moveit_controllers_copy.yaml
 /home/angel/ros2_ws/install/hiwin_dual_arm/share/hiwin_dual_arm/config/ompl_planning.yaml
 /home/angel/ros2_ws/install/hiwin_dual_arm/share/hiwin_dual_arm/config/pilz_cartesian_limits.yaml
 /home/angel/ros2_ws/install/hiwin_dual_arm/share/hiwin_dual_arm/config/ros2_controllers.yaml

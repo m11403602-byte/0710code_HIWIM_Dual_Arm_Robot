@@ -1,0 +1,84 @@
+[0.031s] Invoking command in '/home/angel/ros2_ws/build/dual_arm_alm_gd_planner': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/angel/ros2_ws/src/For_hiwin_dual_arm/dual_arm_alm_gd_planner -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/angel/ros2_ws/install/dual_arm_alm_gd_planner
+[0.094s] -- The C compiler identification is GNU 11.4.0
+[0.151s] -- The CXX compiler identification is GNU 11.4.0
+[0.159s] -- Detecting C compiler ABI info
+[0.237s] -- Detecting C compiler ABI info - done
+[0.245s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.245s] -- Detecting C compile features
+[0.245s] -- Detecting C compile features - done
+[0.247s] -- Detecting CXX compiler ABI info
+[0.336s] -- Detecting CXX compiler ABI info - done
+[0.343s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.343s] -- Detecting CXX compile features
+[0.345s] -- Detecting CXX compile features - done
+[0.353s] -- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.482s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.552s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.598s] -- Found rclcpp: 16.0.19 (/opt/ros/humble/share/rclcpp/cmake)
+[0.688s] -- Found rosidl_generator_c: 3.1.8 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.693s] -- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.703s] -- Found rosidl_generator_cpp: 3.1.8 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.729s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.748s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.802s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.807s] -- Found rmw_fastrtps_cpp: 6.2.10 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.889s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[0.924s] -- Found FastRTPS: /opt/ros/humble/include  
+[0.963s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.977s] -- Looking for pthread.h
+[1.061s] -- Looking for pthread.h - found
+[1.068s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[1.147s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[1.148s] -- Found Threads: TRUE  
+[1.202s] -- Found pluginlib: 5.1.4 (/opt/ros/humble/share/pluginlib/cmake)
+[1.228s] -- Found moveit_core: 2.5.9 (/opt/ros/humble/share/moveit_core/cmake)
+[1.269s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: chrono date_time filesystem iostreams program_options regex serialization system thread 
+[1.305s] -- Found parameter_traits: 0.7.1 (/opt/ros/humble/share/parameter_traits/cmake)
+[1.321s] -- Found rclcpp_lifecycle: 16.0.19 (/opt/ros/humble/share/rclcpp_lifecycle/cmake)
+[1.347s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: filesystem 
+[1.445s] -- library: /usr/lib/x86_64-linux-gnu/libcurl.so
+[1.516s] -- Found Eigen3: TRUE (found version "3.4.0") 
+[1.516s] -- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+[1.821s] -- Configuring done
+[1.845s] -- Generating done
+[1.852s] -- Build files have been written to: /home/angel/ros2_ws/build/dual_arm_alm_gd_planner
+[1.873s] Invoked command in '/home/angel/ros2_ws/build/dual_arm_alm_gd_planner' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/angel/ros2_ws/src/For_hiwin_dual_arm/dual_arm_alm_gd_planner -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/angel/ros2_ws/install/dual_arm_alm_gd_planner
+[1.873s] Invoking command in '/home/angel/ros2_ws/build/dual_arm_alm_gd_planner': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/angel/ros2_ws/build/dual_arm_alm_gd_planner -- -j8 -l8
+[1.935s] [ 20%] [32mBuilding CXX object CMakeFiles/dual_arm_alm_gd_planner.dir/src/data_io.cpp.o[0m
+[1.940s] [ 40%] [32mBuilding CXX object CMakeFiles/dual_arm_alm_gd_planner.dir/src/planner_manager.cpp.o[0m
+[1.942s] [ 60%] [32mBuilding CXX object CMakeFiles/dual_arm_alm_gd_planner.dir/src/gd_solver.cpp.o[0m
+[1.944s] [ 80%] [32mBuilding CXX object CMakeFiles/dual_arm_alm_gd_planner.dir/src/avoidance_system.cpp.o[0m
+[32.671s] [100%] [32m[1mLinking CXX shared library libdual_arm_alm_gd_planner.so[0m
+[33.183s] [100%] Built target dual_arm_alm_gd_planner
+[33.200s] Invoked command in '/home/angel/ros2_ws/build/dual_arm_alm_gd_planner' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/angel/ros2_ws/build/dual_arm_alm_gd_planner -- -j8 -l8
+[33.200s] Invoking command in '/home/angel/ros2_ws/build/dual_arm_alm_gd_planner': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/angel/ros2_ws/build/dual_arm_alm_gd_planner
+[33.227s] -- Install configuration: "Release"
+[33.227s] -- Execute custom install script
+[33.227s] -- Symlinking: /home/angel/ros2_ws/install/dual_arm_alm_gd_planner/share/dual_arm_alm_gd_planner//dual_arm_alm_gd_planner.xml
+[33.227s] -- Symlinking: /home/angel/ros2_ws/install/dual_arm_alm_gd_planner/lib/libdual_arm_alm_gd_planner.so
+[33.227s] -- Symlinking: /home/angel/ros2_ws/install/dual_arm_alm_gd_planner/include/dual_arm_alm_gd_planner/avoidance_system.hpp
+[33.237s] -- Symlinking: /home/angel/ros2_ws/install/dual_arm_alm_gd_planner/include/dual_arm_alm_gd_planner/data_io.hpp
+[33.242s] -- Symlinking: /home/angel/ros2_ws/install/dual_arm_alm_gd_planner/include/dual_arm_alm_gd_planner/gd_solver.hpp
+[33.250s] -- Symlinking: /home/angel/ros2_ws/install/dual_arm_alm_gd_planner/include/dual_arm_alm_gd_planner/planner_manager.hpp
+[33.258s] -- Symlinking: /home/angel/ros2_ws/install/dual_arm_alm_gd_planner/share/dual_arm_alm_gd_planner/config/dual_arm_alm_gd_planning.yaml
+[33.268s] -- Symlinking: /home/angel/ros2_ws/install/dual_arm_alm_gd_planner/share/dual_arm_alm_gd_planner/environment/library_path.sh
+[33.275s] -- Symlinking: /home/angel/ros2_ws/install/dual_arm_alm_gd_planner/share/dual_arm_alm_gd_planner/environment/library_path.dsv
+[33.282s] -- Symlinking: /home/angel/ros2_ws/install/dual_arm_alm_gd_planner/share/ament_index/resource_index/package_run_dependencies/dual_arm_alm_gd_planner
+[33.289s] -- Symlinking: /home/angel/ros2_ws/install/dual_arm_alm_gd_planner/share/ament_index/resource_index/parent_prefix_path/dual_arm_alm_gd_planner
+[33.297s] -- Symlinking: /home/angel/ros2_ws/install/dual_arm_alm_gd_planner/share/dual_arm_alm_gd_planner/environment/ament_prefix_path.sh
+[33.305s] -- Symlinking: /home/angel/ros2_ws/install/dual_arm_alm_gd_planner/share/dual_arm_alm_gd_planner/environment/ament_prefix_path.dsv
+[33.314s] -- Symlinking: /home/angel/ros2_ws/install/dual_arm_alm_gd_planner/share/dual_arm_alm_gd_planner/environment/path.sh
+[33.321s] -- Symlinking: /home/angel/ros2_ws/install/dual_arm_alm_gd_planner/share/dual_arm_alm_gd_planner/environment/path.dsv
+[33.329s] -- Symlinking: /home/angel/ros2_ws/install/dual_arm_alm_gd_planner/share/dual_arm_alm_gd_planner/local_setup.bash
+[33.336s] -- Symlinking: /home/angel/ros2_ws/install/dual_arm_alm_gd_planner/share/dual_arm_alm_gd_planner/local_setup.sh
+[33.344s] -- Symlinking: /home/angel/ros2_ws/install/dual_arm_alm_gd_planner/share/dual_arm_alm_gd_planner/local_setup.zsh
+[33.352s] -- Symlinking: /home/angel/ros2_ws/install/dual_arm_alm_gd_planner/share/dual_arm_alm_gd_planner/local_setup.dsv
+[33.364s] -- Symlinking: /home/angel/ros2_ws/install/dual_arm_alm_gd_planner/share/dual_arm_alm_gd_planner/package.dsv
+[33.371s] -- Symlinking: /home/angel/ros2_ws/install/dual_arm_alm_gd_planner/share/ament_index/resource_index/packages/dual_arm_alm_gd_planner
+[33.380s] -- Symlinking: /home/angel/ros2_ws/install/dual_arm_alm_gd_planner/share/ament_index/resource_index/moveit_core__pluginlib__plugin/dual_arm_alm_gd_planner
+[33.387s] -- Symlinking: /home/angel/ros2_ws/install/dual_arm_alm_gd_planner/share/dual_arm_alm_gd_planner/cmake/ament_cmake_export_libraries-extras.cmake
+[33.395s] -- Symlinking: /home/angel/ros2_ws/install/dual_arm_alm_gd_planner/share/dual_arm_alm_gd_planner/cmake/ament_cmake_export_dependencies-extras.cmake
+[33.404s] -- Symlinking: /home/angel/ros2_ws/install/dual_arm_alm_gd_planner/share/dual_arm_alm_gd_planner/cmake/dual_arm_alm_gd_plannerConfig.cmake
+[33.410s] -- Symlinking: /home/angel/ros2_ws/install/dual_arm_alm_gd_planner/share/dual_arm_alm_gd_planner/cmake/dual_arm_alm_gd_plannerConfig-version.cmake
+[33.418s] -- Symlinking: /home/angel/ros2_ws/install/dual_arm_alm_gd_planner/share/dual_arm_alm_gd_planner/package.xml
+[33.428s] Invoked command in '/home/angel/ros2_ws/build/dual_arm_alm_gd_planner' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/angel/ros2_ws/build/dual_arm_alm_gd_planner

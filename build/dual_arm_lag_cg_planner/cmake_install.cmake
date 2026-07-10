@@ -1,4 +1,4 @@
-# Install script for directory: /home/angel/ros2_ws/src/dual_arm_lag_cg_planner
+# Install script for directory: /home/angel/ros2_ws/src/For_hiwin_dual_arm/dual_arm_lag_cg_planner
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

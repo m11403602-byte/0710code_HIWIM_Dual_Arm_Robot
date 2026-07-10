@@ -1,0 +1,12 @@
+hiwin_dual_arm_description
+
+Derived content and attribution:
+- urdf/ra_macro.xacro, urdf/inc/common.xacro, config/ra605_710/, meshes/ra605_710/:
+  from HIWINCorporation/hiwin_ros2 (Apache License 2.0, see LICENSE).
+  Modified: flange frame orientation in ra_macro.xacro
+  (link_6->flange joint rpy 0,0,0 -> -pi/2,-pi/2,0); package name references.
+- config/ra610_1476/, meshes/ra610_1476/:
+  ported from HIWINCorporation/hiwin_ros (BSD 3-Clause License,
+  Copyright (c) 2019, HIWIN Technologies Corp).
+- dual_hiwin_arms.urdf.xacro, big/small_arm_platform.urdf.xacro, meshes/platform/:
+  original work of this project (NTUST).

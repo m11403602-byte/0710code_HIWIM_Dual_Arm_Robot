@@ -1,4 +1,4 @@
-# Install script for directory: /home/angel/ros2_ws/src/hiwin_dual_arm
+# Install script for directory: /home/angel/ros2_ws/src/For_hiwin_dual_arm/hiwin_dual_arm
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

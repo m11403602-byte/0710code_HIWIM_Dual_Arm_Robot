@@ -53,7 +53,7 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/angel/ros2_ws/src/dual_arm_alm_newton_planner
+CMAKE_SOURCE_DIR = /home/angel/ros2_ws/src/For_hiwin_dual_arm/dual_arm_alm_newton_planner
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /home/angel/ros2_ws/build/dual_arm_alm_newton_planner
@@ -78,6 +78,6 @@ CMakeFiles/uninstall.dir/clean:
 .PHONY : CMakeFiles/uninstall.dir/clean
 
 CMakeFiles/uninstall.dir/depend:
-	cd /home/angel/ros2_ws/build/dual_arm_alm_newton_planner && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/angel/ros2_ws/src/dual_arm_alm_newton_planner /home/angel/ros2_ws/src/dual_arm_alm_newton_planner /home/angel/ros2_ws/build/dual_arm_alm_newton_planner /home/angel/ros2_ws/build/dual_arm_alm_newton_planner /home/angel/ros2_ws/build/dual_arm_alm_newton_planner/CMakeFiles/uninstall.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/angel/ros2_ws/build/dual_arm_alm_newton_planner && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/angel/ros2_ws/src/For_hiwin_dual_arm/dual_arm_alm_newton_planner /home/angel/ros2_ws/src/For_hiwin_dual_arm/dual_arm_alm_newton_planner /home/angel/ros2_ws/build/dual_arm_alm_newton_planner /home/angel/ros2_ws/build/dual_arm_alm_newton_planner /home/angel/ros2_ws/build/dual_arm_alm_newton_planner/CMakeFiles/uninstall.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/uninstall.dir/depend
 

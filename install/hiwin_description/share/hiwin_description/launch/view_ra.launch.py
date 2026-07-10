@@ -1,1 +1,0 @@
-/home/angel/ros2_ws/src/hiwin_description/launch/view_ra.launch.py

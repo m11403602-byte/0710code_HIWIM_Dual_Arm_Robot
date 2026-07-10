@@ -53,7 +53,7 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/angel/ros2_ws/src/hiwin_dual_arm
+CMAKE_SOURCE_DIR = /home/angel/ros2_ws/src/For_hiwin_dual_arm/hiwin_dual_arm
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /home/angel/ros2_ws/build/hiwin_dual_arm
@@ -78,6 +78,6 @@ CMakeFiles/uninstall.dir/clean:
 .PHONY : CMakeFiles/uninstall.dir/clean
 
 CMakeFiles/uninstall.dir/depend:
-	cd /home/angel/ros2_ws/build/hiwin_dual_arm && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/angel/ros2_ws/src/hiwin_dual_arm /home/angel/ros2_ws/src/hiwin_dual_arm /home/angel/ros2_ws/build/hiwin_dual_arm /home/angel/ros2_ws/build/hiwin_dual_arm /home/angel/ros2_ws/build/hiwin_dual_arm/CMakeFiles/uninstall.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/angel/ros2_ws/build/hiwin_dual_arm && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/angel/ros2_ws/src/For_hiwin_dual_arm/hiwin_dual_arm /home/angel/ros2_ws/src/For_hiwin_dual_arm/hiwin_dual_arm /home/angel/ros2_ws/build/hiwin_dual_arm /home/angel/ros2_ws/build/hiwin_dual_arm /home/angel/ros2_ws/build/hiwin_dual_arm/CMakeFiles/uninstall.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/uninstall.dir/depend
 

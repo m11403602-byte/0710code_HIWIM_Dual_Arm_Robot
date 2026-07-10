@@ -1,0 +1,767 @@
+[1.120s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build', '--symlink-install']
+[1.120s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=True, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=8, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x74c847217550>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x74c847216ad0>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x74c847216ad0>>, mixin_verb=('build',))
+[3.135s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[3.136s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[3.136s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[3.136s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[3.136s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[3.136s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[3.136s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/angel/ros2_ws'
+[3.137s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[3.137s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[3.138s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[3.138s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[3.138s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[3.138s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[3.138s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[3.138s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[3.139s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[3.167s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[3.167s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[3.167s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[3.167s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[3.167s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[3.167s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[3.167s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[3.168s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[3.168s] Level 1:colcon.colcon_core.package_identification:_identify(docs) by extensions ['ignore', 'ignore_ament_install']
+[3.168s] Level 1:colcon.colcon_core.package_identification:_identify(docs) by extension 'ignore'
+[3.168s] Level 1:colcon.colcon_core.package_identification:_identify(docs) by extension 'ignore_ament_install'
+[3.168s] Level 1:colcon.colcon_core.package_identification:_identify(docs) by extensions ['colcon_pkg']
+[3.168s] Level 1:colcon.colcon_core.package_identification:_identify(docs) by extension 'colcon_pkg'
+[3.168s] Level 1:colcon.colcon_core.package_identification:_identify(docs) by extensions ['colcon_meta']
+[3.168s] Level 1:colcon.colcon_core.package_identification:_identify(docs) by extension 'colcon_meta'
+[3.168s] Level 1:colcon.colcon_core.package_identification:_identify(docs) by extensions ['ros']
+[3.168s] Level 1:colcon.colcon_core.package_identification:_identify(docs) by extension 'ros'
+[3.168s] Level 1:colcon.colcon_core.package_identification:_identify(docs) by extensions ['cmake', 'python']
+[3.168s] Level 1:colcon.colcon_core.package_identification:_identify(docs) by extension 'cmake'
+[3.168s] Level 1:colcon.colcon_core.package_identification:_identify(docs) by extension 'python'
+[3.169s] Level 1:colcon.colcon_core.package_identification:_identify(docs) by extensions ['python_setup_py']
+[3.169s] Level 1:colcon.colcon_core.package_identification:_identify(docs) by extension 'python_setup_py'
+[3.169s] Level 1:colcon.colcon_core.package_identification:_identify(docs/images) by extensions ['ignore', 'ignore_ament_install']
+[3.169s] Level 1:colcon.colcon_core.package_identification:_identify(docs/images) by extension 'ignore'
+[3.169s] Level 1:colcon.colcon_core.package_identification:_identify(docs/images) by extension 'ignore_ament_install'
+[3.169s] Level 1:colcon.colcon_core.package_identification:_identify(docs/images) by extensions ['colcon_pkg']
+[3.169s] Level 1:colcon.colcon_core.package_identification:_identify(docs/images) by extension 'colcon_pkg'
+[3.169s] Level 1:colcon.colcon_core.package_identification:_identify(docs/images) by extensions ['colcon_meta']
+[3.169s] Level 1:colcon.colcon_core.package_identification:_identify(docs/images) by extension 'colcon_meta'
+[3.169s] Level 1:colcon.colcon_core.package_identification:_identify(docs/images) by extensions ['ros']
+[3.169s] Level 1:colcon.colcon_core.package_identification:_identify(docs/images) by extension 'ros'
+[3.169s] Level 1:colcon.colcon_core.package_identification:_identify(docs/images) by extensions ['cmake', 'python']
+[3.169s] Level 1:colcon.colcon_core.package_identification:_identify(docs/images) by extension 'cmake'
+[3.170s] Level 1:colcon.colcon_core.package_identification:_identify(docs/images) by extension 'python'
+[3.170s] Level 1:colcon.colcon_core.package_identification:_identify(docs/images) by extensions ['python_setup_py']
+[3.170s] Level 1:colcon.colcon_core.package_identification:_identify(docs/images) by extension 'python_setup_py'
+[3.170s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[3.170s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[3.170s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[3.170s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[3.170s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[3.170s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[3.170s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[3.170s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[3.170s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[3.171s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[3.171s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[3.171s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[3.171s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[3.171s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[3.171s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[3.171s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[3.171s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[3.171s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[3.171s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[3.171s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[3.171s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm) by extensions ['ignore', 'ignore_ament_install']
+[3.171s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm) by extension 'ignore'
+[3.171s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm) by extension 'ignore_ament_install'
+[3.171s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm) by extensions ['colcon_pkg']
+[3.172s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm) by extension 'colcon_pkg'
+[3.172s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm) by extensions ['colcon_meta']
+[3.172s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm) by extension 'colcon_meta'
+[3.172s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm) by extensions ['ros']
+[3.172s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm) by extension 'ros'
+[3.172s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm) by extensions ['cmake', 'python']
+[3.172s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm) by extension 'cmake'
+[3.172s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm) by extension 'python'
+[3.172s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm) by extensions ['python_setup_py']
+[3.172s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm) by extension 'python_setup_py'
+[3.172s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/dual_arm_alm_cg_planner) by extensions ['ignore', 'ignore_ament_install']
+[3.172s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/dual_arm_alm_cg_planner) by extension 'ignore'
+[3.172s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/dual_arm_alm_cg_planner) by extension 'ignore_ament_install'
+[3.172s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/dual_arm_alm_cg_planner) by extensions ['colcon_pkg']
+[3.172s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/dual_arm_alm_cg_planner) by extension 'colcon_pkg'
+[3.173s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/dual_arm_alm_cg_planner) by extensions ['colcon_meta']
+[3.173s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/dual_arm_alm_cg_planner) by extension 'colcon_meta'
+[3.173s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/dual_arm_alm_cg_planner) by extensions ['ros']
+[3.173s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/dual_arm_alm_cg_planner) by extension 'ros'
+[3.176s] DEBUG:colcon.colcon_core.package_identification:Package 'src/For_hiwin_dual_arm/dual_arm_alm_cg_planner' with type 'ros.ament_cmake' and name 'dual_arm_alm_cg_planner'
+[3.176s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/dual_arm_alm_gd_planner) by extensions ['ignore', 'ignore_ament_install']
+[3.176s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/dual_arm_alm_gd_planner) by extension 'ignore'
+[3.176s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/dual_arm_alm_gd_planner) by extension 'ignore_ament_install'
+[3.176s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/dual_arm_alm_gd_planner) by extensions ['colcon_pkg']
+[3.176s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/dual_arm_alm_gd_planner) by extension 'colcon_pkg'
+[3.176s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/dual_arm_alm_gd_planner) by extensions ['colcon_meta']
+[3.176s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/dual_arm_alm_gd_planner) by extension 'colcon_meta'
+[3.177s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/dual_arm_alm_gd_planner) by extensions ['ros']
+[3.177s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/dual_arm_alm_gd_planner) by extension 'ros'
+[3.178s] DEBUG:colcon.colcon_core.package_identification:Package 'src/For_hiwin_dual_arm/dual_arm_alm_gd_planner' with type 'ros.ament_cmake' and name 'dual_arm_alm_gd_planner'
+[3.178s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/dual_arm_alm_newton_planner) by extensions ['ignore', 'ignore_ament_install']
+[3.178s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/dual_arm_alm_newton_planner) by extension 'ignore'
+[3.178s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/dual_arm_alm_newton_planner) by extension 'ignore_ament_install'
+[3.178s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/dual_arm_alm_newton_planner) by extensions ['colcon_pkg']
+[3.178s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/dual_arm_alm_newton_planner) by extension 'colcon_pkg'
+[3.178s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/dual_arm_alm_newton_planner) by extensions ['colcon_meta']
+[3.178s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/dual_arm_alm_newton_planner) by extension 'colcon_meta'
+[3.178s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/dual_arm_alm_newton_planner) by extensions ['ros']
+[3.178s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/dual_arm_alm_newton_planner) by extension 'ros'
+[3.179s] DEBUG:colcon.colcon_core.package_identification:Package 'src/For_hiwin_dual_arm/dual_arm_alm_newton_planner' with type 'ros.ament_cmake' and name 'dual_arm_alm_newton_planner'
+[3.179s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/dual_arm_domain_bridge (7)) by extensions ['ignore', 'ignore_ament_install']
+[3.179s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/dual_arm_domain_bridge (7)) by extension 'ignore'
+[3.179s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/dual_arm_domain_bridge (7)) by extension 'ignore_ament_install'
+[3.179s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/dual_arm_domain_bridge (7)) by extensions ['colcon_pkg']
+[3.180s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/dual_arm_domain_bridge (7)) by extension 'colcon_pkg'
+[3.180s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/dual_arm_domain_bridge (7)) by extensions ['colcon_meta']
+[3.180s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/dual_arm_domain_bridge (7)) by extension 'colcon_meta'
+[3.180s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/dual_arm_domain_bridge (7)) by extensions ['ros']
+[3.180s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/dual_arm_domain_bridge (7)) by extension 'ros'
+[3.180s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/dual_arm_domain_bridge (7)) by extensions ['cmake', 'python']
+[3.180s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/dual_arm_domain_bridge (7)) by extension 'cmake'
+[3.180s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/dual_arm_domain_bridge (7)) by extension 'python'
+[3.180s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/dual_arm_domain_bridge (7)) by extensions ['python_setup_py']
+[3.180s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/dual_arm_domain_bridge (7)) by extension 'python_setup_py'
+[3.180s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/dual_arm_domain_bridge (7)/dual_arm_domain_bridge) by extensions ['ignore', 'ignore_ament_install']
+[3.180s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/dual_arm_domain_bridge (7)/dual_arm_domain_bridge) by extension 'ignore'
+[3.180s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/dual_arm_domain_bridge (7)/dual_arm_domain_bridge) by extension 'ignore_ament_install'
+[3.180s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/dual_arm_domain_bridge (7)/dual_arm_domain_bridge) by extensions ['colcon_pkg']
+[3.180s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/dual_arm_domain_bridge (7)/dual_arm_domain_bridge) by extension 'colcon_pkg'
+[3.180s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/dual_arm_domain_bridge (7)/dual_arm_domain_bridge) by extensions ['colcon_meta']
+[3.180s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/dual_arm_domain_bridge (7)/dual_arm_domain_bridge) by extension 'colcon_meta'
+[3.180s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/dual_arm_domain_bridge (7)/dual_arm_domain_bridge) by extensions ['ros']
+[3.181s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/dual_arm_domain_bridge (7)/dual_arm_domain_bridge) by extension 'ros'
+[3.181s] DEBUG:colcon.colcon_core.package_identification:Package 'src/For_hiwin_dual_arm/dual_arm_domain_bridge (7)/dual_arm_domain_bridge' with type 'ros.ament_cmake' and name 'dual_arm_domain_bridge'
+[3.181s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/dual_arm_lag_cg_planner) by extensions ['ignore', 'ignore_ament_install']
+[3.182s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/dual_arm_lag_cg_planner) by extension 'ignore'
+[3.182s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/dual_arm_lag_cg_planner) by extension 'ignore_ament_install'
+[3.182s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/dual_arm_lag_cg_planner) by extensions ['colcon_pkg']
+[3.182s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/dual_arm_lag_cg_planner) by extension 'colcon_pkg'
+[3.182s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/dual_arm_lag_cg_planner) by extensions ['colcon_meta']
+[3.182s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/dual_arm_lag_cg_planner) by extension 'colcon_meta'
+[3.182s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/dual_arm_lag_cg_planner) by extensions ['ros']
+[3.182s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/dual_arm_lag_cg_planner) by extension 'ros'
+[3.183s] DEBUG:colcon.colcon_core.package_identification:Package 'src/For_hiwin_dual_arm/dual_arm_lag_cg_planner' with type 'ros.ament_cmake' and name 'dual_arm_lag_cg_planner'
+[3.183s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/dual_arm_lag_gd_planner) by extensions ['ignore', 'ignore_ament_install']
+[3.183s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/dual_arm_lag_gd_planner) by extension 'ignore'
+[3.183s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/dual_arm_lag_gd_planner) by extension 'ignore_ament_install'
+[3.183s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/dual_arm_lag_gd_planner) by extensions ['colcon_pkg']
+[3.183s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/dual_arm_lag_gd_planner) by extension 'colcon_pkg'
+[3.183s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/dual_arm_lag_gd_planner) by extensions ['colcon_meta']
+[3.183s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/dual_arm_lag_gd_planner) by extension 'colcon_meta'
+[3.183s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/dual_arm_lag_gd_planner) by extensions ['ros']
+[3.183s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/dual_arm_lag_gd_planner) by extension 'ros'
+[3.184s] DEBUG:colcon.colcon_core.package_identification:Package 'src/For_hiwin_dual_arm/dual_arm_lag_gd_planner' with type 'ros.ament_cmake' and name 'dual_arm_lag_gd_planner'
+[3.184s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/dual_arm_lag_newton_planner) by extensions ['ignore', 'ignore_ament_install']
+[3.184s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/dual_arm_lag_newton_planner) by extension 'ignore'
+[3.184s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/dual_arm_lag_newton_planner) by extension 'ignore_ament_install'
+[3.184s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/dual_arm_lag_newton_planner) by extensions ['colcon_pkg']
+[3.184s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/dual_arm_lag_newton_planner) by extension 'colcon_pkg'
+[3.184s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/dual_arm_lag_newton_planner) by extensions ['colcon_meta']
+[3.185s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/dual_arm_lag_newton_planner) by extension 'colcon_meta'
+[3.185s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/dual_arm_lag_newton_planner) by extensions ['ros']
+[3.185s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/dual_arm_lag_newton_planner) by extension 'ros'
+[3.185s] DEBUG:colcon.colcon_core.package_identification:Package 'src/For_hiwin_dual_arm/dual_arm_lag_newton_planner' with type 'ros.ament_cmake' and name 'dual_arm_lag_newton_planner'
+[3.186s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/hiwin_dual_arm) by extensions ['ignore', 'ignore_ament_install']
+[3.186s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/hiwin_dual_arm) by extension 'ignore'
+[3.186s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/hiwin_dual_arm) by extension 'ignore_ament_install'
+[3.186s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/hiwin_dual_arm) by extensions ['colcon_pkg']
+[3.186s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/hiwin_dual_arm) by extension 'colcon_pkg'
+[3.186s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/hiwin_dual_arm) by extensions ['colcon_meta']
+[3.186s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/hiwin_dual_arm) by extension 'colcon_meta'
+[3.186s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/hiwin_dual_arm) by extensions ['ros']
+[3.186s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/hiwin_dual_arm) by extension 'ros'
+[3.187s] DEBUG:colcon.colcon_core.package_identification:Package 'src/For_hiwin_dual_arm/hiwin_dual_arm' with type 'ros.ament_cmake' and name 'hiwin_dual_arm'
+[3.187s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/hiwin_dual_arm_description) by extensions ['ignore', 'ignore_ament_install']
+[3.187s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/hiwin_dual_arm_description) by extension 'ignore'
+[3.188s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/hiwin_dual_arm_description) by extension 'ignore_ament_install'
+[3.188s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/hiwin_dual_arm_description) by extensions ['colcon_pkg']
+[3.188s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/hiwin_dual_arm_description) by extension 'colcon_pkg'
+[3.188s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/hiwin_dual_arm_description) by extensions ['colcon_meta']
+[3.188s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/hiwin_dual_arm_description) by extension 'colcon_meta'
+[3.188s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/hiwin_dual_arm_description) by extensions ['ros']
+[3.188s] Level 1:colcon.colcon_core.package_identification:_identify(src/For_hiwin_dual_arm/hiwin_dual_arm_description) by extension 'ros'
+[3.188s] DEBUG:colcon.colcon_core.package_identification:Package 'src/For_hiwin_dual_arm/hiwin_dual_arm_description' with type 'ros.ament_cmake' and name 'hiwin_dual_arm_description'
+[3.188s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[3.188s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[3.188s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[3.188s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[3.188s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[3.336s] Level 5:colcon.colcon_core.verb:set package 'dual_arm_alm_cg_planner' build argument 'cmake_args' from command line to 'None'
+[3.336s] Level 5:colcon.colcon_core.verb:set package 'dual_arm_alm_cg_planner' build argument 'cmake_target' from command line to 'None'
+[3.336s] Level 5:colcon.colcon_core.verb:set package 'dual_arm_alm_cg_planner' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[3.336s] Level 5:colcon.colcon_core.verb:set package 'dual_arm_alm_cg_planner' build argument 'cmake_clean_cache' from command line to 'False'
+[3.336s] Level 5:colcon.colcon_core.verb:set package 'dual_arm_alm_cg_planner' build argument 'cmake_clean_first' from command line to 'False'
+[3.337s] Level 5:colcon.colcon_core.verb:set package 'dual_arm_alm_cg_planner' build argument 'cmake_force_configure' from command line to 'False'
+[3.337s] Level 5:colcon.colcon_core.verb:set package 'dual_arm_alm_cg_planner' build argument 'ament_cmake_args' from command line to 'None'
+[3.337s] Level 5:colcon.colcon_core.verb:set package 'dual_arm_alm_cg_planner' build argument 'catkin_cmake_args' from command line to 'None'
+[3.337s] Level 5:colcon.colcon_core.verb:set package 'dual_arm_alm_cg_planner' build argument 'catkin_skip_building_tests' from command line to 'False'
+[3.337s] DEBUG:colcon.colcon_core.verb:Building package 'dual_arm_alm_cg_planner' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/angel/ros2_ws/build/dual_arm_alm_cg_planner', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/angel/ros2_ws/install/dual_arm_alm_cg_planner', 'merge_install': False, 'path': '/home/angel/ros2_ws/src/For_hiwin_dual_arm/dual_arm_alm_cg_planner', 'symlink_install': True, 'test_result_base': None}
+[3.337s] Level 5:colcon.colcon_core.verb:set package 'dual_arm_alm_gd_planner' build argument 'cmake_args' from command line to 'None'
+[3.337s] Level 5:colcon.colcon_core.verb:set package 'dual_arm_alm_gd_planner' build argument 'cmake_target' from command line to 'None'
+[3.338s] Level 5:colcon.colcon_core.verb:set package 'dual_arm_alm_gd_planner' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[3.338s] Level 5:colcon.colcon_core.verb:set package 'dual_arm_alm_gd_planner' build argument 'cmake_clean_cache' from command line to 'False'
+[3.338s] Level 5:colcon.colcon_core.verb:set package 'dual_arm_alm_gd_planner' build argument 'cmake_clean_first' from command line to 'False'
+[3.338s] Level 5:colcon.colcon_core.verb:set package 'dual_arm_alm_gd_planner' build argument 'cmake_force_configure' from command line to 'False'
+[3.338s] Level 5:colcon.colcon_core.verb:set package 'dual_arm_alm_gd_planner' build argument 'ament_cmake_args' from command line to 'None'
+[3.338s] Level 5:colcon.colcon_core.verb:set package 'dual_arm_alm_gd_planner' build argument 'catkin_cmake_args' from command line to 'None'
+[3.338s] Level 5:colcon.colcon_core.verb:set package 'dual_arm_alm_gd_planner' build argument 'catkin_skip_building_tests' from command line to 'False'
+[3.338s] DEBUG:colcon.colcon_core.verb:Building package 'dual_arm_alm_gd_planner' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/angel/ros2_ws/build/dual_arm_alm_gd_planner', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/angel/ros2_ws/install/dual_arm_alm_gd_planner', 'merge_install': False, 'path': '/home/angel/ros2_ws/src/For_hiwin_dual_arm/dual_arm_alm_gd_planner', 'symlink_install': True, 'test_result_base': None}
+[3.338s] Level 5:colcon.colcon_core.verb:set package 'dual_arm_alm_newton_planner' build argument 'cmake_args' from command line to 'None'
+[3.339s] Level 5:colcon.colcon_core.verb:set package 'dual_arm_alm_newton_planner' build argument 'cmake_target' from command line to 'None'
+[3.339s] Level 5:colcon.colcon_core.verb:set package 'dual_arm_alm_newton_planner' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[3.339s] Level 5:colcon.colcon_core.verb:set package 'dual_arm_alm_newton_planner' build argument 'cmake_clean_cache' from command line to 'False'
+[3.339s] Level 5:colcon.colcon_core.verb:set package 'dual_arm_alm_newton_planner' build argument 'cmake_clean_first' from command line to 'False'
+[3.339s] Level 5:colcon.colcon_core.verb:set package 'dual_arm_alm_newton_planner' build argument 'cmake_force_configure' from command line to 'False'
+[3.339s] Level 5:colcon.colcon_core.verb:set package 'dual_arm_alm_newton_planner' build argument 'ament_cmake_args' from command line to 'None'
+[3.339s] Level 5:colcon.colcon_core.verb:set package 'dual_arm_alm_newton_planner' build argument 'catkin_cmake_args' from command line to 'None'
+[3.339s] Level 5:colcon.colcon_core.verb:set package 'dual_arm_alm_newton_planner' build argument 'catkin_skip_building_tests' from command line to 'False'
+[3.339s] DEBUG:colcon.colcon_core.verb:Building package 'dual_arm_alm_newton_planner' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/angel/ros2_ws/build/dual_arm_alm_newton_planner', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/angel/ros2_ws/install/dual_arm_alm_newton_planner', 'merge_install': False, 'path': '/home/angel/ros2_ws/src/For_hiwin_dual_arm/dual_arm_alm_newton_planner', 'symlink_install': True, 'test_result_base': None}
+[3.339s] Level 5:colcon.colcon_core.verb:set package 'dual_arm_domain_bridge' build argument 'cmake_args' from command line to 'None'
+[3.340s] Level 5:colcon.colcon_core.verb:set package 'dual_arm_domain_bridge' build argument 'cmake_target' from command line to 'None'
+[3.340s] Level 5:colcon.colcon_core.verb:set package 'dual_arm_domain_bridge' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[3.340s] Level 5:colcon.colcon_core.verb:set package 'dual_arm_domain_bridge' build argument 'cmake_clean_cache' from command line to 'False'
+[3.340s] Level 5:colcon.colcon_core.verb:set package 'dual_arm_domain_bridge' build argument 'cmake_clean_first' from command line to 'False'
+[3.340s] Level 5:colcon.colcon_core.verb:set package 'dual_arm_domain_bridge' build argument 'cmake_force_configure' from command line to 'False'
+[3.340s] Level 5:colcon.colcon_core.verb:set package 'dual_arm_domain_bridge' build argument 'ament_cmake_args' from command line to 'None'
+[3.340s] Level 5:colcon.colcon_core.verb:set package 'dual_arm_domain_bridge' build argument 'catkin_cmake_args' from command line to 'None'
+[3.340s] Level 5:colcon.colcon_core.verb:set package 'dual_arm_domain_bridge' build argument 'catkin_skip_building_tests' from command line to 'False'
+[3.340s] DEBUG:colcon.colcon_core.verb:Building package 'dual_arm_domain_bridge' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/angel/ros2_ws/build/dual_arm_domain_bridge', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/angel/ros2_ws/install/dual_arm_domain_bridge', 'merge_install': False, 'path': '/home/angel/ros2_ws/src/For_hiwin_dual_arm/dual_arm_domain_bridge (7)/dual_arm_domain_bridge', 'symlink_install': True, 'test_result_base': None}
+[3.340s] Level 5:colcon.colcon_core.verb:set package 'dual_arm_lag_cg_planner' build argument 'cmake_args' from command line to 'None'
+[3.341s] Level 5:colcon.colcon_core.verb:set package 'dual_arm_lag_cg_planner' build argument 'cmake_target' from command line to 'None'
+[3.341s] Level 5:colcon.colcon_core.verb:set package 'dual_arm_lag_cg_planner' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[3.341s] Level 5:colcon.colcon_core.verb:set package 'dual_arm_lag_cg_planner' build argument 'cmake_clean_cache' from command line to 'False'
+[3.341s] Level 5:colcon.colcon_core.verb:set package 'dual_arm_lag_cg_planner' build argument 'cmake_clean_first' from command line to 'False'
+[3.341s] Level 5:colcon.colcon_core.verb:set package 'dual_arm_lag_cg_planner' build argument 'cmake_force_configure' from command line to 'False'
+[3.341s] Level 5:colcon.colcon_core.verb:set package 'dual_arm_lag_cg_planner' build argument 'ament_cmake_args' from command line to 'None'
+[3.341s] Level 5:colcon.colcon_core.verb:set package 'dual_arm_lag_cg_planner' build argument 'catkin_cmake_args' from command line to 'None'
+[3.341s] Level 5:colcon.colcon_core.verb:set package 'dual_arm_lag_cg_planner' build argument 'catkin_skip_building_tests' from command line to 'False'
+[3.341s] DEBUG:colcon.colcon_core.verb:Building package 'dual_arm_lag_cg_planner' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/angel/ros2_ws/build/dual_arm_lag_cg_planner', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/angel/ros2_ws/install/dual_arm_lag_cg_planner', 'merge_install': False, 'path': '/home/angel/ros2_ws/src/For_hiwin_dual_arm/dual_arm_lag_cg_planner', 'symlink_install': True, 'test_result_base': None}
+[3.341s] Level 5:colcon.colcon_core.verb:set package 'dual_arm_lag_gd_planner' build argument 'cmake_args' from command line to 'None'
+[3.341s] Level 5:colcon.colcon_core.verb:set package 'dual_arm_lag_gd_planner' build argument 'cmake_target' from command line to 'None'
+[3.341s] Level 5:colcon.colcon_core.verb:set package 'dual_arm_lag_gd_planner' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[3.341s] Level 5:colcon.colcon_core.verb:set package 'dual_arm_lag_gd_planner' build argument 'cmake_clean_cache' from command line to 'False'
+[3.342s] Level 5:colcon.colcon_core.verb:set package 'dual_arm_lag_gd_planner' build argument 'cmake_clean_first' from command line to 'False'
+[3.342s] Level 5:colcon.colcon_core.verb:set package 'dual_arm_lag_gd_planner' build argument 'cmake_force_configure' from command line to 'False'
+[3.342s] Level 5:colcon.colcon_core.verb:set package 'dual_arm_lag_gd_planner' build argument 'ament_cmake_args' from command line to 'None'
+[3.342s] Level 5:colcon.colcon_core.verb:set package 'dual_arm_lag_gd_planner' build argument 'catkin_cmake_args' from command line to 'None'
+[3.342s] Level 5:colcon.colcon_core.verb:set package 'dual_arm_lag_gd_planner' build argument 'catkin_skip_building_tests' from command line to 'False'
+[3.342s] DEBUG:colcon.colcon_core.verb:Building package 'dual_arm_lag_gd_planner' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/angel/ros2_ws/build/dual_arm_lag_gd_planner', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/angel/ros2_ws/install/dual_arm_lag_gd_planner', 'merge_install': False, 'path': '/home/angel/ros2_ws/src/For_hiwin_dual_arm/dual_arm_lag_gd_planner', 'symlink_install': True, 'test_result_base': None}
+[3.342s] Level 5:colcon.colcon_core.verb:set package 'dual_arm_lag_newton_planner' build argument 'cmake_args' from command line to 'None'
+[3.342s] Level 5:colcon.colcon_core.verb:set package 'dual_arm_lag_newton_planner' build argument 'cmake_target' from command line to 'None'
+[3.342s] Level 5:colcon.colcon_core.verb:set package 'dual_arm_lag_newton_planner' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[3.342s] Level 5:colcon.colcon_core.verb:set package 'dual_arm_lag_newton_planner' build argument 'cmake_clean_cache' from command line to 'False'
+[3.342s] Level 5:colcon.colcon_core.verb:set package 'dual_arm_lag_newton_planner' build argument 'cmake_clean_first' from command line to 'False'
+[3.342s] Level 5:colcon.colcon_core.verb:set package 'dual_arm_lag_newton_planner' build argument 'cmake_force_configure' from command line to 'False'
+[3.342s] Level 5:colcon.colcon_core.verb:set package 'dual_arm_lag_newton_planner' build argument 'ament_cmake_args' from command line to 'None'
+[3.342s] Level 5:colcon.colcon_core.verb:set package 'dual_arm_lag_newton_planner' build argument 'catkin_cmake_args' from command line to 'None'
+[3.343s] Level 5:colcon.colcon_core.verb:set package 'dual_arm_lag_newton_planner' build argument 'catkin_skip_building_tests' from command line to 'False'
+[3.343s] DEBUG:colcon.colcon_core.verb:Building package 'dual_arm_lag_newton_planner' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/angel/ros2_ws/build/dual_arm_lag_newton_planner', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/angel/ros2_ws/install/dual_arm_lag_newton_planner', 'merge_install': False, 'path': '/home/angel/ros2_ws/src/For_hiwin_dual_arm/dual_arm_lag_newton_planner', 'symlink_install': True, 'test_result_base': None}
+[3.343s] Level 5:colcon.colcon_core.verb:set package 'hiwin_dual_arm_description' build argument 'cmake_args' from command line to 'None'
+[3.343s] Level 5:colcon.colcon_core.verb:set package 'hiwin_dual_arm_description' build argument 'cmake_target' from command line to 'None'
+[3.343s] Level 5:colcon.colcon_core.verb:set package 'hiwin_dual_arm_description' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[3.343s] Level 5:colcon.colcon_core.verb:set package 'hiwin_dual_arm_description' build argument 'cmake_clean_cache' from command line to 'False'
+[3.343s] Level 5:colcon.colcon_core.verb:set package 'hiwin_dual_arm_description' build argument 'cmake_clean_first' from command line to 'False'
+[3.343s] Level 5:colcon.colcon_core.verb:set package 'hiwin_dual_arm_description' build argument 'cmake_force_configure' from command line to 'False'
+[3.343s] Level 5:colcon.colcon_core.verb:set package 'hiwin_dual_arm_description' build argument 'ament_cmake_args' from command line to 'None'
+[3.343s] Level 5:colcon.colcon_core.verb:set package 'hiwin_dual_arm_description' build argument 'catkin_cmake_args' from command line to 'None'
+[3.343s] Level 5:colcon.colcon_core.verb:set package 'hiwin_dual_arm_description' build argument 'catkin_skip_building_tests' from command line to 'False'
+[3.343s] DEBUG:colcon.colcon_core.verb:Building package 'hiwin_dual_arm_description' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/angel/ros2_ws/build/hiwin_dual_arm_description', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/angel/ros2_ws/install/hiwin_dual_arm_description', 'merge_install': False, 'path': '/home/angel/ros2_ws/src/For_hiwin_dual_arm/hiwin_dual_arm_description', 'symlink_install': True, 'test_result_base': None}
+[3.344s] Level 5:colcon.colcon_core.verb:set package 'hiwin_dual_arm' build argument 'cmake_args' from command line to 'None'
+[3.344s] Level 5:colcon.colcon_core.verb:set package 'hiwin_dual_arm' build argument 'cmake_target' from command line to 'None'
+[3.344s] Level 5:colcon.colcon_core.verb:set package 'hiwin_dual_arm' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[3.344s] Level 5:colcon.colcon_core.verb:set package 'hiwin_dual_arm' build argument 'cmake_clean_cache' from command line to 'False'
+[3.344s] Level 5:colcon.colcon_core.verb:set package 'hiwin_dual_arm' build argument 'cmake_clean_first' from command line to 'False'
+[3.344s] Level 5:colcon.colcon_core.verb:set package 'hiwin_dual_arm' build argument 'cmake_force_configure' from command line to 'False'
+[3.344s] Level 5:colcon.colcon_core.verb:set package 'hiwin_dual_arm' build argument 'ament_cmake_args' from command line to 'None'
+[3.344s] Level 5:colcon.colcon_core.verb:set package 'hiwin_dual_arm' build argument 'catkin_cmake_args' from command line to 'None'
+[3.344s] Level 5:colcon.colcon_core.verb:set package 'hiwin_dual_arm' build argument 'catkin_skip_building_tests' from command line to 'False'
+[3.344s] DEBUG:colcon.colcon_core.verb:Building package 'hiwin_dual_arm' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/angel/ros2_ws/build/hiwin_dual_arm', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/angel/ros2_ws/install/hiwin_dual_arm', 'merge_install': False, 'path': '/home/angel/ros2_ws/src/For_hiwin_dual_arm/hiwin_dual_arm', 'symlink_install': True, 'test_result_base': None}
+[3.344s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[3.346s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[3.346s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/angel/ros2_ws/src/For_hiwin_dual_arm/hiwin_dual_arm_description' with build type 'ament_cmake'
+[3.346s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/angel/ros2_ws/src/For_hiwin_dual_arm/hiwin_dual_arm_description'
+[3.364s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[3.365s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[3.365s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[3.370s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/angel/ros2_ws/src/For_hiwin_dual_arm/dual_arm_alm_cg_planner' with build type 'ament_cmake'
+[3.371s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/angel/ros2_ws/src/For_hiwin_dual_arm/dual_arm_alm_cg_planner'
+[3.371s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[3.371s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[3.374s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/angel/ros2_ws/src/For_hiwin_dual_arm/dual_arm_alm_gd_planner' with build type 'ament_cmake'
+[3.374s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/angel/ros2_ws/src/For_hiwin_dual_arm/dual_arm_alm_gd_planner'
+[3.374s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[3.374s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[3.377s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/angel/ros2_ws/src/For_hiwin_dual_arm/dual_arm_alm_newton_planner' with build type 'ament_cmake'
+[3.377s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/angel/ros2_ws/src/For_hiwin_dual_arm/dual_arm_alm_newton_planner'
+[3.377s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[3.377s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[3.380s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/angel/ros2_ws/src/For_hiwin_dual_arm/dual_arm_domain_bridge (7)/dual_arm_domain_bridge' with build type 'ament_cmake'
+[3.380s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/angel/ros2_ws/src/For_hiwin_dual_arm/dual_arm_domain_bridge (7)/dual_arm_domain_bridge'
+[3.381s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[3.381s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[3.383s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/angel/ros2_ws/src/For_hiwin_dual_arm/dual_arm_lag_cg_planner' with build type 'ament_cmake'
+[3.383s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/angel/ros2_ws/src/For_hiwin_dual_arm/dual_arm_lag_cg_planner'
+[3.384s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[3.384s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[3.387s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/angel/ros2_ws/src/For_hiwin_dual_arm/dual_arm_lag_gd_planner' with build type 'ament_cmake'
+[3.387s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/angel/ros2_ws/src/For_hiwin_dual_arm/dual_arm_lag_gd_planner'
+[3.387s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[3.387s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[3.390s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/angel/ros2_ws/src/For_hiwin_dual_arm/dual_arm_lag_newton_planner' with build type 'ament_cmake'
+[3.390s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/angel/ros2_ws/src/For_hiwin_dual_arm/dual_arm_lag_newton_planner'
+[3.390s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[3.390s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[3.397s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/angel/ros2_ws/build/hiwin_dual_arm_description': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/angel/ros2_ws/src/For_hiwin_dual_arm/hiwin_dual_arm_description -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/angel/ros2_ws/install/hiwin_dual_arm_description
+[3.404s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/angel/ros2_ws/build/dual_arm_alm_cg_planner': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/angel/ros2_ws/src/For_hiwin_dual_arm/dual_arm_alm_cg_planner -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/angel/ros2_ws/install/dual_arm_alm_cg_planner
+[3.406s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/angel/ros2_ws/build/dual_arm_alm_gd_planner': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/angel/ros2_ws/src/For_hiwin_dual_arm/dual_arm_alm_gd_planner -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/angel/ros2_ws/install/dual_arm_alm_gd_planner
+[3.408s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/angel/ros2_ws/build/dual_arm_alm_newton_planner': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/angel/ros2_ws/src/For_hiwin_dual_arm/dual_arm_alm_newton_planner -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/angel/ros2_ws/install/dual_arm_alm_newton_planner
+[3.409s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/angel/ros2_ws/build/dual_arm_domain_bridge': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/angel/ros2_ws/src/For_hiwin_dual_arm/dual_arm_domain_bridge (7)/dual_arm_domain_bridge -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/angel/ros2_ws/install/dual_arm_domain_bridge
+[3.413s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/angel/ros2_ws/build/dual_arm_lag_cg_planner': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/angel/ros2_ws/src/For_hiwin_dual_arm/dual_arm_lag_cg_planner -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/angel/ros2_ws/install/dual_arm_lag_cg_planner
+[3.417s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/angel/ros2_ws/build/dual_arm_lag_gd_planner': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/angel/ros2_ws/src/For_hiwin_dual_arm/dual_arm_lag_gd_planner -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/angel/ros2_ws/install/dual_arm_lag_gd_planner
+[3.426s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/angel/ros2_ws/build/dual_arm_lag_newton_planner': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/angel/ros2_ws/src/For_hiwin_dual_arm/dual_arm_lag_newton_planner -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/angel/ros2_ws/install/dual_arm_lag_newton_planner
+[4.020s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/angel/ros2_ws/build/hiwin_dual_arm_description' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/angel/ros2_ws/src/For_hiwin_dual_arm/hiwin_dual_arm_description -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/angel/ros2_ws/install/hiwin_dual_arm_description
+[4.024s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/angel/ros2_ws/build/hiwin_dual_arm_description': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/angel/ros2_ws/build/hiwin_dual_arm_description -- -j8 -l8
+[4.790s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/angel/ros2_ws/build/dual_arm_domain_bridge' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/angel/ros2_ws/src/For_hiwin_dual_arm/dual_arm_domain_bridge (7)/dual_arm_domain_bridge -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/angel/ros2_ws/install/dual_arm_domain_bridge
+[4.791s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/angel/ros2_ws/build/dual_arm_domain_bridge': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/angel/ros2_ws/build/dual_arm_domain_bridge -- -j8 -l8
+[5.243s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/angel/ros2_ws/build/dual_arm_lag_gd_planner' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/angel/ros2_ws/src/For_hiwin_dual_arm/dual_arm_lag_gd_planner -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/angel/ros2_ws/install/dual_arm_lag_gd_planner
+[5.246s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/angel/ros2_ws/build/dual_arm_lag_gd_planner': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/angel/ros2_ws/build/dual_arm_lag_gd_planner -- -j8 -l8
+[5.248s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/angel/ros2_ws/build/dual_arm_alm_gd_planner' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/angel/ros2_ws/src/For_hiwin_dual_arm/dual_arm_alm_gd_planner -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/angel/ros2_ws/install/dual_arm_alm_gd_planner
+[5.248s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/angel/ros2_ws/build/dual_arm_alm_gd_planner': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/angel/ros2_ws/build/dual_arm_alm_gd_planner -- -j8 -l8
+[5.252s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/angel/ros2_ws/build/hiwin_dual_arm_description' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/angel/ros2_ws/build/hiwin_dual_arm_description -- -j8 -l8
+[5.260s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/angel/ros2_ws/build/hiwin_dual_arm_description': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/angel/ros2_ws/build/hiwin_dual_arm_description
+[5.262s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/angel/ros2_ws/build/dual_arm_lag_cg_planner' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/angel/ros2_ws/src/For_hiwin_dual_arm/dual_arm_lag_cg_planner -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/angel/ros2_ws/install/dual_arm_lag_cg_planner
+[5.264s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/angel/ros2_ws/build/dual_arm_lag_cg_planner': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/angel/ros2_ws/build/dual_arm_lag_cg_planner -- -j8 -l8
+[5.266s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/angel/ros2_ws/build/dual_arm_alm_cg_planner' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/angel/ros2_ws/src/For_hiwin_dual_arm/dual_arm_alm_cg_planner -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/angel/ros2_ws/install/dual_arm_alm_cg_planner
+[5.266s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/angel/ros2_ws/build/dual_arm_alm_cg_planner': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/angel/ros2_ws/build/dual_arm_alm_cg_planner -- -j8 -l8
+[5.271s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/angel/ros2_ws/build/dual_arm_lag_newton_planner' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/angel/ros2_ws/src/For_hiwin_dual_arm/dual_arm_lag_newton_planner -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/angel/ros2_ws/install/dual_arm_lag_newton_planner
+[5.271s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/angel/ros2_ws/build/dual_arm_lag_newton_planner': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/angel/ros2_ws/build/dual_arm_lag_newton_planner -- -j8 -l8
+[5.275s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/angel/ros2_ws/build/dual_arm_alm_newton_planner' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/angel/ros2_ws/src/For_hiwin_dual_arm/dual_arm_alm_newton_planner -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/angel/ros2_ws/install/dual_arm_alm_newton_planner
+[5.275s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/angel/ros2_ws/build/dual_arm_alm_newton_planner': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/angel/ros2_ws/build/dual_arm_alm_newton_planner -- -j8 -l8
+[6.318s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(hiwin_dual_arm_description)
+[6.319s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/angel/ros2_ws/build/hiwin_dual_arm_description' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/angel/ros2_ws/build/hiwin_dual_arm_description
+[6.395s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/hiwin_dual_arm_description' for CMake module files
+[6.396s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/hiwin_dual_arm_description' for CMake config files
+[6.396s] Level 1:colcon.colcon_core.shell:create_environment_hook('hiwin_dual_arm_description', 'cmake_prefix_path')
+[6.397s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/angel/ros2_ws/install/hiwin_dual_arm_description/share/hiwin_dual_arm_description/hook/cmake_prefix_path.ps1'
+[6.397s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/angel/ros2_ws/install/hiwin_dual_arm_description/share/hiwin_dual_arm_description/hook/cmake_prefix_path.dsv'
+[6.397s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/angel/ros2_ws/install/hiwin_dual_arm_description/share/hiwin_dual_arm_description/hook/cmake_prefix_path.sh'
+[6.398s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/hiwin_dual_arm_description/bin'
+[6.404s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/hiwin_dual_arm_description/lib/pkgconfig/hiwin_dual_arm_description.pc'
+[6.453s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/hiwin_dual_arm_description/lib/python3.10/site-packages'
+[6.453s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/hiwin_dual_arm_description/bin'
+[6.457s] INFO:colcon.colcon_core.shell:Creating package script '/home/angel/ros2_ws/install/hiwin_dual_arm_description/share/hiwin_dual_arm_description/package.ps1'
+[6.458s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/angel/ros2_ws/install/hiwin_dual_arm_description/share/hiwin_dual_arm_description/package.dsv'
+[6.459s] INFO:colcon.colcon_core.shell:Creating package script '/home/angel/ros2_ws/install/hiwin_dual_arm_description/share/hiwin_dual_arm_description/package.sh'
+[6.461s] INFO:colcon.colcon_core.shell:Creating package script '/home/angel/ros2_ws/install/hiwin_dual_arm_description/share/hiwin_dual_arm_description/package.bash'
+[6.468s] INFO:colcon.colcon_core.shell:Creating package script '/home/angel/ros2_ws/install/hiwin_dual_arm_description/share/hiwin_dual_arm_description/package.zsh'
+[6.468s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/angel/ros2_ws/install/hiwin_dual_arm_description/share/colcon-core/packages/hiwin_dual_arm_description)
+[6.469s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(hiwin_dual_arm_description)
+[6.470s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/hiwin_dual_arm_description' for CMake module files
+[6.470s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/hiwin_dual_arm_description' for CMake config files
+[6.471s] Level 1:colcon.colcon_core.shell:create_environment_hook('hiwin_dual_arm_description', 'cmake_prefix_path')
+[6.471s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/angel/ros2_ws/install/hiwin_dual_arm_description/share/hiwin_dual_arm_description/hook/cmake_prefix_path.ps1'
+[6.481s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/angel/ros2_ws/install/hiwin_dual_arm_description/share/hiwin_dual_arm_description/hook/cmake_prefix_path.dsv'
+[6.481s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/angel/ros2_ws/install/hiwin_dual_arm_description/share/hiwin_dual_arm_description/hook/cmake_prefix_path.sh'
+[6.482s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/hiwin_dual_arm_description/bin'
+[6.482s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/hiwin_dual_arm_description/lib/pkgconfig/hiwin_dual_arm_description.pc'
+[6.483s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/hiwin_dual_arm_description/lib/python3.10/site-packages'
+[6.483s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/hiwin_dual_arm_description/bin'
+[6.483s] INFO:colcon.colcon_core.shell:Creating package script '/home/angel/ros2_ws/install/hiwin_dual_arm_description/share/hiwin_dual_arm_description/package.ps1'
+[6.490s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/angel/ros2_ws/install/hiwin_dual_arm_description/share/hiwin_dual_arm_description/package.dsv'
+[6.491s] INFO:colcon.colcon_core.shell:Creating package script '/home/angel/ros2_ws/install/hiwin_dual_arm_description/share/hiwin_dual_arm_description/package.sh'
+[6.492s] INFO:colcon.colcon_core.shell:Creating package script '/home/angel/ros2_ws/install/hiwin_dual_arm_description/share/hiwin_dual_arm_description/package.bash'
+[6.494s] INFO:colcon.colcon_core.shell:Creating package script '/home/angel/ros2_ws/install/hiwin_dual_arm_description/share/hiwin_dual_arm_description/package.zsh'
+[6.494s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/angel/ros2_ws/install/hiwin_dual_arm_description/share/colcon-core/packages/hiwin_dual_arm_description)
+[6.499s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/angel/ros2_ws/src/For_hiwin_dual_arm/hiwin_dual_arm' with build type 'ament_cmake'
+[6.502s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/angel/ros2_ws/src/For_hiwin_dual_arm/hiwin_dual_arm'
+[6.503s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[6.503s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[6.544s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/angel/ros2_ws/build/hiwin_dual_arm': AMENT_PREFIX_PATH=/home/angel/ros2_ws/install/hiwin_dual_arm_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/angel/ros2_ws/install/hiwin_dual_arm_description:/opt/ros/humble /usr/bin/cmake /home/angel/ros2_ws/src/For_hiwin_dual_arm/hiwin_dual_arm -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/angel/ros2_ws/install/hiwin_dual_arm
+[36.574s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/angel/ros2_ws/build/dual_arm_alm_gd_planner' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/angel/ros2_ws/build/dual_arm_alm_gd_planner -- -j8 -l8
+[36.575s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/angel/ros2_ws/build/dual_arm_alm_gd_planner': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/angel/ros2_ws/build/dual_arm_alm_gd_planner
+[36.596s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/angel/ros2_ws/build/dual_arm_alm_newton_planner' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/angel/ros2_ws/build/dual_arm_alm_newton_planner -- -j8 -l8
+[36.597s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/angel/ros2_ws/build/dual_arm_alm_newton_planner': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/angel/ros2_ws/build/dual_arm_alm_newton_planner
+[36.599s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/angel/ros2_ws/build/hiwin_dual_arm' returned '0': AMENT_PREFIX_PATH=/home/angel/ros2_ws/install/hiwin_dual_arm_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/angel/ros2_ws/install/hiwin_dual_arm_description:/opt/ros/humble /usr/bin/cmake /home/angel/ros2_ws/src/For_hiwin_dual_arm/hiwin_dual_arm -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/angel/ros2_ws/install/hiwin_dual_arm
+[36.601s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/angel/ros2_ws/build/hiwin_dual_arm': AMENT_PREFIX_PATH=/home/angel/ros2_ws/install/hiwin_dual_arm_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/angel/ros2_ws/install/hiwin_dual_arm_description:/opt/ros/humble /usr/bin/cmake --build /home/angel/ros2_ws/build/hiwin_dual_arm -- -j8 -l8
+[36.611s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/angel/ros2_ws/build/dual_arm_alm_cg_planner' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/angel/ros2_ws/build/dual_arm_alm_cg_planner -- -j8 -l8
+[36.612s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/angel/ros2_ws/build/dual_arm_alm_cg_planner': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/angel/ros2_ws/build/dual_arm_alm_cg_planner
+[36.802s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(dual_arm_alm_gd_planner)
+[36.802s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_alm_gd_planner' for CMake module files
+[36.802s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/angel/ros2_ws/build/dual_arm_alm_gd_planner' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/angel/ros2_ws/build/dual_arm_alm_gd_planner
+[36.803s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_alm_gd_planner' for CMake config files
+[36.803s] Level 1:colcon.colcon_core.shell:create_environment_hook('dual_arm_alm_gd_planner', 'cmake_prefix_path')
+[36.803s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/angel/ros2_ws/install/dual_arm_alm_gd_planner/share/dual_arm_alm_gd_planner/hook/cmake_prefix_path.ps1'
+[36.803s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/angel/ros2_ws/install/dual_arm_alm_gd_planner/share/dual_arm_alm_gd_planner/hook/cmake_prefix_path.dsv'
+[36.804s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/angel/ros2_ws/install/dual_arm_alm_gd_planner/share/dual_arm_alm_gd_planner/hook/cmake_prefix_path.sh'
+[36.804s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_alm_gd_planner/lib'
+[36.805s] Level 1:colcon.colcon_core.shell:create_environment_hook('dual_arm_alm_gd_planner', 'ld_library_path_lib')
+[36.805s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/angel/ros2_ws/install/dual_arm_alm_gd_planner/share/dual_arm_alm_gd_planner/hook/ld_library_path_lib.ps1'
+[36.805s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/angel/ros2_ws/install/dual_arm_alm_gd_planner/share/dual_arm_alm_gd_planner/hook/ld_library_path_lib.dsv'
+[36.805s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/angel/ros2_ws/install/dual_arm_alm_gd_planner/share/dual_arm_alm_gd_planner/hook/ld_library_path_lib.sh'
+[36.806s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_alm_gd_planner/bin'
+[36.806s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_alm_gd_planner/lib/pkgconfig/dual_arm_alm_gd_planner.pc'
+[36.806s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_alm_gd_planner/lib/python3.10/site-packages'
+[36.806s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_alm_gd_planner/bin'
+[36.807s] INFO:colcon.colcon_core.shell:Creating package script '/home/angel/ros2_ws/install/dual_arm_alm_gd_planner/share/dual_arm_alm_gd_planner/package.ps1'
+[36.807s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/angel/ros2_ws/install/dual_arm_alm_gd_planner/share/dual_arm_alm_gd_planner/package.dsv'
+[36.808s] INFO:colcon.colcon_core.shell:Creating package script '/home/angel/ros2_ws/install/dual_arm_alm_gd_planner/share/dual_arm_alm_gd_planner/package.sh'
+[36.808s] INFO:colcon.colcon_core.shell:Creating package script '/home/angel/ros2_ws/install/dual_arm_alm_gd_planner/share/dual_arm_alm_gd_planner/package.bash'
+[36.808s] INFO:colcon.colcon_core.shell:Creating package script '/home/angel/ros2_ws/install/dual_arm_alm_gd_planner/share/dual_arm_alm_gd_planner/package.zsh'
+[36.809s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/angel/ros2_ws/install/dual_arm_alm_gd_planner/share/colcon-core/packages/dual_arm_alm_gd_planner)
+[36.809s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(dual_arm_alm_gd_planner)
+[36.809s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_alm_gd_planner' for CMake module files
+[36.810s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_alm_gd_planner' for CMake config files
+[36.810s] Level 1:colcon.colcon_core.shell:create_environment_hook('dual_arm_alm_gd_planner', 'cmake_prefix_path')
+[36.810s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/angel/ros2_ws/install/dual_arm_alm_gd_planner/share/dual_arm_alm_gd_planner/hook/cmake_prefix_path.ps1'
+[36.811s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/angel/ros2_ws/install/dual_arm_alm_gd_planner/share/dual_arm_alm_gd_planner/hook/cmake_prefix_path.dsv'
+[36.811s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/angel/ros2_ws/install/dual_arm_alm_gd_planner/share/dual_arm_alm_gd_planner/hook/cmake_prefix_path.sh'
+[36.811s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_alm_gd_planner/lib'
+[36.811s] Level 1:colcon.colcon_core.shell:create_environment_hook('dual_arm_alm_gd_planner', 'ld_library_path_lib')
+[36.812s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/angel/ros2_ws/install/dual_arm_alm_gd_planner/share/dual_arm_alm_gd_planner/hook/ld_library_path_lib.ps1'
+[36.812s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/angel/ros2_ws/install/dual_arm_alm_gd_planner/share/dual_arm_alm_gd_planner/hook/ld_library_path_lib.dsv'
+[36.812s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/angel/ros2_ws/install/dual_arm_alm_gd_planner/share/dual_arm_alm_gd_planner/hook/ld_library_path_lib.sh'
+[36.812s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_alm_gd_planner/bin'
+[36.812s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_alm_gd_planner/lib/pkgconfig/dual_arm_alm_gd_planner.pc'
+[36.813s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_alm_gd_planner/lib/python3.10/site-packages'
+[36.813s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_alm_gd_planner/bin'
+[36.813s] INFO:colcon.colcon_core.shell:Creating package script '/home/angel/ros2_ws/install/dual_arm_alm_gd_planner/share/dual_arm_alm_gd_planner/package.ps1'
+[36.814s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/angel/ros2_ws/install/dual_arm_alm_gd_planner/share/dual_arm_alm_gd_planner/package.dsv'
+[36.814s] INFO:colcon.colcon_core.shell:Creating package script '/home/angel/ros2_ws/install/dual_arm_alm_gd_planner/share/dual_arm_alm_gd_planner/package.sh'
+[36.815s] INFO:colcon.colcon_core.shell:Creating package script '/home/angel/ros2_ws/install/dual_arm_alm_gd_planner/share/dual_arm_alm_gd_planner/package.bash'
+[36.815s] INFO:colcon.colcon_core.shell:Creating package script '/home/angel/ros2_ws/install/dual_arm_alm_gd_planner/share/dual_arm_alm_gd_planner/package.zsh'
+[36.816s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/angel/ros2_ws/install/dual_arm_alm_gd_planner/share/colcon-core/packages/dual_arm_alm_gd_planner)
+[36.817s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/angel/ros2_ws/build/hiwin_dual_arm' returned '0': AMENT_PREFIX_PATH=/home/angel/ros2_ws/install/hiwin_dual_arm_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/angel/ros2_ws/install/hiwin_dual_arm_description:/opt/ros/humble /usr/bin/cmake --build /home/angel/ros2_ws/build/hiwin_dual_arm -- -j8 -l8
+[37.237s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/angel/ros2_ws/build/hiwin_dual_arm': AMENT_PREFIX_PATH=/home/angel/ros2_ws/install/hiwin_dual_arm_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/angel/ros2_ws/install/hiwin_dual_arm_description:/opt/ros/humble /usr/bin/cmake --install /home/angel/ros2_ws/build/hiwin_dual_arm
+[37.240s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(dual_arm_alm_newton_planner)
+[37.240s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_alm_newton_planner' for CMake module files
+[37.240s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/angel/ros2_ws/build/dual_arm_alm_newton_planner' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/angel/ros2_ws/build/dual_arm_alm_newton_planner
+[37.241s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_alm_newton_planner' for CMake config files
+[37.241s] Level 1:colcon.colcon_core.shell:create_environment_hook('dual_arm_alm_newton_planner', 'cmake_prefix_path')
+[37.241s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/angel/ros2_ws/install/dual_arm_alm_newton_planner/share/dual_arm_alm_newton_planner/hook/cmake_prefix_path.ps1'
+[37.241s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/angel/ros2_ws/install/dual_arm_alm_newton_planner/share/dual_arm_alm_newton_planner/hook/cmake_prefix_path.dsv'
+[37.242s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/angel/ros2_ws/install/dual_arm_alm_newton_planner/share/dual_arm_alm_newton_planner/hook/cmake_prefix_path.sh'
+[37.242s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_alm_newton_planner/lib'
+[37.242s] Level 1:colcon.colcon_core.shell:create_environment_hook('dual_arm_alm_newton_planner', 'ld_library_path_lib')
+[37.243s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/angel/ros2_ws/install/dual_arm_alm_newton_planner/share/dual_arm_alm_newton_planner/hook/ld_library_path_lib.ps1'
+[37.243s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/angel/ros2_ws/install/dual_arm_alm_newton_planner/share/dual_arm_alm_newton_planner/hook/ld_library_path_lib.dsv'
+[37.244s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/angel/ros2_ws/install/dual_arm_alm_newton_planner/share/dual_arm_alm_newton_planner/hook/ld_library_path_lib.sh'
+[37.244s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_alm_newton_planner/bin'
+[37.244s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_alm_newton_planner/lib/pkgconfig/dual_arm_alm_newton_planner.pc'
+[37.244s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_alm_newton_planner/lib/python3.10/site-packages'
+[37.244s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_alm_newton_planner/bin'
+[37.245s] INFO:colcon.colcon_core.shell:Creating package script '/home/angel/ros2_ws/install/dual_arm_alm_newton_planner/share/dual_arm_alm_newton_planner/package.ps1'
+[37.245s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/angel/ros2_ws/install/dual_arm_alm_newton_planner/share/dual_arm_alm_newton_planner/package.dsv'
+[37.246s] INFO:colcon.colcon_core.shell:Creating package script '/home/angel/ros2_ws/install/dual_arm_alm_newton_planner/share/dual_arm_alm_newton_planner/package.sh'
+[37.246s] INFO:colcon.colcon_core.shell:Creating package script '/home/angel/ros2_ws/install/dual_arm_alm_newton_planner/share/dual_arm_alm_newton_planner/package.bash'
+[37.246s] INFO:colcon.colcon_core.shell:Creating package script '/home/angel/ros2_ws/install/dual_arm_alm_newton_planner/share/dual_arm_alm_newton_planner/package.zsh'
+[37.246s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/angel/ros2_ws/install/dual_arm_alm_newton_planner/share/colcon-core/packages/dual_arm_alm_newton_planner)
+[37.247s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(dual_arm_alm_newton_planner)
+[37.247s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_alm_newton_planner' for CMake module files
+[37.247s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_alm_newton_planner' for CMake config files
+[37.248s] Level 1:colcon.colcon_core.shell:create_environment_hook('dual_arm_alm_newton_planner', 'cmake_prefix_path')
+[37.248s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/angel/ros2_ws/install/dual_arm_alm_newton_planner/share/dual_arm_alm_newton_planner/hook/cmake_prefix_path.ps1'
+[37.340s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/angel/ros2_ws/install/dual_arm_alm_newton_planner/share/dual_arm_alm_newton_planner/hook/cmake_prefix_path.dsv'
+[37.341s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/angel/ros2_ws/install/dual_arm_alm_newton_planner/share/dual_arm_alm_newton_planner/hook/cmake_prefix_path.sh'
+[37.341s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_alm_newton_planner/lib'
+[37.342s] Level 1:colcon.colcon_core.shell:create_environment_hook('dual_arm_alm_newton_planner', 'ld_library_path_lib')
+[37.342s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/angel/ros2_ws/install/dual_arm_alm_newton_planner/share/dual_arm_alm_newton_planner/hook/ld_library_path_lib.ps1'
+[37.342s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/angel/ros2_ws/install/dual_arm_alm_newton_planner/share/dual_arm_alm_newton_planner/hook/ld_library_path_lib.dsv'
+[37.342s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/angel/ros2_ws/install/dual_arm_alm_newton_planner/share/dual_arm_alm_newton_planner/hook/ld_library_path_lib.sh'
+[37.343s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_alm_newton_planner/bin'
+[37.343s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_alm_newton_planner/lib/pkgconfig/dual_arm_alm_newton_planner.pc'
+[37.343s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_alm_newton_planner/lib/python3.10/site-packages'
+[37.343s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_alm_newton_planner/bin'
+[37.343s] INFO:colcon.colcon_core.shell:Creating package script '/home/angel/ros2_ws/install/dual_arm_alm_newton_planner/share/dual_arm_alm_newton_planner/package.ps1'
+[37.344s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/angel/ros2_ws/install/dual_arm_alm_newton_planner/share/dual_arm_alm_newton_planner/package.dsv'
+[37.344s] INFO:colcon.colcon_core.shell:Creating package script '/home/angel/ros2_ws/install/dual_arm_alm_newton_planner/share/dual_arm_alm_newton_planner/package.sh'
+[37.345s] INFO:colcon.colcon_core.shell:Creating package script '/home/angel/ros2_ws/install/dual_arm_alm_newton_planner/share/dual_arm_alm_newton_planner/package.bash'
+[37.345s] INFO:colcon.colcon_core.shell:Creating package script '/home/angel/ros2_ws/install/dual_arm_alm_newton_planner/share/dual_arm_alm_newton_planner/package.zsh'
+[37.346s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/angel/ros2_ws/install/dual_arm_alm_newton_planner/share/colcon-core/packages/dual_arm_alm_newton_planner)
+[37.347s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(dual_arm_alm_cg_planner)
+[37.348s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_alm_cg_planner' for CMake module files
+[37.348s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_alm_cg_planner' for CMake config files
+[37.349s] Level 1:colcon.colcon_core.shell:create_environment_hook('dual_arm_alm_cg_planner', 'cmake_prefix_path')
+[37.348s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/angel/ros2_ws/build/dual_arm_lag_gd_planner' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/angel/ros2_ws/build/dual_arm_lag_gd_planner -- -j8 -l8
+[37.349s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/angel/ros2_ws/install/dual_arm_alm_cg_planner/share/dual_arm_alm_cg_planner/hook/cmake_prefix_path.ps1'
+[37.349s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/angel/ros2_ws/build/dual_arm_lag_gd_planner': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/angel/ros2_ws/build/dual_arm_lag_gd_planner
+[37.350s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/angel/ros2_ws/build/dual_arm_alm_cg_planner' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/angel/ros2_ws/build/dual_arm_alm_cg_planner
+[37.350s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/angel/ros2_ws/install/dual_arm_alm_cg_planner/share/dual_arm_alm_cg_planner/hook/cmake_prefix_path.dsv'
+[37.351s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/angel/ros2_ws/install/dual_arm_alm_cg_planner/share/dual_arm_alm_cg_planner/hook/cmake_prefix_path.sh'
+[37.351s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_alm_cg_planner/lib'
+[37.351s] Level 1:colcon.colcon_core.shell:create_environment_hook('dual_arm_alm_cg_planner', 'ld_library_path_lib')
+[37.352s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/angel/ros2_ws/install/dual_arm_alm_cg_planner/share/dual_arm_alm_cg_planner/hook/ld_library_path_lib.ps1'
+[37.352s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/angel/ros2_ws/install/dual_arm_alm_cg_planner/share/dual_arm_alm_cg_planner/hook/ld_library_path_lib.dsv'
+[37.352s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/angel/ros2_ws/install/dual_arm_alm_cg_planner/share/dual_arm_alm_cg_planner/hook/ld_library_path_lib.sh'
+[37.353s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_alm_cg_planner/bin'
+[37.353s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_alm_cg_planner/lib/pkgconfig/dual_arm_alm_cg_planner.pc'
+[37.353s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_alm_cg_planner/lib/python3.10/site-packages'
+[37.353s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_alm_cg_planner/bin'
+[37.354s] INFO:colcon.colcon_core.shell:Creating package script '/home/angel/ros2_ws/install/dual_arm_alm_cg_planner/share/dual_arm_alm_cg_planner/package.ps1'
+[37.355s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/angel/ros2_ws/install/dual_arm_alm_cg_planner/share/dual_arm_alm_cg_planner/package.dsv'
+[37.355s] INFO:colcon.colcon_core.shell:Creating package script '/home/angel/ros2_ws/install/dual_arm_alm_cg_planner/share/dual_arm_alm_cg_planner/package.sh'
+[37.356s] INFO:colcon.colcon_core.shell:Creating package script '/home/angel/ros2_ws/install/dual_arm_alm_cg_planner/share/dual_arm_alm_cg_planner/package.bash'
+[37.356s] INFO:colcon.colcon_core.shell:Creating package script '/home/angel/ros2_ws/install/dual_arm_alm_cg_planner/share/dual_arm_alm_cg_planner/package.zsh'
+[37.357s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/angel/ros2_ws/install/dual_arm_alm_cg_planner/share/colcon-core/packages/dual_arm_alm_cg_planner)
+[37.357s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(dual_arm_alm_cg_planner)
+[37.357s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_alm_cg_planner' for CMake module files
+[37.358s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_alm_cg_planner' for CMake config files
+[37.358s] Level 1:colcon.colcon_core.shell:create_environment_hook('dual_arm_alm_cg_planner', 'cmake_prefix_path')
+[37.358s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/angel/ros2_ws/install/dual_arm_alm_cg_planner/share/dual_arm_alm_cg_planner/hook/cmake_prefix_path.ps1'
+[37.359s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/angel/ros2_ws/install/dual_arm_alm_cg_planner/share/dual_arm_alm_cg_planner/hook/cmake_prefix_path.dsv'
+[37.359s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/angel/ros2_ws/install/dual_arm_alm_cg_planner/share/dual_arm_alm_cg_planner/hook/cmake_prefix_path.sh'
+[37.360s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_alm_cg_planner/lib'
+[37.360s] Level 1:colcon.colcon_core.shell:create_environment_hook('dual_arm_alm_cg_planner', 'ld_library_path_lib')
+[37.360s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/angel/ros2_ws/install/dual_arm_alm_cg_planner/share/dual_arm_alm_cg_planner/hook/ld_library_path_lib.ps1'
+[37.360s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/angel/ros2_ws/install/dual_arm_alm_cg_planner/share/dual_arm_alm_cg_planner/hook/ld_library_path_lib.dsv'
+[37.361s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/angel/ros2_ws/install/dual_arm_alm_cg_planner/share/dual_arm_alm_cg_planner/hook/ld_library_path_lib.sh'
+[37.361s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_alm_cg_planner/bin'
+[37.362s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_alm_cg_planner/lib/pkgconfig/dual_arm_alm_cg_planner.pc'
+[37.362s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_alm_cg_planner/lib/python3.10/site-packages'
+[37.362s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_alm_cg_planner/bin'
+[37.362s] INFO:colcon.colcon_core.shell:Creating package script '/home/angel/ros2_ws/install/dual_arm_alm_cg_planner/share/dual_arm_alm_cg_planner/package.ps1'
+[37.363s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/angel/ros2_ws/install/dual_arm_alm_cg_planner/share/dual_arm_alm_cg_planner/package.dsv'
+[37.363s] INFO:colcon.colcon_core.shell:Creating package script '/home/angel/ros2_ws/install/dual_arm_alm_cg_planner/share/dual_arm_alm_cg_planner/package.sh'
+[37.364s] INFO:colcon.colcon_core.shell:Creating package script '/home/angel/ros2_ws/install/dual_arm_alm_cg_planner/share/dual_arm_alm_cg_planner/package.bash'
+[37.364s] INFO:colcon.colcon_core.shell:Creating package script '/home/angel/ros2_ws/install/dual_arm_alm_cg_planner/share/dual_arm_alm_cg_planner/package.zsh'
+[37.365s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/angel/ros2_ws/install/dual_arm_alm_cg_planner/share/colcon-core/packages/dual_arm_alm_cg_planner)
+[37.368s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/angel/ros2_ws/build/dual_arm_lag_cg_planner' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/angel/ros2_ws/build/dual_arm_lag_cg_planner -- -j8 -l8
+[37.368s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/angel/ros2_ws/build/dual_arm_lag_cg_planner': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/angel/ros2_ws/build/dual_arm_lag_cg_planner
+[37.584s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(hiwin_dual_arm)
+[37.584s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/hiwin_dual_arm' for CMake module files
+[37.585s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/angel/ros2_ws/build/hiwin_dual_arm' returned '0': AMENT_PREFIX_PATH=/home/angel/ros2_ws/install/hiwin_dual_arm_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/angel/ros2_ws/install/hiwin_dual_arm_description:/opt/ros/humble /usr/bin/cmake --install /home/angel/ros2_ws/build/hiwin_dual_arm
+[37.585s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/hiwin_dual_arm' for CMake config files
+[37.585s] Level 1:colcon.colcon_core.shell:create_environment_hook('hiwin_dual_arm', 'cmake_prefix_path')
+[37.586s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/angel/ros2_ws/install/hiwin_dual_arm/share/hiwin_dual_arm/hook/cmake_prefix_path.ps1'
+[37.586s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/angel/ros2_ws/install/hiwin_dual_arm/share/hiwin_dual_arm/hook/cmake_prefix_path.dsv'
+[37.587s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/angel/ros2_ws/install/hiwin_dual_arm/share/hiwin_dual_arm/hook/cmake_prefix_path.sh'
+[37.588s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/hiwin_dual_arm/bin'
+[37.588s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/hiwin_dual_arm/lib/pkgconfig/hiwin_dual_arm.pc'
+[37.588s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/hiwin_dual_arm/lib/python3.10/site-packages'
+[37.589s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/hiwin_dual_arm/bin'
+[37.589s] INFO:colcon.colcon_core.shell:Creating package script '/home/angel/ros2_ws/install/hiwin_dual_arm/share/hiwin_dual_arm/package.ps1'
+[37.590s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/angel/ros2_ws/install/hiwin_dual_arm/share/hiwin_dual_arm/package.dsv'
+[37.590s] INFO:colcon.colcon_core.shell:Creating package script '/home/angel/ros2_ws/install/hiwin_dual_arm/share/hiwin_dual_arm/package.sh'
+[37.591s] INFO:colcon.colcon_core.shell:Creating package script '/home/angel/ros2_ws/install/hiwin_dual_arm/share/hiwin_dual_arm/package.bash'
+[37.591s] INFO:colcon.colcon_core.shell:Creating package script '/home/angel/ros2_ws/install/hiwin_dual_arm/share/hiwin_dual_arm/package.zsh'
+[37.591s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/angel/ros2_ws/install/hiwin_dual_arm/share/colcon-core/packages/hiwin_dual_arm)
+[37.592s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(hiwin_dual_arm)
+[37.592s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/hiwin_dual_arm' for CMake module files
+[37.593s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/hiwin_dual_arm' for CMake config files
+[37.593s] Level 1:colcon.colcon_core.shell:create_environment_hook('hiwin_dual_arm', 'cmake_prefix_path')
+[37.593s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/angel/ros2_ws/install/hiwin_dual_arm/share/hiwin_dual_arm/hook/cmake_prefix_path.ps1'
+[37.594s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/angel/ros2_ws/install/hiwin_dual_arm/share/hiwin_dual_arm/hook/cmake_prefix_path.dsv'
+[37.594s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/angel/ros2_ws/install/hiwin_dual_arm/share/hiwin_dual_arm/hook/cmake_prefix_path.sh'
+[37.594s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/hiwin_dual_arm/bin'
+[37.594s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/hiwin_dual_arm/lib/pkgconfig/hiwin_dual_arm.pc'
+[37.595s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/hiwin_dual_arm/lib/python3.10/site-packages'
+[37.595s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/hiwin_dual_arm/bin'
+[37.595s] INFO:colcon.colcon_core.shell:Creating package script '/home/angel/ros2_ws/install/hiwin_dual_arm/share/hiwin_dual_arm/package.ps1'
+[37.596s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/angel/ros2_ws/install/hiwin_dual_arm/share/hiwin_dual_arm/package.dsv'
+[37.596s] INFO:colcon.colcon_core.shell:Creating package script '/home/angel/ros2_ws/install/hiwin_dual_arm/share/hiwin_dual_arm/package.sh'
+[37.596s] INFO:colcon.colcon_core.shell:Creating package script '/home/angel/ros2_ws/install/hiwin_dual_arm/share/hiwin_dual_arm/package.bash'
+[37.597s] INFO:colcon.colcon_core.shell:Creating package script '/home/angel/ros2_ws/install/hiwin_dual_arm/share/hiwin_dual_arm/package.zsh'
+[37.597s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/angel/ros2_ws/install/hiwin_dual_arm/share/colcon-core/packages/hiwin_dual_arm)
+[37.598s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(dual_arm_lag_gd_planner)
+[37.598s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_lag_gd_planner' for CMake module files
+[37.599s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/angel/ros2_ws/build/dual_arm_lag_gd_planner' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/angel/ros2_ws/build/dual_arm_lag_gd_planner
+[37.599s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_lag_gd_planner' for CMake config files
+[37.600s] Level 1:colcon.colcon_core.shell:create_environment_hook('dual_arm_lag_gd_planner', 'cmake_prefix_path')
+[37.600s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/angel/ros2_ws/install/dual_arm_lag_gd_planner/share/dual_arm_lag_gd_planner/hook/cmake_prefix_path.ps1'
+[37.600s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/angel/ros2_ws/install/dual_arm_lag_gd_planner/share/dual_arm_lag_gd_planner/hook/cmake_prefix_path.dsv'
+[37.601s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/angel/ros2_ws/install/dual_arm_lag_gd_planner/share/dual_arm_lag_gd_planner/hook/cmake_prefix_path.sh'
+[37.601s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_lag_gd_planner/lib'
+[37.601s] Level 1:colcon.colcon_core.shell:create_environment_hook('dual_arm_lag_gd_planner', 'ld_library_path_lib')
+[37.601s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/angel/ros2_ws/install/dual_arm_lag_gd_planner/share/dual_arm_lag_gd_planner/hook/ld_library_path_lib.ps1'
+[37.602s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/angel/ros2_ws/install/dual_arm_lag_gd_planner/share/dual_arm_lag_gd_planner/hook/ld_library_path_lib.dsv'
+[37.602s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/angel/ros2_ws/install/dual_arm_lag_gd_planner/share/dual_arm_lag_gd_planner/hook/ld_library_path_lib.sh'
+[37.602s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_lag_gd_planner/bin'
+[37.602s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_lag_gd_planner/lib/pkgconfig/dual_arm_lag_gd_planner.pc'
+[37.602s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_lag_gd_planner/lib/python3.10/site-packages'
+[37.603s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_lag_gd_planner/bin'
+[37.603s] INFO:colcon.colcon_core.shell:Creating package script '/home/angel/ros2_ws/install/dual_arm_lag_gd_planner/share/dual_arm_lag_gd_planner/package.ps1'
+[37.604s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/angel/ros2_ws/install/dual_arm_lag_gd_planner/share/dual_arm_lag_gd_planner/package.dsv'
+[37.604s] INFO:colcon.colcon_core.shell:Creating package script '/home/angel/ros2_ws/install/dual_arm_lag_gd_planner/share/dual_arm_lag_gd_planner/package.sh'
+[37.605s] INFO:colcon.colcon_core.shell:Creating package script '/home/angel/ros2_ws/install/dual_arm_lag_gd_planner/share/dual_arm_lag_gd_planner/package.bash'
+[37.605s] INFO:colcon.colcon_core.shell:Creating package script '/home/angel/ros2_ws/install/dual_arm_lag_gd_planner/share/dual_arm_lag_gd_planner/package.zsh'
+[37.605s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/angel/ros2_ws/install/dual_arm_lag_gd_planner/share/colcon-core/packages/dual_arm_lag_gd_planner)
+[37.606s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(dual_arm_lag_gd_planner)
+[37.606s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_lag_gd_planner' for CMake module files
+[37.606s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_lag_gd_planner' for CMake config files
+[37.606s] Level 1:colcon.colcon_core.shell:create_environment_hook('dual_arm_lag_gd_planner', 'cmake_prefix_path')
+[37.607s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/angel/ros2_ws/install/dual_arm_lag_gd_planner/share/dual_arm_lag_gd_planner/hook/cmake_prefix_path.ps1'
+[37.607s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/angel/ros2_ws/install/dual_arm_lag_gd_planner/share/dual_arm_lag_gd_planner/hook/cmake_prefix_path.dsv'
+[37.608s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/angel/ros2_ws/install/dual_arm_lag_gd_planner/share/dual_arm_lag_gd_planner/hook/cmake_prefix_path.sh'
+[37.608s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_lag_gd_planner/lib'
+[37.608s] Level 1:colcon.colcon_core.shell:create_environment_hook('dual_arm_lag_gd_planner', 'ld_library_path_lib')
+[37.609s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/angel/ros2_ws/install/dual_arm_lag_gd_planner/share/dual_arm_lag_gd_planner/hook/ld_library_path_lib.ps1'
+[37.609s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/angel/ros2_ws/install/dual_arm_lag_gd_planner/share/dual_arm_lag_gd_planner/hook/ld_library_path_lib.dsv'
+[37.610s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/angel/ros2_ws/install/dual_arm_lag_gd_planner/share/dual_arm_lag_gd_planner/hook/ld_library_path_lib.sh'
+[37.610s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_lag_gd_planner/bin'
+[37.610s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_lag_gd_planner/lib/pkgconfig/dual_arm_lag_gd_planner.pc'
+[37.610s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_lag_gd_planner/lib/python3.10/site-packages'
+[37.611s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_lag_gd_planner/bin'
+[37.612s] INFO:colcon.colcon_core.shell:Creating package script '/home/angel/ros2_ws/install/dual_arm_lag_gd_planner/share/dual_arm_lag_gd_planner/package.ps1'
+[37.613s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/angel/ros2_ws/install/dual_arm_lag_gd_planner/share/dual_arm_lag_gd_planner/package.dsv'
+[37.613s] INFO:colcon.colcon_core.shell:Creating package script '/home/angel/ros2_ws/install/dual_arm_lag_gd_planner/share/dual_arm_lag_gd_planner/package.sh'
+[37.614s] INFO:colcon.colcon_core.shell:Creating package script '/home/angel/ros2_ws/install/dual_arm_lag_gd_planner/share/dual_arm_lag_gd_planner/package.bash'
+[37.614s] INFO:colcon.colcon_core.shell:Creating package script '/home/angel/ros2_ws/install/dual_arm_lag_gd_planner/share/dual_arm_lag_gd_planner/package.zsh'
+[37.614s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/angel/ros2_ws/install/dual_arm_lag_gd_planner/share/colcon-core/packages/dual_arm_lag_gd_planner)
+[37.616s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(dual_arm_lag_cg_planner)
+[37.616s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_lag_cg_planner' for CMake module files
+[37.617s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/angel/ros2_ws/build/dual_arm_lag_cg_planner' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/angel/ros2_ws/build/dual_arm_lag_cg_planner
+[37.617s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_lag_cg_planner' for CMake config files
+[37.617s] Level 1:colcon.colcon_core.shell:create_environment_hook('dual_arm_lag_cg_planner', 'cmake_prefix_path')
+[37.618s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/angel/ros2_ws/install/dual_arm_lag_cg_planner/share/dual_arm_lag_cg_planner/hook/cmake_prefix_path.ps1'
+[37.618s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/angel/ros2_ws/install/dual_arm_lag_cg_planner/share/dual_arm_lag_cg_planner/hook/cmake_prefix_path.dsv'
+[37.618s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/angel/ros2_ws/install/dual_arm_lag_cg_planner/share/dual_arm_lag_cg_planner/hook/cmake_prefix_path.sh'
+[37.619s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_lag_cg_planner/lib'
+[37.619s] Level 1:colcon.colcon_core.shell:create_environment_hook('dual_arm_lag_cg_planner', 'ld_library_path_lib')
+[37.619s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/angel/ros2_ws/install/dual_arm_lag_cg_planner/share/dual_arm_lag_cg_planner/hook/ld_library_path_lib.ps1'
+[37.619s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/angel/ros2_ws/install/dual_arm_lag_cg_planner/share/dual_arm_lag_cg_planner/hook/ld_library_path_lib.dsv'
+[37.619s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/angel/ros2_ws/install/dual_arm_lag_cg_planner/share/dual_arm_lag_cg_planner/hook/ld_library_path_lib.sh'
+[37.620s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_lag_cg_planner/bin'
+[37.620s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_lag_cg_planner/lib/pkgconfig/dual_arm_lag_cg_planner.pc'
+[37.620s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_lag_cg_planner/lib/python3.10/site-packages'
+[37.620s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_lag_cg_planner/bin'
+[37.622s] INFO:colcon.colcon_core.shell:Creating package script '/home/angel/ros2_ws/install/dual_arm_lag_cg_planner/share/dual_arm_lag_cg_planner/package.ps1'
+[37.622s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/angel/ros2_ws/install/dual_arm_lag_cg_planner/share/dual_arm_lag_cg_planner/package.dsv'
+[37.623s] INFO:colcon.colcon_core.shell:Creating package script '/home/angel/ros2_ws/install/dual_arm_lag_cg_planner/share/dual_arm_lag_cg_planner/package.sh'
+[37.623s] INFO:colcon.colcon_core.shell:Creating package script '/home/angel/ros2_ws/install/dual_arm_lag_cg_planner/share/dual_arm_lag_cg_planner/package.bash'
+[37.623s] INFO:colcon.colcon_core.shell:Creating package script '/home/angel/ros2_ws/install/dual_arm_lag_cg_planner/share/dual_arm_lag_cg_planner/package.zsh'
+[37.626s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/angel/ros2_ws/install/dual_arm_lag_cg_planner/share/colcon-core/packages/dual_arm_lag_cg_planner)
+[37.628s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(dual_arm_lag_cg_planner)
+[37.628s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_lag_cg_planner' for CMake module files
+[37.629s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_lag_cg_planner' for CMake config files
+[37.629s] Level 1:colcon.colcon_core.shell:create_environment_hook('dual_arm_lag_cg_planner', 'cmake_prefix_path')
+[37.629s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/angel/ros2_ws/install/dual_arm_lag_cg_planner/share/dual_arm_lag_cg_planner/hook/cmake_prefix_path.ps1'
+[37.630s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/angel/ros2_ws/install/dual_arm_lag_cg_planner/share/dual_arm_lag_cg_planner/hook/cmake_prefix_path.dsv'
+[37.630s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/angel/ros2_ws/install/dual_arm_lag_cg_planner/share/dual_arm_lag_cg_planner/hook/cmake_prefix_path.sh'
+[37.631s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_lag_cg_planner/lib'
+[37.631s] Level 1:colcon.colcon_core.shell:create_environment_hook('dual_arm_lag_cg_planner', 'ld_library_path_lib')
+[37.631s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/angel/ros2_ws/install/dual_arm_lag_cg_planner/share/dual_arm_lag_cg_planner/hook/ld_library_path_lib.ps1'
+[37.631s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/angel/ros2_ws/install/dual_arm_lag_cg_planner/share/dual_arm_lag_cg_planner/hook/ld_library_path_lib.dsv'
+[37.632s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/angel/ros2_ws/install/dual_arm_lag_cg_planner/share/dual_arm_lag_cg_planner/hook/ld_library_path_lib.sh'
+[37.632s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_lag_cg_planner/bin'
+[37.632s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_lag_cg_planner/lib/pkgconfig/dual_arm_lag_cg_planner.pc'
+[37.632s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_lag_cg_planner/lib/python3.10/site-packages'
+[37.632s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_lag_cg_planner/bin'
+[37.633s] INFO:colcon.colcon_core.shell:Creating package script '/home/angel/ros2_ws/install/dual_arm_lag_cg_planner/share/dual_arm_lag_cg_planner/package.ps1'
+[37.633s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/angel/ros2_ws/install/dual_arm_lag_cg_planner/share/dual_arm_lag_cg_planner/package.dsv'
+[37.634s] INFO:colcon.colcon_core.shell:Creating package script '/home/angel/ros2_ws/install/dual_arm_lag_cg_planner/share/dual_arm_lag_cg_planner/package.sh'
+[37.634s] INFO:colcon.colcon_core.shell:Creating package script '/home/angel/ros2_ws/install/dual_arm_lag_cg_planner/share/dual_arm_lag_cg_planner/package.bash'
+[37.634s] INFO:colcon.colcon_core.shell:Creating package script '/home/angel/ros2_ws/install/dual_arm_lag_cg_planner/share/dual_arm_lag_cg_planner/package.zsh'
+[37.635s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/angel/ros2_ws/install/dual_arm_lag_cg_planner/share/colcon-core/packages/dual_arm_lag_cg_planner)
+[39.672s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/angel/ros2_ws/build/dual_arm_lag_newton_planner' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/angel/ros2_ws/build/dual_arm_lag_newton_planner -- -j8 -l8
+[39.674s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/angel/ros2_ws/build/dual_arm_lag_newton_planner': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/angel/ros2_ws/build/dual_arm_lag_newton_planner
+[39.870s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(dual_arm_lag_newton_planner)
+[39.870s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_lag_newton_planner' for CMake module files
+[39.870s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/angel/ros2_ws/build/dual_arm_lag_newton_planner' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/angel/ros2_ws/build/dual_arm_lag_newton_planner
+[39.871s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_lag_newton_planner' for CMake config files
+[39.871s] Level 1:colcon.colcon_core.shell:create_environment_hook('dual_arm_lag_newton_planner', 'cmake_prefix_path')
+[39.871s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/angel/ros2_ws/install/dual_arm_lag_newton_planner/share/dual_arm_lag_newton_planner/hook/cmake_prefix_path.ps1'
+[39.872s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/angel/ros2_ws/install/dual_arm_lag_newton_planner/share/dual_arm_lag_newton_planner/hook/cmake_prefix_path.dsv'
+[39.872s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/angel/ros2_ws/install/dual_arm_lag_newton_planner/share/dual_arm_lag_newton_planner/hook/cmake_prefix_path.sh'
+[39.872s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_lag_newton_planner/lib'
+[39.872s] Level 1:colcon.colcon_core.shell:create_environment_hook('dual_arm_lag_newton_planner', 'ld_library_path_lib')
+[39.873s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/angel/ros2_ws/install/dual_arm_lag_newton_planner/share/dual_arm_lag_newton_planner/hook/ld_library_path_lib.ps1'
+[39.873s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/angel/ros2_ws/install/dual_arm_lag_newton_planner/share/dual_arm_lag_newton_planner/hook/ld_library_path_lib.dsv'
+[39.873s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/angel/ros2_ws/install/dual_arm_lag_newton_planner/share/dual_arm_lag_newton_planner/hook/ld_library_path_lib.sh'
+[39.873s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_lag_newton_planner/bin'
+[39.873s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_lag_newton_planner/lib/pkgconfig/dual_arm_lag_newton_planner.pc'
+[39.874s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_lag_newton_planner/lib/python3.10/site-packages'
+[39.874s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_lag_newton_planner/bin'
+[39.874s] INFO:colcon.colcon_core.shell:Creating package script '/home/angel/ros2_ws/install/dual_arm_lag_newton_planner/share/dual_arm_lag_newton_planner/package.ps1'
+[39.875s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/angel/ros2_ws/install/dual_arm_lag_newton_planner/share/dual_arm_lag_newton_planner/package.dsv'
+[39.875s] INFO:colcon.colcon_core.shell:Creating package script '/home/angel/ros2_ws/install/dual_arm_lag_newton_planner/share/dual_arm_lag_newton_planner/package.sh'
+[39.875s] INFO:colcon.colcon_core.shell:Creating package script '/home/angel/ros2_ws/install/dual_arm_lag_newton_planner/share/dual_arm_lag_newton_planner/package.bash'
+[39.876s] INFO:colcon.colcon_core.shell:Creating package script '/home/angel/ros2_ws/install/dual_arm_lag_newton_planner/share/dual_arm_lag_newton_planner/package.zsh'
+[39.876s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/angel/ros2_ws/install/dual_arm_lag_newton_planner/share/colcon-core/packages/dual_arm_lag_newton_planner)
+[39.876s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(dual_arm_lag_newton_planner)
+[39.876s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_lag_newton_planner' for CMake module files
+[39.877s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_lag_newton_planner' for CMake config files
+[39.877s] Level 1:colcon.colcon_core.shell:create_environment_hook('dual_arm_lag_newton_planner', 'cmake_prefix_path')
+[39.877s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/angel/ros2_ws/install/dual_arm_lag_newton_planner/share/dual_arm_lag_newton_planner/hook/cmake_prefix_path.ps1'
+[39.878s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/angel/ros2_ws/install/dual_arm_lag_newton_planner/share/dual_arm_lag_newton_planner/hook/cmake_prefix_path.dsv'
+[39.878s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/angel/ros2_ws/install/dual_arm_lag_newton_planner/share/dual_arm_lag_newton_planner/hook/cmake_prefix_path.sh'
+[39.878s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_lag_newton_planner/lib'
+[39.878s] Level 1:colcon.colcon_core.shell:create_environment_hook('dual_arm_lag_newton_planner', 'ld_library_path_lib')
+[39.878s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/angel/ros2_ws/install/dual_arm_lag_newton_planner/share/dual_arm_lag_newton_planner/hook/ld_library_path_lib.ps1'
+[39.879s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/angel/ros2_ws/install/dual_arm_lag_newton_planner/share/dual_arm_lag_newton_planner/hook/ld_library_path_lib.dsv'
+[39.879s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/angel/ros2_ws/install/dual_arm_lag_newton_planner/share/dual_arm_lag_newton_planner/hook/ld_library_path_lib.sh'
+[39.880s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_lag_newton_planner/bin'
+[39.880s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_lag_newton_planner/lib/pkgconfig/dual_arm_lag_newton_planner.pc'
+[39.880s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_lag_newton_planner/lib/python3.10/site-packages'
+[39.880s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_lag_newton_planner/bin'
+[39.880s] INFO:colcon.colcon_core.shell:Creating package script '/home/angel/ros2_ws/install/dual_arm_lag_newton_planner/share/dual_arm_lag_newton_planner/package.ps1'
+[39.881s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/angel/ros2_ws/install/dual_arm_lag_newton_planner/share/dual_arm_lag_newton_planner/package.dsv'
+[39.881s] INFO:colcon.colcon_core.shell:Creating package script '/home/angel/ros2_ws/install/dual_arm_lag_newton_planner/share/dual_arm_lag_newton_planner/package.sh'
+[39.882s] INFO:colcon.colcon_core.shell:Creating package script '/home/angel/ros2_ws/install/dual_arm_lag_newton_planner/share/dual_arm_lag_newton_planner/package.bash'
+[39.882s] INFO:colcon.colcon_core.shell:Creating package script '/home/angel/ros2_ws/install/dual_arm_lag_newton_planner/share/dual_arm_lag_newton_planner/package.zsh'
+[39.882s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/angel/ros2_ws/install/dual_arm_lag_newton_planner/share/colcon-core/packages/dual_arm_lag_newton_planner)
+[47.065s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/angel/ros2_ws/build/dual_arm_domain_bridge' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/angel/ros2_ws/build/dual_arm_domain_bridge -- -j8 -l8
+[47.066s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/angel/ros2_ws/build/dual_arm_domain_bridge': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/angel/ros2_ws/build/dual_arm_domain_bridge
+[47.184s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(dual_arm_domain_bridge)
+[47.185s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_domain_bridge' for CMake module files
+[47.185s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/angel/ros2_ws/build/dual_arm_domain_bridge' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/angel/ros2_ws/build/dual_arm_domain_bridge
+[47.185s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_domain_bridge' for CMake config files
+[47.186s] Level 1:colcon.colcon_core.shell:create_environment_hook('dual_arm_domain_bridge', 'cmake_prefix_path')
+[47.186s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/angel/ros2_ws/install/dual_arm_domain_bridge/share/dual_arm_domain_bridge/hook/cmake_prefix_path.ps1'
+[47.186s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/angel/ros2_ws/install/dual_arm_domain_bridge/share/dual_arm_domain_bridge/hook/cmake_prefix_path.dsv'
+[47.187s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/angel/ros2_ws/install/dual_arm_domain_bridge/share/dual_arm_domain_bridge/hook/cmake_prefix_path.sh'
+[47.187s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_domain_bridge/lib'
+[47.187s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_domain_bridge/bin'
+[47.187s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_domain_bridge/lib/pkgconfig/dual_arm_domain_bridge.pc'
+[47.187s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_domain_bridge/lib/python3.10/site-packages'
+[47.188s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_domain_bridge/bin'
+[47.188s] INFO:colcon.colcon_core.shell:Creating package script '/home/angel/ros2_ws/install/dual_arm_domain_bridge/share/dual_arm_domain_bridge/package.ps1'
+[47.188s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/angel/ros2_ws/install/dual_arm_domain_bridge/share/dual_arm_domain_bridge/package.dsv'
+[47.189s] INFO:colcon.colcon_core.shell:Creating package script '/home/angel/ros2_ws/install/dual_arm_domain_bridge/share/dual_arm_domain_bridge/package.sh'
+[47.189s] INFO:colcon.colcon_core.shell:Creating package script '/home/angel/ros2_ws/install/dual_arm_domain_bridge/share/dual_arm_domain_bridge/package.bash'
+[47.189s] INFO:colcon.colcon_core.shell:Creating package script '/home/angel/ros2_ws/install/dual_arm_domain_bridge/share/dual_arm_domain_bridge/package.zsh'
+[47.190s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/angel/ros2_ws/install/dual_arm_domain_bridge/share/colcon-core/packages/dual_arm_domain_bridge)
+[47.190s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(dual_arm_domain_bridge)
+[47.190s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_domain_bridge' for CMake module files
+[47.191s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_domain_bridge' for CMake config files
+[47.191s] Level 1:colcon.colcon_core.shell:create_environment_hook('dual_arm_domain_bridge', 'cmake_prefix_path')
+[47.191s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/angel/ros2_ws/install/dual_arm_domain_bridge/share/dual_arm_domain_bridge/hook/cmake_prefix_path.ps1'
+[47.191s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/angel/ros2_ws/install/dual_arm_domain_bridge/share/dual_arm_domain_bridge/hook/cmake_prefix_path.dsv'
+[47.192s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/angel/ros2_ws/install/dual_arm_domain_bridge/share/dual_arm_domain_bridge/hook/cmake_prefix_path.sh'
+[47.192s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_domain_bridge/lib'
+[47.192s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_domain_bridge/bin'
+[47.192s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_domain_bridge/lib/pkgconfig/dual_arm_domain_bridge.pc'
+[47.192s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_domain_bridge/lib/python3.10/site-packages'
+[47.193s] Level 1:colcon.colcon_core.environment:checking '/home/angel/ros2_ws/install/dual_arm_domain_bridge/bin'
+[47.193s] INFO:colcon.colcon_core.shell:Creating package script '/home/angel/ros2_ws/install/dual_arm_domain_bridge/share/dual_arm_domain_bridge/package.ps1'
+[47.194s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/angel/ros2_ws/install/dual_arm_domain_bridge/share/dual_arm_domain_bridge/package.dsv'
+[47.194s] INFO:colcon.colcon_core.shell:Creating package script '/home/angel/ros2_ws/install/dual_arm_domain_bridge/share/dual_arm_domain_bridge/package.sh'
+[47.194s] INFO:colcon.colcon_core.shell:Creating package script '/home/angel/ros2_ws/install/dual_arm_domain_bridge/share/dual_arm_domain_bridge/package.bash'
+[47.195s] INFO:colcon.colcon_core.shell:Creating package script '/home/angel/ros2_ws/install/dual_arm_domain_bridge/share/dual_arm_domain_bridge/package.zsh'
+[47.195s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/angel/ros2_ws/install/dual_arm_domain_bridge/share/colcon-core/packages/dual_arm_domain_bridge)
+[47.195s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[47.196s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[47.196s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[47.196s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[53.924s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.notify_send': Could not find 'notify-send'
+[53.924s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[53.924s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[53.925s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[53.950s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[53.950s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/angel/ros2_ws/install/local_setup.ps1'
+[54.438s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/angel/ros2_ws/install/_local_setup_util_ps1.py'
+[54.607s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/angel/ros2_ws/install/setup.ps1'
+[54.805s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/angel/ros2_ws/install/local_setup.sh'
+[54.869s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/angel/ros2_ws/install/_local_setup_util_sh.py'
+[54.872s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/angel/ros2_ws/install/setup.sh'
+[54.969s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/angel/ros2_ws/install/local_setup.bash'
+[55.045s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/angel/ros2_ws/install/setup.bash'
+[55.148s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/angel/ros2_ws/install/local_setup.zsh'
+[55.163s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/angel/ros2_ws/install/setup.zsh'

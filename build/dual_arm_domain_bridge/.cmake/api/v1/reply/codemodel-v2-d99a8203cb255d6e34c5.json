@@ -1,0 +1,88 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Release-0a7d1833f1145650cb0b.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"name" : "Release",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "dual_arm_domain_bridge",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "dual_arm_domain_bridge_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-dual_arm_domain_bridge_uninstall-Release-12957c4447027d8adf4d.json",
+					"name" : "dual_arm_domain_bridge_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "joint_state_uplink_bridge::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-joint_state_uplink_bridge-Release-7c09f0f22923f8294300.json",
+					"name" : "joint_state_uplink_bridge",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "trajectory_downlink_endpoint_relay::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-trajectory_downlink_endpoint_relay-Release-7e50c38b0090a0b88e9c.json",
+					"name" : "trajectory_downlink_endpoint_relay",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-Release-0d85ab0a099a9389fdd5.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/angel/ros2_ws/build/dual_arm_domain_bridge",
+		"source" : "/home/angel/ros2_ws/src/For_hiwin_dual_arm/dual_arm_domain_bridge (7)/dual_arm_domain_bridge"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

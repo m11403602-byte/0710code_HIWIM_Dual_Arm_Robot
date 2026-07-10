@@ -335,7 +335,7 @@ PKG_CONFIG_EXECUTABLE:FILEPATH=/usr/bin/pkg-config
 Python3_EXECUTABLE:FILEPATH=/usr/bin/python3
 
 //Name of the computer/site where compile is being run
-SITE:STRING=hiwin-humble-env.angel-MS-7C31
+SITE:STRING=hiwin_user_controller.angel-MS-7C31
 
 //Path to a file.
 TINYXML2_INCLUDE_DIR:PATH=/usr/include
@@ -464,7 +464,7 @@ dual_arm_alm_cg_planner_BINARY_DIR:STATIC=/home/angel/ros2_ws/build/dual_arm_alm
 dual_arm_alm_cg_planner_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
-dual_arm_alm_cg_planner_SOURCE_DIR:STATIC=/home/angel/ros2_ws/src/dual_arm_alm_cg_planner
+dual_arm_alm_cg_planner_SOURCE_DIR:STATIC=/home/angel/ros2_ws/src/For_hiwin_dual_arm/dual_arm_alm_cg_planner
 
 //The directory containing a CMake configuration file for eigen3_cmake_module.
 eigen3_cmake_module_DIR:PATH=/opt/ros/humble/share/eigen3_cmake_module/cmake
@@ -861,7 +861,7 @@ CMAKE_HAVE_LIBC_PTHREAD:INTERNAL=1
 CMAKE_HAVE_PTHREAD_H:INTERNAL=1
 //Source directory with the top level CMakeLists.txt file for this
 // project
-CMAKE_HOME_DIRECTORY:INTERNAL=/home/angel/ros2_ws/src/dual_arm_alm_cg_planner
+CMAKE_HOME_DIRECTORY:INTERNAL=/home/angel/ros2_ws/src/For_hiwin_dual_arm/dual_arm_alm_cg_planner
 //Install .so files without execute permission.
 CMAKE_INSTALL_SO_NO_EXE:INTERNAL=1
 //ADVANCED property for variable: CMAKE_LINKER

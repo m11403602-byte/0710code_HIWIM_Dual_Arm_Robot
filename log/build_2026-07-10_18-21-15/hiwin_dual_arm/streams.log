@@ -1,0 +1,70 @@
+[0.045s] Invoking command in '/home/angel/ros2_ws/build/hiwin_dual_arm': AMENT_PREFIX_PATH=/home/angel/ros2_ws/install/hiwin_dual_arm_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/angel/ros2_ws/install/hiwin_dual_arm_description:/opt/ros/humble /usr/bin/cmake /home/angel/ros2_ws/src/For_hiwin_dual_arm/hiwin_dual_arm -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/angel/ros2_ws/install/hiwin_dual_arm
+[30.098s] -- The C compiler identification is GNU 11.4.0
+[30.098s] -- The CXX compiler identification is GNU 11.4.0
+[30.098s] -- Detecting C compiler ABI info
+[30.098s] -- Detecting C compiler ABI info - done
+[30.098s] -- Check for working C compiler: /usr/bin/cc - skipped
+[30.098s] -- Detecting C compile features
+[30.098s] -- Detecting C compile features - done
+[30.098s] -- Detecting CXX compiler ABI info
+[30.098s] -- Detecting CXX compiler ABI info - done
+[30.098s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[30.098s] -- Detecting CXX compile features
+[30.098s] -- Detecting CXX compile features - done
+[30.098s] -- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)
+[30.098s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[30.098s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[30.098s] -- Configuring done
+[30.098s] -- Generating done
+[30.098s] -- Build files have been written to: /home/angel/ros2_ws/build/hiwin_dual_arm
+[30.100s] Invoked command in '/home/angel/ros2_ws/build/hiwin_dual_arm' returned '0': AMENT_PREFIX_PATH=/home/angel/ros2_ws/install/hiwin_dual_arm_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/angel/ros2_ws/install/hiwin_dual_arm_description:/opt/ros/humble /usr/bin/cmake /home/angel/ros2_ws/src/For_hiwin_dual_arm/hiwin_dual_arm -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/angel/ros2_ws/install/hiwin_dual_arm
+[30.102s] Invoking command in '/home/angel/ros2_ws/build/hiwin_dual_arm': AMENT_PREFIX_PATH=/home/angel/ros2_ws/install/hiwin_dual_arm_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/angel/ros2_ws/install/hiwin_dual_arm_description:/opt/ros/humble /usr/bin/cmake --build /home/angel/ros2_ws/build/hiwin_dual_arm -- -j8 -l8
+[30.317s] Invoked command in '/home/angel/ros2_ws/build/hiwin_dual_arm' returned '0': AMENT_PREFIX_PATH=/home/angel/ros2_ws/install/hiwin_dual_arm_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/angel/ros2_ws/install/hiwin_dual_arm_description:/opt/ros/humble /usr/bin/cmake --build /home/angel/ros2_ws/build/hiwin_dual_arm -- -j8 -l8
+[30.737s] Invoking command in '/home/angel/ros2_ws/build/hiwin_dual_arm': AMENT_PREFIX_PATH=/home/angel/ros2_ws/install/hiwin_dual_arm_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/angel/ros2_ws/install/hiwin_dual_arm_description:/opt/ros/humble /usr/bin/cmake --install /home/angel/ros2_ws/build/hiwin_dual_arm
+[30.743s] -- Install configuration: ""
+[30.744s] -- Execute custom install script
+[30.744s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm/share/ament_index/resource_index/package_run_dependencies/hiwin_dual_arm
+[30.751s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm/share/ament_index/resource_index/parent_prefix_path/hiwin_dual_arm
+[30.758s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm/share/hiwin_dual_arm/environment/ament_prefix_path.sh
+[30.764s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm/share/hiwin_dual_arm/environment/ament_prefix_path.dsv
+[30.772s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm/share/hiwin_dual_arm/environment/path.sh
+[30.779s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm/share/hiwin_dual_arm/environment/path.dsv
+[30.786s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm/share/hiwin_dual_arm/local_setup.bash
+[30.793s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm/share/hiwin_dual_arm/local_setup.sh
+[30.799s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm/share/hiwin_dual_arm/local_setup.zsh
+[30.807s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm/share/hiwin_dual_arm/local_setup.dsv
+[30.813s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm/share/hiwin_dual_arm/package.dsv
+[30.820s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm/share/ament_index/resource_index/packages/hiwin_dual_arm
+[30.827s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm/share/hiwin_dual_arm/cmake/hiwin_dual_armConfig.cmake
+[30.834s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm/share/hiwin_dual_arm/cmake/hiwin_dual_armConfig-version.cmake
+[30.845s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm/share/hiwin_dual_arm/package.xml
+[30.851s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm/share/hiwin_dual_arm/launch/brain.launch.py
+[30.859s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm/share/hiwin_dual_arm/launch/demo.launch.py
+[30.871s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm/share/hiwin_dual_arm/launch/move_group.launch.py
+[30.875s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm/share/hiwin_dual_arm/launch/moveit_rviz.launch.py
+[30.884s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm/share/hiwin_dual_arm/launch/rsp.launch.py
+[30.892s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm/share/hiwin_dual_arm/launch/setup_assistant.launch.py
+[30.899s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm/share/hiwin_dual_arm/launch/spawn_controllers.launch.py
+[30.905s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm/share/hiwin_dual_arm/launch/static_virtual_joint_tfs.launch.py
+[30.912s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm/share/hiwin_dual_arm/launch/warehouse_db.launch.py
+[30.924s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm/share/hiwin_dual_arm/config/dual_arm_alm_cg_planning.yaml
+[30.930s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm/share/hiwin_dual_arm/config/dual_arm_alm_gd_planning.yaml
+[30.940s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm/share/hiwin_dual_arm/config/dual_arm_alm_newton_planning.yaml
+[30.949s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm/share/hiwin_dual_arm/config/dual_arm_lag_cg_planning.yaml
+[30.956s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm/share/hiwin_dual_arm/config/dual_arm_lag_gd_planning.yaml
+[30.964s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm/share/hiwin_dual_arm/config/dual_arm_lag_newton_planning.yaml
+[30.971s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm/share/hiwin_dual_arm/config/dual_hiwin.ros2_control.xacro
+[30.979s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm/share/hiwin_dual_arm/config/dual_hiwin.srdf
+[30.987s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm/share/hiwin_dual_arm/config/dual_hiwin.urdf.xacro
+[30.993s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm/share/hiwin_dual_arm/config/initial_positions.yaml
+[31.000s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm/share/hiwin_dual_arm/config/joint_limits.yaml
+[31.008s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm/share/hiwin_dual_arm/config/kinematics.yaml
+[31.014s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm/share/hiwin_dual_arm/config/moveit.rviz
+[31.021s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm/share/hiwin_dual_arm/config/moveit_controllers.yaml
+[31.028s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm/share/hiwin_dual_arm/config/ompl_planning.yaml
+[31.036s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm/share/hiwin_dual_arm/config/pilz_cartesian_limits.yaml
+[31.047s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm/share/hiwin_dual_arm/config/ros2_controllers.yaml
+[31.054s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm/share/hiwin_dual_arm/config/ros2_controllers_copy.yaml
+[31.063s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm/share/hiwin_dual_arm/config/sensors_3d.yaml
+[31.073s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm/share/hiwin_dual_arm/.setup_assistant
+[31.085s] Invoked command in '/home/angel/ros2_ws/build/hiwin_dual_arm' returned '0': AMENT_PREFIX_PATH=/home/angel/ros2_ws/install/hiwin_dual_arm_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/angel/ros2_ws/install/hiwin_dual_arm_description:/opt/ros/humble /usr/bin/cmake --install /home/angel/ros2_ws/build/hiwin_dual_arm

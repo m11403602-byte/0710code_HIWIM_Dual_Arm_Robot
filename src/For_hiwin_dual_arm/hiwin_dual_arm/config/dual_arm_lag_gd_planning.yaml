@@ -1,0 +1,43 @@
+# Dual-Arm Avoidance Planner (純 Lagrangian + Gradient Descent) 參數
+#   改 yaml 後重啟 move_group 生效, 不用重編
+planning_plugin: 'dual_arm_lag_gd_planner/DualArmLagGdPlannerManager'
+request_adapters: >-
+  default_planner_request_adapters/FixWorkspaceBounds
+  default_planner_request_adapters/FixStartStateBounds
+  default_planner_request_adapters/FixStartStateCollision
+  default_planner_request_adapters/FixStartStatePathConstraints
+
+# ===== 常調參數 =====
+path_weight: 0.5            # A/B 臂成本權重 pw*fA+(1-pw)*fB, 範圍 [0,1]
+                            #   越大: RA610-1476-GC2(big_arm) 的避讓幅度越小, RA605-710-GC2(small_arm) 的避讓幅度越大
+                            #   越小: RA610-1476-GC2(big_arm) 的避讓幅度越大, RA605-710-GC2(small_arm) 的避讓幅度越小
+danger_threshold: 0.35       # 危險因子閾值; 此值 + collision_tolerance = 碰撞邊界(0.5), 兩者之和不得超過 0.5 (超過會漏判真碰撞)
+collision_tolerance: 0.15    # 碰撞判定緩衝帶 (此值 = 碰撞邊界(0.5) - danger_threshold)
+fix_tolerance: 0.1          # find_targets 的 前後餘隙 比例
+max_refinement_iter: 15     # 外層修復最多輪數
+
+# ===== 軌跡平滑權重 =====   # 平滑權重越大路徑越平滑
+smooth_w: 0.3               # 與原始組態距離(||Xm-Xm^ori||^2)的原始權重
+smooth_w_H: 1.0             # 第一關節組態與 Head 端距離(||X1-XH||^2)的平滑權重(建議與 smooth_w_T、smooth_w_neighbor一樣)
+smooth_w_T: 1.0             # 第三關節組態與 Tail 端距離(||X3-XT||^2)的平滑權重(建議與 smooth_w_H、smooth_w_neighbor一樣)
+smooth_w_neighbor: 1.0      # 相鄰兩組態距離(||X_m+1-X_m||^2)的平滑權重(建議與 smooth_w_H、smooth_w_T一樣)
+
+# ===== 純 Lagrangian 參數 (對應 Dual_Arm_Lagrangian_Gradient_v2) =====
+#   調整指引: 來不及收斂 (跑滿 lag_max_iter 仍未達標) → 提高 lag_max_iter
+lag_lam0: 30.0                 # λ_0 初值 (原始值 30)
+lag_max_iter: 500              # 主迴圈最大迭代 (原始值 500)
+
+# ===== 關節名前綴 (依 SRDF 調整) =====
+joint_prefix_A: "big_joint_"      # A 臂 (RA610): big_joint_1 ~ big_joint_6
+joint_prefix_B: "small_joint_"    # B 臂 (RA605): small_joint_1 ~ small_joint_6
+
+# ===== 時間參數化 (在插件內處理) =====
+time_optimal: true          # true=TOTG 時間最佳化; false=自訂等間隔
+path_total_time: 20.0        # (time_optimal=false 時) 目標軌跡總時間 (秒)
+min_time_interval: 0.05     # (time_optimal=false 時) 每點最小時間間隔 (秒)
+
+# ===== 診斷輸出 (預設全關) =====
+export_csv_prefix: "./lag_data"   # 匯出根目錄: <prefix>/<unix秒>_GD/ (export_level=0 時不匯出)
+export_level: 0             # 0=完全不匯出(總開關)
+                            # 1=標配 6 檔 (meta/summary/inner/danger_final/danger_rounds/targets)
+                            # 2=完整 9 檔 (+constraints_all/path_original/path_evolution)

@@ -1,1 +1,1 @@
-/home/angel/ros2_ws/src/dual_arm_lag_newton_planner/include/dual_arm_lag_newton_planner/newton_solver.hpp
+/home/angel/ros2_ws/src/For_hiwin_dual_arm/dual_arm_lag_newton_planner/include/dual_arm_lag_newton_planner/newton_solver.hpp

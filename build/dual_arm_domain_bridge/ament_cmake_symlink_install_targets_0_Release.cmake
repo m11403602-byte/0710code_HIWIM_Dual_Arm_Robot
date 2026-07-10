@@ -1,0 +1,1 @@
+ament_cmake_symlink_install_targets("TARGET_FILES" "/home/angel/ros2_ws/build/dual_arm_domain_bridge/joint_state_uplink_bridge" "/home/angel/ros2_ws/build/dual_arm_domain_bridge/trajectory_downlink_endpoint_relay" "TARGETS" "joint_state_uplink_bridge" "trajectory_downlink_endpoint_relay" "DESTINATION" "lib/dual_arm_domain_bridge")

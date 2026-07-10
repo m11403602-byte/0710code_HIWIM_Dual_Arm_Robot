@@ -1,35 +1,42 @@
-以下是開啟使用者的界面單純模擬看軌跡是否有異常
-網域統一設
-export ROS_DOMAIN_ID=24
-echo $ROS_DOMAIN_ID
+#!/bin/bash
+進入到容器裡面
+distrobox enter hiwin_user_controller
+#
+# 這個腳本用於設定 ROS 2 Humble 環境並編譯工作區。
+# 請在進入 distrobox 容器後，於 ros2_ws 目錄下執行此腳本。
+#
+# 腳本發生錯誤時立即停止執行
+set -e
 
-上銀手臂ROS2 RVIZ的相關指令
-進入虛擬環境ROS2 humble
-distrobox enter hiwin-humble-env
-啟動安裝檔案_在這個容器下要把原本的環境清理掉
+# --- 環境設定 ---
+echo "設定 ROS 環境..."
+
+# 設定 ROS 網域 ID，以便節點之間互相通訊
+export ROS_DOMAIN_ID=24
+echo "ROS_DOMAIN_ID 已設定為: $ROS_DOMAIN_ID"
+
+# --- 環境清理與載入 ---
+echo "清理可能衝突的舊 ROS 環境變數..."
 unset ROS_VERSION
 unset ROS_ROOT
 unset AMENT_PREFIX_PATH
 unset CMAKE_PREFIX_PATH
 unset COLCON_PREFIX_PATH
-載入環境
+
+echo "載入 ROS 2 Humble 基礎環境..."
 source /opt/ros/humble/setup.bash 
 
-# 確保所有 hiwin_ros2 的原始碼都存在於 src/ 目錄下
-if [ -d "hiwin_ros2" ]; then
-    echo "正在複製 hiwin_ros2 packages 到 src/ 目錄下..."
-    cp -r hiwin_ros2/* src/
-    echo "複製完畢。"
-fi
-
-# 刪除快取與產出資料夾
+# --- 工作區編譯 ---
 echo "正在清除舊的 build, install, 和 log 目錄..."
 rm -rf build/ install/ log/
 echo "清除完畢。"
 
-# 編譯工作區中的所有 packages
 echo "正在編譯工作區中的所有 packages..."
 colcon build --symlink-install
+echo "編譯完成。"
 
-載入資料環境
+# --- 載入新環境 ---
+echo "載入新編譯的工作區環境..."
 source install/setup.bash
+
+echo "環境準備完成！現在可以在此終端機中執行 ROS 2 指令。"

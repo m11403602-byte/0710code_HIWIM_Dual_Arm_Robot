@@ -1,0 +1,6 @@
+Invoking command in '/home/angel/ros2_ws/build/dual_arm_alm_gd_planner': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/angel/ros2_ws/src/For_hiwin_dual_arm/dual_arm_alm_gd_planner -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/angel/ros2_ws/install/dual_arm_alm_gd_planner
+Invoked command in '/home/angel/ros2_ws/build/dual_arm_alm_gd_planner' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/angel/ros2_ws/src/For_hiwin_dual_arm/dual_arm_alm_gd_planner -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/angel/ros2_ws/install/dual_arm_alm_gd_planner
+Invoking command in '/home/angel/ros2_ws/build/dual_arm_alm_gd_planner': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/angel/ros2_ws/build/dual_arm_alm_gd_planner -- -j8 -l8
+Invoked command in '/home/angel/ros2_ws/build/dual_arm_alm_gd_planner' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/angel/ros2_ws/build/dual_arm_alm_gd_planner -- -j8 -l8
+Invoking command in '/home/angel/ros2_ws/build/dual_arm_alm_gd_planner': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/angel/ros2_ws/build/dual_arm_alm_gd_planner
+Invoked command in '/home/angel/ros2_ws/build/dual_arm_alm_gd_planner' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/angel/ros2_ws/build/dual_arm_alm_gd_planner

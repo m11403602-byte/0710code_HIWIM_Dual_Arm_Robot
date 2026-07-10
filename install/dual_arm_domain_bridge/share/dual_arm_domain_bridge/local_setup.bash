@@ -1,0 +1,1 @@
+/home/angel/ros2_ws/build/dual_arm_domain_bridge/ament_cmake_environment_hooks/local_setup.bash

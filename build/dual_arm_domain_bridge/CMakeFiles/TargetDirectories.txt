@@ -1,0 +1,11 @@
+/home/angel/ros2_ws/build/dual_arm_domain_bridge/CMakeFiles/uninstall.dir
+/home/angel/ros2_ws/build/dual_arm_domain_bridge/CMakeFiles/dual_arm_domain_bridge_uninstall.dir
+/home/angel/ros2_ws/build/dual_arm_domain_bridge/CMakeFiles/joint_state_uplink_bridge.dir
+/home/angel/ros2_ws/build/dual_arm_domain_bridge/CMakeFiles/trajectory_downlink_endpoint_relay.dir
+/home/angel/ros2_ws/build/dual_arm_domain_bridge/CMakeFiles/test.dir
+/home/angel/ros2_ws/build/dual_arm_domain_bridge/CMakeFiles/edit_cache.dir
+/home/angel/ros2_ws/build/dual_arm_domain_bridge/CMakeFiles/rebuild_cache.dir
+/home/angel/ros2_ws/build/dual_arm_domain_bridge/CMakeFiles/list_install_components.dir
+/home/angel/ros2_ws/build/dual_arm_domain_bridge/CMakeFiles/install.dir
+/home/angel/ros2_ws/build/dual_arm_domain_bridge/CMakeFiles/install/local.dir
+/home/angel/ros2_ws/build/dual_arm_domain_bridge/CMakeFiles/install/strip.dir

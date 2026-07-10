@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>hiwin_dual_arm_description</name>
+  <version>1.0.0</version>
+  <description>
+    NTUST dual-arm (HIWIN RA610-1476 + RA605-710) robot description:
+    dual_hiwin_arms.urdf.xacro with arm platforms.
+    Arm macro (ra_macro/common) and RA meshes derived from
+    HIWINCorporation/hiwin_ros2 hiwin_description (base commit a48add5);
+    RA610-1476 assets ported from HIWINCorporation/hiwin_ros.
+  </description>
+  <author>HIWIN Technologies Corp (original RA arm description)</author>
+  <maintainer email="mfpss910727@gmail.com">john</maintainer>
+  <license>Apache-2.0</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <exec_depend>xacro</exec_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

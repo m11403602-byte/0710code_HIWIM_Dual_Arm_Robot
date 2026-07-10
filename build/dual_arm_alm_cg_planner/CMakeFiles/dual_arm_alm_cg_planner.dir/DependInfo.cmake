@@ -8,10 +8,10 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/angel/ros2_ws/src/dual_arm_alm_cg_planner/src/avoidance_system.cpp" "CMakeFiles/dual_arm_alm_cg_planner.dir/src/avoidance_system.cpp.o" "gcc" "CMakeFiles/dual_arm_alm_cg_planner.dir/src/avoidance_system.cpp.o.d"
-  "/home/angel/ros2_ws/src/dual_arm_alm_cg_planner/src/cg_solver.cpp" "CMakeFiles/dual_arm_alm_cg_planner.dir/src/cg_solver.cpp.o" "gcc" "CMakeFiles/dual_arm_alm_cg_planner.dir/src/cg_solver.cpp.o.d"
-  "/home/angel/ros2_ws/src/dual_arm_alm_cg_planner/src/data_io.cpp" "CMakeFiles/dual_arm_alm_cg_planner.dir/src/data_io.cpp.o" "gcc" "CMakeFiles/dual_arm_alm_cg_planner.dir/src/data_io.cpp.o.d"
-  "/home/angel/ros2_ws/src/dual_arm_alm_cg_planner/src/planner_manager.cpp" "CMakeFiles/dual_arm_alm_cg_planner.dir/src/planner_manager.cpp.o" "gcc" "CMakeFiles/dual_arm_alm_cg_planner.dir/src/planner_manager.cpp.o.d"
+  "/home/angel/ros2_ws/src/For_hiwin_dual_arm/dual_arm_alm_cg_planner/src/avoidance_system.cpp" "CMakeFiles/dual_arm_alm_cg_planner.dir/src/avoidance_system.cpp.o" "gcc" "CMakeFiles/dual_arm_alm_cg_planner.dir/src/avoidance_system.cpp.o.d"
+  "/home/angel/ros2_ws/src/For_hiwin_dual_arm/dual_arm_alm_cg_planner/src/cg_solver.cpp" "CMakeFiles/dual_arm_alm_cg_planner.dir/src/cg_solver.cpp.o" "gcc" "CMakeFiles/dual_arm_alm_cg_planner.dir/src/cg_solver.cpp.o.d"
+  "/home/angel/ros2_ws/src/For_hiwin_dual_arm/dual_arm_alm_cg_planner/src/data_io.cpp" "CMakeFiles/dual_arm_alm_cg_planner.dir/src/data_io.cpp.o" "gcc" "CMakeFiles/dual_arm_alm_cg_planner.dir/src/data_io.cpp.o.d"
+  "/home/angel/ros2_ws/src/For_hiwin_dual_arm/dual_arm_alm_cg_planner/src/planner_manager.cpp" "CMakeFiles/dual_arm_alm_cg_planner.dir/src/planner_manager.cpp.o" "gcc" "CMakeFiles/dual_arm_alm_cg_planner.dir/src/planner_manager.cpp.o.d"
   )
 
 # Targets to which this target links.

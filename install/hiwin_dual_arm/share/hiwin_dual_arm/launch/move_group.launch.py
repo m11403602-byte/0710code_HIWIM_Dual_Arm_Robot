@@ -1,1 +1,1 @@
-/home/angel/ros2_ws/src/hiwin_dual_arm/launch/move_group.launch.py
+/home/angel/ros2_ws/src/For_hiwin_dual_arm/hiwin_dual_arm/launch/move_group.launch.py

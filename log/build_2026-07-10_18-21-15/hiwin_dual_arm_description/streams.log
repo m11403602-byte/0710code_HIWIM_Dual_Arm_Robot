@@ -1,0 +1,86 @@
+[0.050s] Invoking command in '/home/angel/ros2_ws/build/hiwin_dual_arm_description': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/angel/ros2_ws/src/For_hiwin_dual_arm/hiwin_dual_arm_description -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/angel/ros2_ws/install/hiwin_dual_arm_description
+[0.119s] -- The C compiler identification is GNU 11.4.0
+[0.177s] -- The CXX compiler identification is GNU 11.4.0
+[0.185s] -- Detecting C compiler ABI info
+[0.261s] -- Detecting C compiler ABI info - done
+[0.267s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.267s] -- Detecting C compile features
+[0.267s] -- Detecting C compile features - done
+[0.273s] -- Detecting CXX compiler ABI info
+[0.351s] -- Detecting CXX compiler ABI info - done
+[0.360s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.360s] -- Detecting CXX compile features
+[0.361s] -- Detecting CXX compile features - done
+[0.368s] -- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.493s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.557s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.665s] -- Configuring done
+[0.668s] -- Generating done
+[0.669s] -- Build files have been written to: /home/angel/ros2_ws/build/hiwin_dual_arm_description
+[0.674s] Invoked command in '/home/angel/ros2_ws/build/hiwin_dual_arm_description' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/angel/ros2_ws/src/For_hiwin_dual_arm/hiwin_dual_arm_description -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/angel/ros2_ws/install/hiwin_dual_arm_description
+[0.677s] Invoking command in '/home/angel/ros2_ws/build/hiwin_dual_arm_description': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/angel/ros2_ws/build/hiwin_dual_arm_description -- -j8 -l8
+[1.905s] Invoked command in '/home/angel/ros2_ws/build/hiwin_dual_arm_description' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/angel/ros2_ws/build/hiwin_dual_arm_description -- -j8 -l8
+[1.913s] Invoking command in '/home/angel/ros2_ws/build/hiwin_dual_arm_description': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/angel/ros2_ws/build/hiwin_dual_arm_description
+[1.925s] -- Install configuration: ""
+[1.925s] -- Execute custom install script
+[1.925s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm_description/share/hiwin_dual_arm_description/urdf/big_arm_platform.urdf.xacro
+[1.931s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm_description/share/hiwin_dual_arm_description/urdf/dual_hiwin_arms.urdf.xacro
+[1.939s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm_description/share/hiwin_dual_arm_description/urdf/inc/common.xacro
+[1.946s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm_description/share/hiwin_dual_arm_description/urdf/ra_macro.xacro
+[1.953s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm_description/share/hiwin_dual_arm_description/urdf/small_arm_platform.urdf.xacro
+[1.973s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm_description/share/hiwin_dual_arm_description/config/ra605_710/default_kinematics.yaml
+[1.991s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm_description/share/hiwin_dual_arm_description/config/ra605_710/joint_limits.yaml
+[2.055s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm_description/share/hiwin_dual_arm_description/config/ra605_710/physical_parameters.yaml
+[2.069s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm_description/share/hiwin_dual_arm_description/config/ra605_710/visual_parameters.yaml
+[2.091s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm_description/share/hiwin_dual_arm_description/config/ra610_1476/default_kinematics.yaml
+[2.119s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm_description/share/hiwin_dual_arm_description/config/ra610_1476/joint_limits.yaml
+[2.137s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm_description/share/hiwin_dual_arm_description/config/ra610_1476/physical_parameters.yaml
+[2.167s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm_description/share/hiwin_dual_arm_description/config/ra610_1476/visual_parameters.yaml
+[2.192s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm_description/share/hiwin_dual_arm_description/meshes/platform/collision/ra605_platform.STL
+[2.221s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm_description/share/hiwin_dual_arm_description/meshes/platform/collision/ra610_platform.STL
+[2.240s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm_description/share/hiwin_dual_arm_description/meshes/platform/visual/ra605_platform.STL
+[2.257s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm_description/share/hiwin_dual_arm_description/meshes/platform/visual/ra610_platform.STL
+[2.272s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm_description/share/hiwin_dual_arm_description/meshes/ra605_710/collision/base.stl
+[2.287s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm_description/share/hiwin_dual_arm_description/meshes/ra605_710/collision/link_1.stl
+[2.304s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm_description/share/hiwin_dual_arm_description/meshes/ra605_710/collision/link_2.stl
+[2.322s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm_description/share/hiwin_dual_arm_description/meshes/ra605_710/collision/link_3.stl
+[2.340s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm_description/share/hiwin_dual_arm_description/meshes/ra605_710/collision/link_4.stl
+[2.354s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm_description/share/hiwin_dual_arm_description/meshes/ra605_710/collision/link_5.stl
+[2.368s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm_description/share/hiwin_dual_arm_description/meshes/ra605_710/collision/link_6.stl
+[2.382s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm_description/share/hiwin_dual_arm_description/meshes/ra605_710/visual/base.stl
+[2.396s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm_description/share/hiwin_dual_arm_description/meshes/ra605_710/visual/link_1.stl
+[2.415s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm_description/share/hiwin_dual_arm_description/meshes/ra605_710/visual/link_2.stl
+[2.427s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm_description/share/hiwin_dual_arm_description/meshes/ra605_710/visual/link_3.stl
+[2.444s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm_description/share/hiwin_dual_arm_description/meshes/ra605_710/visual/link_4.stl
+[2.455s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm_description/share/hiwin_dual_arm_description/meshes/ra605_710/visual/link_5.stl
+[2.473s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm_description/share/hiwin_dual_arm_description/meshes/ra605_710/visual/link_6.stl
+[2.487s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm_description/share/hiwin_dual_arm_description/meshes/ra610_1476/collision/base.stl
+[2.508s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm_description/share/hiwin_dual_arm_description/meshes/ra610_1476/collision/link_1.stl
+[2.519s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm_description/share/hiwin_dual_arm_description/meshes/ra610_1476/collision/link_2.stl
+[2.533s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm_description/share/hiwin_dual_arm_description/meshes/ra610_1476/collision/link_3.stl
+[2.552s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm_description/share/hiwin_dual_arm_description/meshes/ra610_1476/collision/link_4.stl
+[2.564s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm_description/share/hiwin_dual_arm_description/meshes/ra610_1476/collision/link_5.stl
+[2.580s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm_description/share/hiwin_dual_arm_description/meshes/ra610_1476/collision/link_6.stl
+[2.593s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm_description/share/hiwin_dual_arm_description/meshes/ra610_1476/visual/base.stl
+[2.609s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm_description/share/hiwin_dual_arm_description/meshes/ra610_1476/visual/link_1.stl
+[2.625s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm_description/share/hiwin_dual_arm_description/meshes/ra610_1476/visual/link_2.stl
+[2.640s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm_description/share/hiwin_dual_arm_description/meshes/ra610_1476/visual/link_3.stl
+[2.653s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm_description/share/hiwin_dual_arm_description/meshes/ra610_1476/visual/link_4.stl
+[2.669s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm_description/share/hiwin_dual_arm_description/meshes/ra610_1476/visual/link_5.stl
+[2.688s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm_description/share/hiwin_dual_arm_description/meshes/ra610_1476/visual/link_6.stl
+[2.701s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm_description/share/ament_index/resource_index/package_run_dependencies/hiwin_dual_arm_description
+[2.713s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm_description/share/ament_index/resource_index/parent_prefix_path/hiwin_dual_arm_description
+[2.729s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm_description/share/hiwin_dual_arm_description/environment/ament_prefix_path.sh
+[2.763s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm_description/share/hiwin_dual_arm_description/environment/ament_prefix_path.dsv
+[2.771s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm_description/share/hiwin_dual_arm_description/environment/path.sh
+[2.792s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm_description/share/hiwin_dual_arm_description/environment/path.dsv
+[2.806s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm_description/share/hiwin_dual_arm_description/local_setup.bash
+[2.823s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm_description/share/hiwin_dual_arm_description/local_setup.sh
+[2.842s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm_description/share/hiwin_dual_arm_description/local_setup.zsh
+[2.856s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm_description/share/hiwin_dual_arm_description/local_setup.dsv
+[2.873s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm_description/share/hiwin_dual_arm_description/package.dsv
+[2.888s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm_description/share/ament_index/resource_index/packages/hiwin_dual_arm_description
+[2.920s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm_description/share/hiwin_dual_arm_description/cmake/hiwin_dual_arm_descriptionConfig.cmake
+[2.938s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm_description/share/hiwin_dual_arm_description/cmake/hiwin_dual_arm_descriptionConfig-version.cmake
+[2.951s] -- Symlinking: /home/angel/ros2_ws/install/hiwin_dual_arm_description/share/hiwin_dual_arm_description/package.xml
+[2.972s] Invoked command in '/home/angel/ros2_ws/build/hiwin_dual_arm_description' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/angel/ros2_ws/build/hiwin_dual_arm_description

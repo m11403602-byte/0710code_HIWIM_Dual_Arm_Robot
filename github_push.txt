@@ -5,7 +5,7 @@ git init
 
 # 將本地倉庫與遠端 GitHub 倉庫連結
 # **注意**: 請將 'your-username' 和 'your-repository' 換成您自己的 GitHub 使用者名稱和倉庫名稱
-git remote add origin https://github.com/m11403602-byte/0710code_HIWIM_Dual_Arm_Robot.git
+git remote add origin https://github.com/m11403602-byte/0710_dual_arm_robot_code_fi.git
 
 # 檢查遠端是否設定成功 (可選)
 git remote -v

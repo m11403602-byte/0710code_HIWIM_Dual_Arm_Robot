@@ -1,7 +1,7 @@
 CMakeFiles/dual_arm_alm_newton_planner.dir/src/planner_manager.cpp.o: \
- /home/angel/ros2_ws/src/dual_arm_alm_newton_planner/src/planner_manager.cpp \
+ /home/angel/ros2_ws/src/For_hiwin_dual_arm/dual_arm_alm_newton_planner/src/planner_manager.cpp \
  /usr/include/stdc-predef.h \
- /home/angel/ros2_ws/src/dual_arm_alm_newton_planner/include/dual_arm_alm_newton_planner/planner_manager.hpp \
+ /home/angel/ros2_ws/src/For_hiwin_dual_arm/dual_arm_alm_newton_planner/include/dual_arm_alm_newton_planner/planner_manager.hpp \
  /opt/ros/humble/include/moveit/planning_interface/planning_interface.h \
  /opt/ros/humble/include/moveit/macros/class_forward.h \
  /opt/ros/humble/include/moveit/macros/declare_ptr.h \
@@ -1211,8 +1211,8 @@ CMakeFiles/dual_arm_alm_newton_planner.dir/src/planner_manager.cpp.o: \
  /opt/ros/humble/include/octomap_msgs/octomap_msgs/msg/rosidl_generator_cpp__visibility_control.hpp \
  /opt/ros/humble/include/moveit_planning_scene_export.h \
  /opt/ros/humble/include/moveit/robot_state/conversions.h \
- /home/angel/ros2_ws/src/dual_arm_alm_newton_planner/include/dual_arm_alm_newton_planner/avoidance_system.hpp \
- /home/angel/ros2_ws/src/dual_arm_alm_newton_planner/include/dual_arm_alm_newton_planner/newton_solver.hpp \
+ /home/angel/ros2_ws/src/For_hiwin_dual_arm/dual_arm_alm_newton_planner/include/dual_arm_alm_newton_planner/avoidance_system.hpp \
+ /home/angel/ros2_ws/src/For_hiwin_dual_arm/dual_arm_alm_newton_planner/include/dual_arm_alm_newton_planner/newton_solver.hpp \
  /usr/include/eigen3/Eigen/Dense /usr/include/eigen3/Eigen/Geometry \
  /usr/include/eigen3/Eigen/Eigenvalues \
  /usr/include/eigen3/Eigen/src/Eigenvalues/Tridiagonalization.h \

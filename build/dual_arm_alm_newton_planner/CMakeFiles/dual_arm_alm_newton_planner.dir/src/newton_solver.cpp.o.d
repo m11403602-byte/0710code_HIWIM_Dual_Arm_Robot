@@ -1,7 +1,7 @@
 CMakeFiles/dual_arm_alm_newton_planner.dir/src/newton_solver.cpp.o: \
- /home/angel/ros2_ws/src/dual_arm_alm_newton_planner/src/newton_solver.cpp \
+ /home/angel/ros2_ws/src/For_hiwin_dual_arm/dual_arm_alm_newton_planner/src/newton_solver.cpp \
  /usr/include/stdc-predef.h \
- /home/angel/ros2_ws/src/dual_arm_alm_newton_planner/include/dual_arm_alm_newton_planner/newton_solver.hpp \
+ /home/angel/ros2_ws/src/For_hiwin_dual_arm/dual_arm_alm_newton_planner/include/dual_arm_alm_newton_planner/newton_solver.hpp \
  /usr/include/eigen3/Eigen/Dense /usr/include/eigen3/Eigen/Core \
  /usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h \
  /usr/include/eigen3/Eigen/src/Core/util/Macros.h \
