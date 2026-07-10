@@ -100,6 +100,8 @@ RViz 左側 **MotionPlanning** 面板 → **Planning** 分頁 → **Planning Lib
 可選擇 `ompl`、`chomp`、`pilz_industrial_motion_planner` 或 6 個 `dual_arm_*` 之一，
 選定後按 **Plan** 測試。
 
+![RViz 規劃畫面 Context](docs/images/rviz_context.png)
+
 ### 3.2 設定起點 / 終點關節角（跑規劃前必做）
 
 規劃器要有「起點」「終點」才能算避障軌跡，RViz 開起來預設不會自動幫你設定，需手動指定：
@@ -125,7 +127,7 @@ RViz 左側 **MotionPlanning** 面板 → **Planning** 分頁 → **Planning Lib
 
 ![RViz 規劃畫面 Planning](docs/images/rviz_planning.png)
 
-首先先要在Planning 點選 Start/Goal State , 接著在Joint頁面滑桿角度或輸入角度。
+首先要在Planning 點選 Start/Goal State , 接著在Joint頁面滑桿角度或輸入角度。
 ![RViz 規劃畫面 Joints](docs/images/rviz_Joints.png)
 
 ## 4. 調整規劃器參數

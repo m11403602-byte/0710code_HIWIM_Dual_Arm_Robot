@@ -1,6 +1,11 @@
 # Dual-Arm Avoidance Planner (ALM + CG-FR) 參數
 #   改 yaml 後重啟 move_group 生效, 不用重編
-# planning_plugin 和 request_adapters 已移至 planning_pipelines.yaml
+planning_plugin: 'dual_arm_alm_cg_planner/DualArmAlmCgPlannerManager'
+request_adapters: >-
+  default_planner_request_adapters/FixWorkspaceBounds
+  default_planner_request_adapters/FixStartStateBounds
+  default_planner_request_adapters/FixStartStateCollision
+  default_planner_request_adapters/FixStartStatePathConstraints
 
 # ===== 常調參數 =====
 path_weight: 0.5            # A/B 臂成本權重 pw*fA+(1-pw)*fB, 範圍 [0,1]
