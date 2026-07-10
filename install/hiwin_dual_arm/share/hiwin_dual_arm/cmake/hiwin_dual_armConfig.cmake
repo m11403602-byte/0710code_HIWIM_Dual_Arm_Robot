@@ -1,1 +1,1 @@
-/home/angel/0710_code/build/hiwin_dual_arm/ament_cmake_core/hiwin_dual_armConfig.cmake
+/home/angel/ros2_ws/build/hiwin_dual_arm/ament_cmake_core/hiwin_dual_armConfig.cmake

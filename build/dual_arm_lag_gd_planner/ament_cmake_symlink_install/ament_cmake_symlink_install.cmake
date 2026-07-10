@@ -23,7 +23,7 @@ function(ament_cmake_symlink_install_directory cmake_current_source_dir)
 
   # make destination absolute path and ensure that it exists
   if(NOT IS_ABSOLUTE "${ARG_DESTINATION}")
-    set(ARG_DESTINATION "/home/angel/0710_code/install/dual_arm_lag_gd_planner/${ARG_DESTINATION}")
+    set(ARG_DESTINATION "/home/angel/ros2_ws/install/dual_arm_lag_gd_planner/${ARG_DESTINATION}")
   endif()
   if(NOT EXISTS "${ARG_DESTINATION}")
     file(MAKE_DIRECTORY "${ARG_DESTINATION}")
@@ -128,7 +128,7 @@ function(ament_cmake_symlink_install_files cmake_current_source_dir)
 
   # make destination an absolute path and ensure that it exists
   if(NOT IS_ABSOLUTE "${ARG_DESTINATION}")
-    set(ARG_DESTINATION "/home/angel/0710_code/install/dual_arm_lag_gd_planner/${ARG_DESTINATION}")
+    set(ARG_DESTINATION "/home/angel/ros2_ws/install/dual_arm_lag_gd_planner/${ARG_DESTINATION}")
   endif()
   if(NOT EXISTS "${ARG_DESTINATION}")
     file(MAKE_DIRECTORY "${ARG_DESTINATION}")
@@ -186,7 +186,7 @@ function(ament_cmake_symlink_install_programs cmake_current_source_dir)
 
   # make destination an absolute path and ensure that it exists
   if(NOT IS_ABSOLUTE "${ARG_DESTINATION}")
-    set(ARG_DESTINATION "/home/angel/0710_code/install/dual_arm_lag_gd_planner/${ARG_DESTINATION}")
+    set(ARG_DESTINATION "/home/angel/ros2_ws/install/dual_arm_lag_gd_planner/${ARG_DESTINATION}")
   endif()
   if(NOT EXISTS "${ARG_DESTINATION}")
     file(MAKE_DIRECTORY "${ARG_DESTINATION}")
@@ -256,7 +256,7 @@ function(ament_cmake_symlink_install_targets)
 
     # make destination an absolute path and ensure that it exists
     if(NOT IS_ABSOLUTE "${destination}")
-      set(destination "/home/angel/0710_code/install/dual_arm_lag_gd_planner/${destination}")
+      set(destination "/home/angel/ros2_ws/install/dual_arm_lag_gd_planner/${destination}")
     endif()
     if(NOT EXISTS "${destination}")
       file(MAKE_DIRECTORY "${destination}")
@@ -316,70 +316,70 @@ message(STATUS "Execute custom install script")
 # begin of custom install code
 
 # install(FILES "dual_arm_lag_gd_planner.xml" "DESTINATION" "share/dual_arm_lag_gd_planner/")
-ament_cmake_symlink_install_files("/home/angel/0710_code/src/0710_code/dual_arm_lag_gd_planner" FILES "dual_arm_lag_gd_planner.xml" "DESTINATION" "share/dual_arm_lag_gd_planner/")
+ament_cmake_symlink_install_files("/home/angel/ros2_ws/src/dual_arm_lag_gd_planner" FILES "dual_arm_lag_gd_planner.xml" "DESTINATION" "share/dual_arm_lag_gd_planner/")
 
 # install("TARGETS" "dual_arm_lag_gd_planner" "ARCHIVE_DESTINATION" "lib" "LIBRARY_DESTINATION" "lib" "RUNTIME_DESTINATION" "bin")
-include("/home/angel/0710_code/build/dual_arm_lag_gd_planner/ament_cmake_symlink_install_targets_0_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
+include("/home/angel/ros2_ws/build/dual_arm_lag_gd_planner/ament_cmake_symlink_install_targets_0_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
 
 # install(DIRECTORY "include/" "DESTINATION" "include")
-ament_cmake_symlink_install_directory("/home/angel/0710_code/src/0710_code/dual_arm_lag_gd_planner" DIRECTORY "include/" "DESTINATION" "include")
+ament_cmake_symlink_install_directory("/home/angel/ros2_ws/src/dual_arm_lag_gd_planner" DIRECTORY "include/" "DESTINATION" "include")
 
 # install(DIRECTORY "config/" "DESTINATION" "share/dual_arm_lag_gd_planner/config")
-ament_cmake_symlink_install_directory("/home/angel/0710_code/src/0710_code/dual_arm_lag_gd_planner" DIRECTORY "config/" "DESTINATION" "share/dual_arm_lag_gd_planner/config")
+ament_cmake_symlink_install_directory("/home/angel/ros2_ws/src/dual_arm_lag_gd_planner" DIRECTORY "config/" "DESTINATION" "share/dual_arm_lag_gd_planner/config")
 
 # install(FILES "/opt/ros/humble/lib/python3.10/site-packages/ament_package/template/environment_hook/library_path.sh" "DESTINATION" "share/dual_arm_lag_gd_planner/environment")
-ament_cmake_symlink_install_files("/home/angel/0710_code/src/0710_code/dual_arm_lag_gd_planner" FILES "/opt/ros/humble/lib/python3.10/site-packages/ament_package/template/environment_hook/library_path.sh" "DESTINATION" "share/dual_arm_lag_gd_planner/environment")
+ament_cmake_symlink_install_files("/home/angel/ros2_ws/src/dual_arm_lag_gd_planner" FILES "/opt/ros/humble/lib/python3.10/site-packages/ament_package/template/environment_hook/library_path.sh" "DESTINATION" "share/dual_arm_lag_gd_planner/environment")
 
-# install(FILES "/home/angel/0710_code/build/dual_arm_lag_gd_planner/ament_cmake_environment_hooks/library_path.dsv" "DESTINATION" "share/dual_arm_lag_gd_planner/environment")
-ament_cmake_symlink_install_files("/home/angel/0710_code/src/0710_code/dual_arm_lag_gd_planner" FILES "/home/angel/0710_code/build/dual_arm_lag_gd_planner/ament_cmake_environment_hooks/library_path.dsv" "DESTINATION" "share/dual_arm_lag_gd_planner/environment")
+# install(FILES "/home/angel/ros2_ws/build/dual_arm_lag_gd_planner/ament_cmake_environment_hooks/library_path.dsv" "DESTINATION" "share/dual_arm_lag_gd_planner/environment")
+ament_cmake_symlink_install_files("/home/angel/ros2_ws/src/dual_arm_lag_gd_planner" FILES "/home/angel/ros2_ws/build/dual_arm_lag_gd_planner/ament_cmake_environment_hooks/library_path.dsv" "DESTINATION" "share/dual_arm_lag_gd_planner/environment")
 
-# install(FILES "/home/angel/0710_code/build/dual_arm_lag_gd_planner/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/dual_arm_lag_gd_planner" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
-ament_cmake_symlink_install_files("/home/angel/0710_code/src/0710_code/dual_arm_lag_gd_planner" FILES "/home/angel/0710_code/build/dual_arm_lag_gd_planner/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/dual_arm_lag_gd_planner" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
+# install(FILES "/home/angel/ros2_ws/build/dual_arm_lag_gd_planner/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/dual_arm_lag_gd_planner" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
+ament_cmake_symlink_install_files("/home/angel/ros2_ws/src/dual_arm_lag_gd_planner" FILES "/home/angel/ros2_ws/build/dual_arm_lag_gd_planner/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/dual_arm_lag_gd_planner" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
 
-# install(FILES "/home/angel/0710_code/build/dual_arm_lag_gd_planner/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/dual_arm_lag_gd_planner" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
-ament_cmake_symlink_install_files("/home/angel/0710_code/src/0710_code/dual_arm_lag_gd_planner" FILES "/home/angel/0710_code/build/dual_arm_lag_gd_planner/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/dual_arm_lag_gd_planner" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
+# install(FILES "/home/angel/ros2_ws/build/dual_arm_lag_gd_planner/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/dual_arm_lag_gd_planner" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
+ament_cmake_symlink_install_files("/home/angel/ros2_ws/src/dual_arm_lag_gd_planner" FILES "/home/angel/ros2_ws/build/dual_arm_lag_gd_planner/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/dual_arm_lag_gd_planner" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
 
 # install(FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/ament_prefix_path.sh" "DESTINATION" "share/dual_arm_lag_gd_planner/environment")
-ament_cmake_symlink_install_files("/home/angel/0710_code/src/0710_code/dual_arm_lag_gd_planner" FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/ament_prefix_path.sh" "DESTINATION" "share/dual_arm_lag_gd_planner/environment")
+ament_cmake_symlink_install_files("/home/angel/ros2_ws/src/dual_arm_lag_gd_planner" FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/ament_prefix_path.sh" "DESTINATION" "share/dual_arm_lag_gd_planner/environment")
 
-# install(FILES "/home/angel/0710_code/build/dual_arm_lag_gd_planner/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/dual_arm_lag_gd_planner/environment")
-ament_cmake_symlink_install_files("/home/angel/0710_code/src/0710_code/dual_arm_lag_gd_planner" FILES "/home/angel/0710_code/build/dual_arm_lag_gd_planner/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/dual_arm_lag_gd_planner/environment")
+# install(FILES "/home/angel/ros2_ws/build/dual_arm_lag_gd_planner/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/dual_arm_lag_gd_planner/environment")
+ament_cmake_symlink_install_files("/home/angel/ros2_ws/src/dual_arm_lag_gd_planner" FILES "/home/angel/ros2_ws/build/dual_arm_lag_gd_planner/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/dual_arm_lag_gd_planner/environment")
 
 # install(FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/path.sh" "DESTINATION" "share/dual_arm_lag_gd_planner/environment")
-ament_cmake_symlink_install_files("/home/angel/0710_code/src/0710_code/dual_arm_lag_gd_planner" FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/path.sh" "DESTINATION" "share/dual_arm_lag_gd_planner/environment")
+ament_cmake_symlink_install_files("/home/angel/ros2_ws/src/dual_arm_lag_gd_planner" FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/path.sh" "DESTINATION" "share/dual_arm_lag_gd_planner/environment")
 
-# install(FILES "/home/angel/0710_code/build/dual_arm_lag_gd_planner/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/dual_arm_lag_gd_planner/environment")
-ament_cmake_symlink_install_files("/home/angel/0710_code/src/0710_code/dual_arm_lag_gd_planner" FILES "/home/angel/0710_code/build/dual_arm_lag_gd_planner/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/dual_arm_lag_gd_planner/environment")
+# install(FILES "/home/angel/ros2_ws/build/dual_arm_lag_gd_planner/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/dual_arm_lag_gd_planner/environment")
+ament_cmake_symlink_install_files("/home/angel/ros2_ws/src/dual_arm_lag_gd_planner" FILES "/home/angel/ros2_ws/build/dual_arm_lag_gd_planner/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/dual_arm_lag_gd_planner/environment")
 
-# install(FILES "/home/angel/0710_code/build/dual_arm_lag_gd_planner/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/dual_arm_lag_gd_planner")
-ament_cmake_symlink_install_files("/home/angel/0710_code/src/0710_code/dual_arm_lag_gd_planner" FILES "/home/angel/0710_code/build/dual_arm_lag_gd_planner/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/dual_arm_lag_gd_planner")
+# install(FILES "/home/angel/ros2_ws/build/dual_arm_lag_gd_planner/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/dual_arm_lag_gd_planner")
+ament_cmake_symlink_install_files("/home/angel/ros2_ws/src/dual_arm_lag_gd_planner" FILES "/home/angel/ros2_ws/build/dual_arm_lag_gd_planner/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/dual_arm_lag_gd_planner")
 
-# install(FILES "/home/angel/0710_code/build/dual_arm_lag_gd_planner/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/dual_arm_lag_gd_planner")
-ament_cmake_symlink_install_files("/home/angel/0710_code/src/0710_code/dual_arm_lag_gd_planner" FILES "/home/angel/0710_code/build/dual_arm_lag_gd_planner/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/dual_arm_lag_gd_planner")
+# install(FILES "/home/angel/ros2_ws/build/dual_arm_lag_gd_planner/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/dual_arm_lag_gd_planner")
+ament_cmake_symlink_install_files("/home/angel/ros2_ws/src/dual_arm_lag_gd_planner" FILES "/home/angel/ros2_ws/build/dual_arm_lag_gd_planner/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/dual_arm_lag_gd_planner")
 
-# install(FILES "/home/angel/0710_code/build/dual_arm_lag_gd_planner/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/dual_arm_lag_gd_planner")
-ament_cmake_symlink_install_files("/home/angel/0710_code/src/0710_code/dual_arm_lag_gd_planner" FILES "/home/angel/0710_code/build/dual_arm_lag_gd_planner/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/dual_arm_lag_gd_planner")
+# install(FILES "/home/angel/ros2_ws/build/dual_arm_lag_gd_planner/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/dual_arm_lag_gd_planner")
+ament_cmake_symlink_install_files("/home/angel/ros2_ws/src/dual_arm_lag_gd_planner" FILES "/home/angel/ros2_ws/build/dual_arm_lag_gd_planner/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/dual_arm_lag_gd_planner")
 
-# install(FILES "/home/angel/0710_code/build/dual_arm_lag_gd_planner/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/dual_arm_lag_gd_planner")
-ament_cmake_symlink_install_files("/home/angel/0710_code/src/0710_code/dual_arm_lag_gd_planner" FILES "/home/angel/0710_code/build/dual_arm_lag_gd_planner/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/dual_arm_lag_gd_planner")
+# install(FILES "/home/angel/ros2_ws/build/dual_arm_lag_gd_planner/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/dual_arm_lag_gd_planner")
+ament_cmake_symlink_install_files("/home/angel/ros2_ws/src/dual_arm_lag_gd_planner" FILES "/home/angel/ros2_ws/build/dual_arm_lag_gd_planner/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/dual_arm_lag_gd_planner")
 
-# install(FILES "/home/angel/0710_code/build/dual_arm_lag_gd_planner/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/dual_arm_lag_gd_planner")
-ament_cmake_symlink_install_files("/home/angel/0710_code/src/0710_code/dual_arm_lag_gd_planner" FILES "/home/angel/0710_code/build/dual_arm_lag_gd_planner/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/dual_arm_lag_gd_planner")
+# install(FILES "/home/angel/ros2_ws/build/dual_arm_lag_gd_planner/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/dual_arm_lag_gd_planner")
+ament_cmake_symlink_install_files("/home/angel/ros2_ws/src/dual_arm_lag_gd_planner" FILES "/home/angel/ros2_ws/build/dual_arm_lag_gd_planner/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/dual_arm_lag_gd_planner")
 
-# install(FILES "/home/angel/0710_code/build/dual_arm_lag_gd_planner/ament_cmake_index/share/ament_index/resource_index/packages/dual_arm_lag_gd_planner" "DESTINATION" "share/ament_index/resource_index/packages")
-ament_cmake_symlink_install_files("/home/angel/0710_code/src/0710_code/dual_arm_lag_gd_planner" FILES "/home/angel/0710_code/build/dual_arm_lag_gd_planner/ament_cmake_index/share/ament_index/resource_index/packages/dual_arm_lag_gd_planner" "DESTINATION" "share/ament_index/resource_index/packages")
+# install(FILES "/home/angel/ros2_ws/build/dual_arm_lag_gd_planner/ament_cmake_index/share/ament_index/resource_index/packages/dual_arm_lag_gd_planner" "DESTINATION" "share/ament_index/resource_index/packages")
+ament_cmake_symlink_install_files("/home/angel/ros2_ws/src/dual_arm_lag_gd_planner" FILES "/home/angel/ros2_ws/build/dual_arm_lag_gd_planner/ament_cmake_index/share/ament_index/resource_index/packages/dual_arm_lag_gd_planner" "DESTINATION" "share/ament_index/resource_index/packages")
 
-# install(FILES "/home/angel/0710_code/build/dual_arm_lag_gd_planner/ament_cmake_index/share/ament_index/resource_index/moveit_core__pluginlib__plugin/dual_arm_lag_gd_planner" "DESTINATION" "share/ament_index/resource_index/moveit_core__pluginlib__plugin")
-ament_cmake_symlink_install_files("/home/angel/0710_code/src/0710_code/dual_arm_lag_gd_planner" FILES "/home/angel/0710_code/build/dual_arm_lag_gd_planner/ament_cmake_index/share/ament_index/resource_index/moveit_core__pluginlib__plugin/dual_arm_lag_gd_planner" "DESTINATION" "share/ament_index/resource_index/moveit_core__pluginlib__plugin")
+# install(FILES "/home/angel/ros2_ws/build/dual_arm_lag_gd_planner/ament_cmake_index/share/ament_index/resource_index/moveit_core__pluginlib__plugin/dual_arm_lag_gd_planner" "DESTINATION" "share/ament_index/resource_index/moveit_core__pluginlib__plugin")
+ament_cmake_symlink_install_files("/home/angel/ros2_ws/src/dual_arm_lag_gd_planner" FILES "/home/angel/ros2_ws/build/dual_arm_lag_gd_planner/ament_cmake_index/share/ament_index/resource_index/moveit_core__pluginlib__plugin/dual_arm_lag_gd_planner" "DESTINATION" "share/ament_index/resource_index/moveit_core__pluginlib__plugin")
 
-# install(FILES "/home/angel/0710_code/build/dual_arm_lag_gd_planner/ament_cmake_export_libraries/ament_cmake_export_libraries-extras.cmake" "DESTINATION" "share/dual_arm_lag_gd_planner/cmake")
-ament_cmake_symlink_install_files("/home/angel/0710_code/src/0710_code/dual_arm_lag_gd_planner" FILES "/home/angel/0710_code/build/dual_arm_lag_gd_planner/ament_cmake_export_libraries/ament_cmake_export_libraries-extras.cmake" "DESTINATION" "share/dual_arm_lag_gd_planner/cmake")
+# install(FILES "/home/angel/ros2_ws/build/dual_arm_lag_gd_planner/ament_cmake_export_libraries/ament_cmake_export_libraries-extras.cmake" "DESTINATION" "share/dual_arm_lag_gd_planner/cmake")
+ament_cmake_symlink_install_files("/home/angel/ros2_ws/src/dual_arm_lag_gd_planner" FILES "/home/angel/ros2_ws/build/dual_arm_lag_gd_planner/ament_cmake_export_libraries/ament_cmake_export_libraries-extras.cmake" "DESTINATION" "share/dual_arm_lag_gd_planner/cmake")
 
-# install(FILES "/home/angel/0710_code/build/dual_arm_lag_gd_planner/ament_cmake_export_dependencies/ament_cmake_export_dependencies-extras.cmake" "DESTINATION" "share/dual_arm_lag_gd_planner/cmake")
-ament_cmake_symlink_install_files("/home/angel/0710_code/src/0710_code/dual_arm_lag_gd_planner" FILES "/home/angel/0710_code/build/dual_arm_lag_gd_planner/ament_cmake_export_dependencies/ament_cmake_export_dependencies-extras.cmake" "DESTINATION" "share/dual_arm_lag_gd_planner/cmake")
+# install(FILES "/home/angel/ros2_ws/build/dual_arm_lag_gd_planner/ament_cmake_export_dependencies/ament_cmake_export_dependencies-extras.cmake" "DESTINATION" "share/dual_arm_lag_gd_planner/cmake")
+ament_cmake_symlink_install_files("/home/angel/ros2_ws/src/dual_arm_lag_gd_planner" FILES "/home/angel/ros2_ws/build/dual_arm_lag_gd_planner/ament_cmake_export_dependencies/ament_cmake_export_dependencies-extras.cmake" "DESTINATION" "share/dual_arm_lag_gd_planner/cmake")
 
-# install(FILES "/home/angel/0710_code/build/dual_arm_lag_gd_planner/ament_cmake_core/dual_arm_lag_gd_plannerConfig.cmake" "/home/angel/0710_code/build/dual_arm_lag_gd_planner/ament_cmake_core/dual_arm_lag_gd_plannerConfig-version.cmake" "DESTINATION" "share/dual_arm_lag_gd_planner/cmake")
-ament_cmake_symlink_install_files("/home/angel/0710_code/src/0710_code/dual_arm_lag_gd_planner" FILES "/home/angel/0710_code/build/dual_arm_lag_gd_planner/ament_cmake_core/dual_arm_lag_gd_plannerConfig.cmake" "/home/angel/0710_code/build/dual_arm_lag_gd_planner/ament_cmake_core/dual_arm_lag_gd_plannerConfig-version.cmake" "DESTINATION" "share/dual_arm_lag_gd_planner/cmake")
+# install(FILES "/home/angel/ros2_ws/build/dual_arm_lag_gd_planner/ament_cmake_core/dual_arm_lag_gd_plannerConfig.cmake" "/home/angel/ros2_ws/build/dual_arm_lag_gd_planner/ament_cmake_core/dual_arm_lag_gd_plannerConfig-version.cmake" "DESTINATION" "share/dual_arm_lag_gd_planner/cmake")
+ament_cmake_symlink_install_files("/home/angel/ros2_ws/src/dual_arm_lag_gd_planner" FILES "/home/angel/ros2_ws/build/dual_arm_lag_gd_planner/ament_cmake_core/dual_arm_lag_gd_plannerConfig.cmake" "/home/angel/ros2_ws/build/dual_arm_lag_gd_planner/ament_cmake_core/dual_arm_lag_gd_plannerConfig-version.cmake" "DESTINATION" "share/dual_arm_lag_gd_planner/cmake")
 
-# install(FILES "/home/angel/0710_code/src/0710_code/dual_arm_lag_gd_planner/package.xml" "DESTINATION" "share/dual_arm_lag_gd_planner")
-ament_cmake_symlink_install_files("/home/angel/0710_code/src/0710_code/dual_arm_lag_gd_planner" FILES "/home/angel/0710_code/src/0710_code/dual_arm_lag_gd_planner/package.xml" "DESTINATION" "share/dual_arm_lag_gd_planner")
+# install(FILES "/home/angel/ros2_ws/src/dual_arm_lag_gd_planner/package.xml" "DESTINATION" "share/dual_arm_lag_gd_planner")
+ament_cmake_symlink_install_files("/home/angel/ros2_ws/src/dual_arm_lag_gd_planner" FILES "/home/angel/ros2_ws/src/dual_arm_lag_gd_planner/package.xml" "DESTINATION" "share/dual_arm_lag_gd_planner")

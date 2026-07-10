@@ -1,4 +1,0 @@
-Invoking command in '/home/angel/0710_code/build/hiwin_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/angel/0710_code/build/hiwin_description -- -j8 -l8
-Invoked command in '/home/angel/0710_code/build/hiwin_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/angel/0710_code/build/hiwin_description -- -j8 -l8
-Invoking command in '/home/angel/0710_code/build/hiwin_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/angel/0710_code/build/hiwin_description
-Invoked command in '/home/angel/0710_code/build/hiwin_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/angel/0710_code/build/hiwin_description

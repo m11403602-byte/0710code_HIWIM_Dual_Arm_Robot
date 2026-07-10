@@ -123,6 +123,7 @@ RViz 左側 **MotionPlanning** 面板 → **Planning** 分頁 → **Planning Lib
 
 可在 Start/Goal State 下拉選單直接選這些名稱做快速測試，不必每次手動輸入角度。
 
+![RViz 規劃畫面](docs/images/rviz_planning.png)
 
 ## 4. 調整規劃器參數
 

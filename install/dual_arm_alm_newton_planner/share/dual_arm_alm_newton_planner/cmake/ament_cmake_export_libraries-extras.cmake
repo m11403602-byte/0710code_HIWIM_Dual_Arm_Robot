@@ -1,1 +1,1 @@
-/home/angel/0710_code/build/dual_arm_alm_newton_planner/ament_cmake_export_libraries/ament_cmake_export_libraries-extras.cmake
+/home/angel/ros2_ws/build/dual_arm_alm_newton_planner/ament_cmake_export_libraries/ament_cmake_export_libraries-extras.cmake

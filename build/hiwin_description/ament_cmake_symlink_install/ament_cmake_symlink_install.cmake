@@ -23,7 +23,7 @@ function(ament_cmake_symlink_install_directory cmake_current_source_dir)
 
   # make destination absolute path and ensure that it exists
   if(NOT IS_ABSOLUTE "${ARG_DESTINATION}")
-    set(ARG_DESTINATION "/home/angel/0710_code/install/hiwin_description/${ARG_DESTINATION}")
+    set(ARG_DESTINATION "/home/angel/ros2_ws/install/hiwin_description/${ARG_DESTINATION}")
   endif()
   if(NOT EXISTS "${ARG_DESTINATION}")
     file(MAKE_DIRECTORY "${ARG_DESTINATION}")
@@ -128,7 +128,7 @@ function(ament_cmake_symlink_install_files cmake_current_source_dir)
 
   # make destination an absolute path and ensure that it exists
   if(NOT IS_ABSOLUTE "${ARG_DESTINATION}")
-    set(ARG_DESTINATION "/home/angel/0710_code/install/hiwin_description/${ARG_DESTINATION}")
+    set(ARG_DESTINATION "/home/angel/ros2_ws/install/hiwin_description/${ARG_DESTINATION}")
   endif()
   if(NOT EXISTS "${ARG_DESTINATION}")
     file(MAKE_DIRECTORY "${ARG_DESTINATION}")
@@ -186,7 +186,7 @@ function(ament_cmake_symlink_install_programs cmake_current_source_dir)
 
   # make destination an absolute path and ensure that it exists
   if(NOT IS_ABSOLUTE "${ARG_DESTINATION}")
-    set(ARG_DESTINATION "/home/angel/0710_code/install/hiwin_description/${ARG_DESTINATION}")
+    set(ARG_DESTINATION "/home/angel/ros2_ws/install/hiwin_description/${ARG_DESTINATION}")
   endif()
   if(NOT EXISTS "${ARG_DESTINATION}")
     file(MAKE_DIRECTORY "${ARG_DESTINATION}")
@@ -256,7 +256,7 @@ function(ament_cmake_symlink_install_targets)
 
     # make destination an absolute path and ensure that it exists
     if(NOT IS_ABSOLUTE "${destination}")
-      set(destination "/home/angel/0710_code/install/hiwin_description/${destination}")
+      set(destination "/home/angel/ros2_ws/install/hiwin_description/${destination}")
     endif()
     if(NOT EXISTS "${destination}")
       file(MAKE_DIRECTORY "${destination}")
@@ -316,46 +316,46 @@ message(STATUS "Execute custom install script")
 # begin of custom install code
 
 # install(DIRECTORY "config" "launch" "meshes" "rviz" "urdf" "DESTINATION" "share/hiwin_description")
-ament_cmake_symlink_install_directory("/home/angel/0710_code/src/0710_code/hiwin_description" DIRECTORY "config" "launch" "meshes" "rviz" "urdf" "DESTINATION" "share/hiwin_description")
+ament_cmake_symlink_install_directory("/home/angel/ros2_ws/src/hiwin_description" DIRECTORY "config" "launch" "meshes" "rviz" "urdf" "DESTINATION" "share/hiwin_description")
 
-# install(FILES "/home/angel/0710_code/build/hiwin_description/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/hiwin_description" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
-ament_cmake_symlink_install_files("/home/angel/0710_code/src/0710_code/hiwin_description" FILES "/home/angel/0710_code/build/hiwin_description/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/hiwin_description" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
+# install(FILES "/home/angel/ros2_ws/build/hiwin_description/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/hiwin_description" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
+ament_cmake_symlink_install_files("/home/angel/ros2_ws/src/hiwin_description" FILES "/home/angel/ros2_ws/build/hiwin_description/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/hiwin_description" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
 
-# install(FILES "/home/angel/0710_code/build/hiwin_description/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/hiwin_description" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
-ament_cmake_symlink_install_files("/home/angel/0710_code/src/0710_code/hiwin_description" FILES "/home/angel/0710_code/build/hiwin_description/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/hiwin_description" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
+# install(FILES "/home/angel/ros2_ws/build/hiwin_description/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/hiwin_description" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
+ament_cmake_symlink_install_files("/home/angel/ros2_ws/src/hiwin_description" FILES "/home/angel/ros2_ws/build/hiwin_description/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/hiwin_description" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
 
 # install(FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/ament_prefix_path.sh" "DESTINATION" "share/hiwin_description/environment")
-ament_cmake_symlink_install_files("/home/angel/0710_code/src/0710_code/hiwin_description" FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/ament_prefix_path.sh" "DESTINATION" "share/hiwin_description/environment")
+ament_cmake_symlink_install_files("/home/angel/ros2_ws/src/hiwin_description" FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/ament_prefix_path.sh" "DESTINATION" "share/hiwin_description/environment")
 
-# install(FILES "/home/angel/0710_code/build/hiwin_description/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/hiwin_description/environment")
-ament_cmake_symlink_install_files("/home/angel/0710_code/src/0710_code/hiwin_description" FILES "/home/angel/0710_code/build/hiwin_description/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/hiwin_description/environment")
+# install(FILES "/home/angel/ros2_ws/build/hiwin_description/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/hiwin_description/environment")
+ament_cmake_symlink_install_files("/home/angel/ros2_ws/src/hiwin_description" FILES "/home/angel/ros2_ws/build/hiwin_description/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/hiwin_description/environment")
 
 # install(FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/path.sh" "DESTINATION" "share/hiwin_description/environment")
-ament_cmake_symlink_install_files("/home/angel/0710_code/src/0710_code/hiwin_description" FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/path.sh" "DESTINATION" "share/hiwin_description/environment")
+ament_cmake_symlink_install_files("/home/angel/ros2_ws/src/hiwin_description" FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/path.sh" "DESTINATION" "share/hiwin_description/environment")
 
-# install(FILES "/home/angel/0710_code/build/hiwin_description/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/hiwin_description/environment")
-ament_cmake_symlink_install_files("/home/angel/0710_code/src/0710_code/hiwin_description" FILES "/home/angel/0710_code/build/hiwin_description/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/hiwin_description/environment")
+# install(FILES "/home/angel/ros2_ws/build/hiwin_description/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/hiwin_description/environment")
+ament_cmake_symlink_install_files("/home/angel/ros2_ws/src/hiwin_description" FILES "/home/angel/ros2_ws/build/hiwin_description/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/hiwin_description/environment")
 
-# install(FILES "/home/angel/0710_code/build/hiwin_description/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/hiwin_description")
-ament_cmake_symlink_install_files("/home/angel/0710_code/src/0710_code/hiwin_description" FILES "/home/angel/0710_code/build/hiwin_description/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/hiwin_description")
+# install(FILES "/home/angel/ros2_ws/build/hiwin_description/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/hiwin_description")
+ament_cmake_symlink_install_files("/home/angel/ros2_ws/src/hiwin_description" FILES "/home/angel/ros2_ws/build/hiwin_description/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/hiwin_description")
 
-# install(FILES "/home/angel/0710_code/build/hiwin_description/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/hiwin_description")
-ament_cmake_symlink_install_files("/home/angel/0710_code/src/0710_code/hiwin_description" FILES "/home/angel/0710_code/build/hiwin_description/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/hiwin_description")
+# install(FILES "/home/angel/ros2_ws/build/hiwin_description/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/hiwin_description")
+ament_cmake_symlink_install_files("/home/angel/ros2_ws/src/hiwin_description" FILES "/home/angel/ros2_ws/build/hiwin_description/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/hiwin_description")
 
-# install(FILES "/home/angel/0710_code/build/hiwin_description/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/hiwin_description")
-ament_cmake_symlink_install_files("/home/angel/0710_code/src/0710_code/hiwin_description" FILES "/home/angel/0710_code/build/hiwin_description/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/hiwin_description")
+# install(FILES "/home/angel/ros2_ws/build/hiwin_description/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/hiwin_description")
+ament_cmake_symlink_install_files("/home/angel/ros2_ws/src/hiwin_description" FILES "/home/angel/ros2_ws/build/hiwin_description/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/hiwin_description")
 
-# install(FILES "/home/angel/0710_code/build/hiwin_description/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/hiwin_description")
-ament_cmake_symlink_install_files("/home/angel/0710_code/src/0710_code/hiwin_description" FILES "/home/angel/0710_code/build/hiwin_description/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/hiwin_description")
+# install(FILES "/home/angel/ros2_ws/build/hiwin_description/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/hiwin_description")
+ament_cmake_symlink_install_files("/home/angel/ros2_ws/src/hiwin_description" FILES "/home/angel/ros2_ws/build/hiwin_description/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/hiwin_description")
 
-# install(FILES "/home/angel/0710_code/build/hiwin_description/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/hiwin_description")
-ament_cmake_symlink_install_files("/home/angel/0710_code/src/0710_code/hiwin_description" FILES "/home/angel/0710_code/build/hiwin_description/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/hiwin_description")
+# install(FILES "/home/angel/ros2_ws/build/hiwin_description/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/hiwin_description")
+ament_cmake_symlink_install_files("/home/angel/ros2_ws/src/hiwin_description" FILES "/home/angel/ros2_ws/build/hiwin_description/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/hiwin_description")
 
-# install(FILES "/home/angel/0710_code/build/hiwin_description/ament_cmake_index/share/ament_index/resource_index/packages/hiwin_description" "DESTINATION" "share/ament_index/resource_index/packages")
-ament_cmake_symlink_install_files("/home/angel/0710_code/src/0710_code/hiwin_description" FILES "/home/angel/0710_code/build/hiwin_description/ament_cmake_index/share/ament_index/resource_index/packages/hiwin_description" "DESTINATION" "share/ament_index/resource_index/packages")
+# install(FILES "/home/angel/ros2_ws/build/hiwin_description/ament_cmake_index/share/ament_index/resource_index/packages/hiwin_description" "DESTINATION" "share/ament_index/resource_index/packages")
+ament_cmake_symlink_install_files("/home/angel/ros2_ws/src/hiwin_description" FILES "/home/angel/ros2_ws/build/hiwin_description/ament_cmake_index/share/ament_index/resource_index/packages/hiwin_description" "DESTINATION" "share/ament_index/resource_index/packages")
 
-# install(FILES "/home/angel/0710_code/build/hiwin_description/ament_cmake_core/hiwin_descriptionConfig.cmake" "/home/angel/0710_code/build/hiwin_description/ament_cmake_core/hiwin_descriptionConfig-version.cmake" "DESTINATION" "share/hiwin_description/cmake")
-ament_cmake_symlink_install_files("/home/angel/0710_code/src/0710_code/hiwin_description" FILES "/home/angel/0710_code/build/hiwin_description/ament_cmake_core/hiwin_descriptionConfig.cmake" "/home/angel/0710_code/build/hiwin_description/ament_cmake_core/hiwin_descriptionConfig-version.cmake" "DESTINATION" "share/hiwin_description/cmake")
+# install(FILES "/home/angel/ros2_ws/build/hiwin_description/ament_cmake_core/hiwin_descriptionConfig.cmake" "/home/angel/ros2_ws/build/hiwin_description/ament_cmake_core/hiwin_descriptionConfig-version.cmake" "DESTINATION" "share/hiwin_description/cmake")
+ament_cmake_symlink_install_files("/home/angel/ros2_ws/src/hiwin_description" FILES "/home/angel/ros2_ws/build/hiwin_description/ament_cmake_core/hiwin_descriptionConfig.cmake" "/home/angel/ros2_ws/build/hiwin_description/ament_cmake_core/hiwin_descriptionConfig-version.cmake" "DESTINATION" "share/hiwin_description/cmake")
 
-# install(FILES "/home/angel/0710_code/src/0710_code/hiwin_description/package.xml" "DESTINATION" "share/hiwin_description")
-ament_cmake_symlink_install_files("/home/angel/0710_code/src/0710_code/hiwin_description" FILES "/home/angel/0710_code/src/0710_code/hiwin_description/package.xml" "DESTINATION" "share/hiwin_description")
+# install(FILES "/home/angel/ros2_ws/src/hiwin_description/package.xml" "DESTINATION" "share/hiwin_description")
+ament_cmake_symlink_install_files("/home/angel/ros2_ws/src/hiwin_description" FILES "/home/angel/ros2_ws/src/hiwin_description/package.xml" "DESTINATION" "share/hiwin_description")

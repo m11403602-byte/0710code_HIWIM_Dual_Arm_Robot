@@ -1,0 +1,2 @@
+Invoking command in '/home/angel/ros2_ws/build/dual_arm_lag_cg_planner': /usr/bin/cmake /home/angel/ros2_ws/src/dual_arm_lag_cg_planner -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/angel/ros2_ws/install/dual_arm_lag_cg_planner
+Invoked command in '/home/angel/ros2_ws/build/dual_arm_lag_cg_planner' returned '1': /usr/bin/cmake /home/angel/ros2_ws/src/dual_arm_lag_cg_planner -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/angel/ros2_ws/install/dual_arm_lag_cg_planner

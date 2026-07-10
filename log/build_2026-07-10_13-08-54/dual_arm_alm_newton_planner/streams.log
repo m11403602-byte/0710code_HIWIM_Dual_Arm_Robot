@@ -1,0 +1,33 @@
+[0.015s] Invoking command in '/home/angel/ros2_ws/build/dual_arm_alm_newton_planner': /usr/bin/cmake /home/angel/ros2_ws/src/dual_arm_alm_newton_planner -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/angel/ros2_ws/install/dual_arm_alm_newton_planner
+[0.301s] -- The C compiler identification is GNU 11.4.0
+[0.375s] -- The CXX compiler identification is GNU 11.4.0
+[0.382s] -- Detecting C compiler ABI info
+[0.463s] -- Detecting C compiler ABI info - done
+[0.470s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.470s] -- Detecting C compile features
+[0.471s] -- Detecting C compile features - done
+[0.475s] -- Detecting CXX compiler ABI info
+[0.559s] -- Detecting CXX compiler ABI info - done
+[0.566s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.566s] -- Detecting CXX compile features
+[0.567s] -- Detecting CXX compile features - done
+[0.868s] [31mCMake Error at CMakeLists.txt:20 (find_package):
+[0.868s]   By not providing "Findament_cmake.cmake" in CMAKE_MODULE_PATH this project
+[0.868s]   has asked CMake to find a package configuration file provided by
+[0.869s]   "ament_cmake", but CMake did not find one.
+[0.869s] 
+[0.870s]   Could not find a package configuration file provided by "ament_cmake" with
+[0.872s]   any of the following names:
+[0.872s] 
+[0.873s]     ament_cmakeConfig.cmake
+[0.874s]     ament_cmake-config.cmake
+[0.874s] 
+[0.874s]   Add the installation prefix of "ament_cmake" to CMAKE_PREFIX_PATH or set
+[0.874s]   "ament_cmake_DIR" to a directory containing one of the above files.  If
+[0.875s]   "ament_cmake" provides a separate development package or SDK, be sure it
+[0.875s]   has been installed.
+[0.875s] 
+[0.875s] [0m
+[0.885s] -- Configuring incomplete, errors occurred!
+[0.887s] See also "/home/angel/ros2_ws/build/dual_arm_alm_newton_planner/CMakeFiles/CMakeOutput.log".
+[0.921s] Invoked command in '/home/angel/ros2_ws/build/dual_arm_alm_newton_planner' returned '1': /usr/bin/cmake /home/angel/ros2_ws/src/dual_arm_alm_newton_planner -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/angel/ros2_ws/install/dual_arm_alm_newton_planner

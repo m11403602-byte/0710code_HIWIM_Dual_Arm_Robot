@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/angel/0710_code/src/0710_code/hiwin_dual_arm
+CMAKE_SOURCE_DIR = /home/angel/ros2_ws/src/hiwin_dual_arm
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/angel/0710_code/build/hiwin_dual_arm
+CMAKE_BINARY_DIR = /home/angel/ros2_ws/build/hiwin_dual_arm
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -142,9 +142,9 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/angel/0710_code/build/hiwin_dual_arm/CMakeFiles /home/angel/0710_code/build/hiwin_dual_arm//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/angel/ros2_ws/build/hiwin_dual_arm/CMakeFiles /home/angel/ros2_ws/build/hiwin_dual_arm//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/angel/0710_code/build/hiwin_dual_arm/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/angel/ros2_ws/build/hiwin_dual_arm/CMakeFiles 0
 .PHONY : all
 
 # The main clean target

@@ -1,1 +1,1 @@
-/home/angel/0710_code/src/0710_code/hiwin_description/launch/view_ra.launch.py
+/home/angel/ros2_ws/src/hiwin_description/launch/view_ra.launch.py

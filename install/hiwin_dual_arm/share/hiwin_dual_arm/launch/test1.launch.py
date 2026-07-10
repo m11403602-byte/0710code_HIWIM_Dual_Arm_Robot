@@ -1,1 +1,1 @@
-/home/angel/0710_code/src/0710_code/hiwin_dual_arm/launch/test1.launch.py
+/home/angel/ros2_ws/src/hiwin_dual_arm/launch/test1.launch.py

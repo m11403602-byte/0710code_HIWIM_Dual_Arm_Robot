@@ -23,7 +23,7 @@ function(ament_cmake_symlink_install_directory cmake_current_source_dir)
 
   # make destination absolute path and ensure that it exists
   if(NOT IS_ABSOLUTE "${ARG_DESTINATION}")
-    set(ARG_DESTINATION "/home/angel/0710_code/install/hiwin_dual_arm/${ARG_DESTINATION}")
+    set(ARG_DESTINATION "/home/angel/ros2_ws/install/hiwin_dual_arm/${ARG_DESTINATION}")
   endif()
   if(NOT EXISTS "${ARG_DESTINATION}")
     file(MAKE_DIRECTORY "${ARG_DESTINATION}")
@@ -128,7 +128,7 @@ function(ament_cmake_symlink_install_files cmake_current_source_dir)
 
   # make destination an absolute path and ensure that it exists
   if(NOT IS_ABSOLUTE "${ARG_DESTINATION}")
-    set(ARG_DESTINATION "/home/angel/0710_code/install/hiwin_dual_arm/${ARG_DESTINATION}")
+    set(ARG_DESTINATION "/home/angel/ros2_ws/install/hiwin_dual_arm/${ARG_DESTINATION}")
   endif()
   if(NOT EXISTS "${ARG_DESTINATION}")
     file(MAKE_DIRECTORY "${ARG_DESTINATION}")
@@ -186,7 +186,7 @@ function(ament_cmake_symlink_install_programs cmake_current_source_dir)
 
   # make destination an absolute path and ensure that it exists
   if(NOT IS_ABSOLUTE "${ARG_DESTINATION}")
-    set(ARG_DESTINATION "/home/angel/0710_code/install/hiwin_dual_arm/${ARG_DESTINATION}")
+    set(ARG_DESTINATION "/home/angel/ros2_ws/install/hiwin_dual_arm/${ARG_DESTINATION}")
   endif()
   if(NOT EXISTS "${ARG_DESTINATION}")
     file(MAKE_DIRECTORY "${ARG_DESTINATION}")
@@ -256,7 +256,7 @@ function(ament_cmake_symlink_install_targets)
 
     # make destination an absolute path and ensure that it exists
     if(NOT IS_ABSOLUTE "${destination}")
-      set(destination "/home/angel/0710_code/install/hiwin_dual_arm/${destination}")
+      set(destination "/home/angel/ros2_ws/install/hiwin_dual_arm/${destination}")
     endif()
     if(NOT EXISTS "${destination}")
       file(MAKE_DIRECTORY "${destination}")
@@ -315,53 +315,53 @@ message(STATUS "Execute custom install script")
 
 # begin of custom install code
 
-# install(FILES "/home/angel/0710_code/build/hiwin_dual_arm/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/hiwin_dual_arm" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
-ament_cmake_symlink_install_files("/home/angel/0710_code/src/0710_code/hiwin_dual_arm" FILES "/home/angel/0710_code/build/hiwin_dual_arm/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/hiwin_dual_arm" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
+# install(FILES "/home/angel/ros2_ws/build/hiwin_dual_arm/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/hiwin_dual_arm" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
+ament_cmake_symlink_install_files("/home/angel/ros2_ws/src/hiwin_dual_arm" FILES "/home/angel/ros2_ws/build/hiwin_dual_arm/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/hiwin_dual_arm" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
 
-# install(FILES "/home/angel/0710_code/build/hiwin_dual_arm/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/hiwin_dual_arm" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
-ament_cmake_symlink_install_files("/home/angel/0710_code/src/0710_code/hiwin_dual_arm" FILES "/home/angel/0710_code/build/hiwin_dual_arm/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/hiwin_dual_arm" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
+# install(FILES "/home/angel/ros2_ws/build/hiwin_dual_arm/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/hiwin_dual_arm" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
+ament_cmake_symlink_install_files("/home/angel/ros2_ws/src/hiwin_dual_arm" FILES "/home/angel/ros2_ws/build/hiwin_dual_arm/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/hiwin_dual_arm" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")
 
 # install(FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/ament_prefix_path.sh" "DESTINATION" "share/hiwin_dual_arm/environment")
-ament_cmake_symlink_install_files("/home/angel/0710_code/src/0710_code/hiwin_dual_arm" FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/ament_prefix_path.sh" "DESTINATION" "share/hiwin_dual_arm/environment")
+ament_cmake_symlink_install_files("/home/angel/ros2_ws/src/hiwin_dual_arm" FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/ament_prefix_path.sh" "DESTINATION" "share/hiwin_dual_arm/environment")
 
-# install(FILES "/home/angel/0710_code/build/hiwin_dual_arm/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/hiwin_dual_arm/environment")
-ament_cmake_symlink_install_files("/home/angel/0710_code/src/0710_code/hiwin_dual_arm" FILES "/home/angel/0710_code/build/hiwin_dual_arm/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/hiwin_dual_arm/environment")
+# install(FILES "/home/angel/ros2_ws/build/hiwin_dual_arm/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/hiwin_dual_arm/environment")
+ament_cmake_symlink_install_files("/home/angel/ros2_ws/src/hiwin_dual_arm" FILES "/home/angel/ros2_ws/build/hiwin_dual_arm/ament_cmake_environment_hooks/ament_prefix_path.dsv" "DESTINATION" "share/hiwin_dual_arm/environment")
 
 # install(FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/path.sh" "DESTINATION" "share/hiwin_dual_arm/environment")
-ament_cmake_symlink_install_files("/home/angel/0710_code/src/0710_code/hiwin_dual_arm" FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/path.sh" "DESTINATION" "share/hiwin_dual_arm/environment")
+ament_cmake_symlink_install_files("/home/angel/ros2_ws/src/hiwin_dual_arm" FILES "/opt/ros/humble/share/ament_cmake_core/cmake/environment_hooks/environment/path.sh" "DESTINATION" "share/hiwin_dual_arm/environment")
 
-# install(FILES "/home/angel/0710_code/build/hiwin_dual_arm/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/hiwin_dual_arm/environment")
-ament_cmake_symlink_install_files("/home/angel/0710_code/src/0710_code/hiwin_dual_arm" FILES "/home/angel/0710_code/build/hiwin_dual_arm/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/hiwin_dual_arm/environment")
+# install(FILES "/home/angel/ros2_ws/build/hiwin_dual_arm/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/hiwin_dual_arm/environment")
+ament_cmake_symlink_install_files("/home/angel/ros2_ws/src/hiwin_dual_arm" FILES "/home/angel/ros2_ws/build/hiwin_dual_arm/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/hiwin_dual_arm/environment")
 
-# install(FILES "/home/angel/0710_code/build/hiwin_dual_arm/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/hiwin_dual_arm")
-ament_cmake_symlink_install_files("/home/angel/0710_code/src/0710_code/hiwin_dual_arm" FILES "/home/angel/0710_code/build/hiwin_dual_arm/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/hiwin_dual_arm")
+# install(FILES "/home/angel/ros2_ws/build/hiwin_dual_arm/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/hiwin_dual_arm")
+ament_cmake_symlink_install_files("/home/angel/ros2_ws/src/hiwin_dual_arm" FILES "/home/angel/ros2_ws/build/hiwin_dual_arm/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/hiwin_dual_arm")
 
-# install(FILES "/home/angel/0710_code/build/hiwin_dual_arm/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/hiwin_dual_arm")
-ament_cmake_symlink_install_files("/home/angel/0710_code/src/0710_code/hiwin_dual_arm" FILES "/home/angel/0710_code/build/hiwin_dual_arm/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/hiwin_dual_arm")
+# install(FILES "/home/angel/ros2_ws/build/hiwin_dual_arm/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/hiwin_dual_arm")
+ament_cmake_symlink_install_files("/home/angel/ros2_ws/src/hiwin_dual_arm" FILES "/home/angel/ros2_ws/build/hiwin_dual_arm/ament_cmake_environment_hooks/local_setup.sh" "DESTINATION" "share/hiwin_dual_arm")
 
-# install(FILES "/home/angel/0710_code/build/hiwin_dual_arm/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/hiwin_dual_arm")
-ament_cmake_symlink_install_files("/home/angel/0710_code/src/0710_code/hiwin_dual_arm" FILES "/home/angel/0710_code/build/hiwin_dual_arm/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/hiwin_dual_arm")
+# install(FILES "/home/angel/ros2_ws/build/hiwin_dual_arm/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/hiwin_dual_arm")
+ament_cmake_symlink_install_files("/home/angel/ros2_ws/src/hiwin_dual_arm" FILES "/home/angel/ros2_ws/build/hiwin_dual_arm/ament_cmake_environment_hooks/local_setup.zsh" "DESTINATION" "share/hiwin_dual_arm")
 
-# install(FILES "/home/angel/0710_code/build/hiwin_dual_arm/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/hiwin_dual_arm")
-ament_cmake_symlink_install_files("/home/angel/0710_code/src/0710_code/hiwin_dual_arm" FILES "/home/angel/0710_code/build/hiwin_dual_arm/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/hiwin_dual_arm")
+# install(FILES "/home/angel/ros2_ws/build/hiwin_dual_arm/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/hiwin_dual_arm")
+ament_cmake_symlink_install_files("/home/angel/ros2_ws/src/hiwin_dual_arm" FILES "/home/angel/ros2_ws/build/hiwin_dual_arm/ament_cmake_environment_hooks/local_setup.dsv" "DESTINATION" "share/hiwin_dual_arm")
 
-# install(FILES "/home/angel/0710_code/build/hiwin_dual_arm/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/hiwin_dual_arm")
-ament_cmake_symlink_install_files("/home/angel/0710_code/src/0710_code/hiwin_dual_arm" FILES "/home/angel/0710_code/build/hiwin_dual_arm/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/hiwin_dual_arm")
+# install(FILES "/home/angel/ros2_ws/build/hiwin_dual_arm/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/hiwin_dual_arm")
+ament_cmake_symlink_install_files("/home/angel/ros2_ws/src/hiwin_dual_arm" FILES "/home/angel/ros2_ws/build/hiwin_dual_arm/ament_cmake_environment_hooks/package.dsv" "DESTINATION" "share/hiwin_dual_arm")
 
-# install(FILES "/home/angel/0710_code/build/hiwin_dual_arm/ament_cmake_index/share/ament_index/resource_index/packages/hiwin_dual_arm" "DESTINATION" "share/ament_index/resource_index/packages")
-ament_cmake_symlink_install_files("/home/angel/0710_code/src/0710_code/hiwin_dual_arm" FILES "/home/angel/0710_code/build/hiwin_dual_arm/ament_cmake_index/share/ament_index/resource_index/packages/hiwin_dual_arm" "DESTINATION" "share/ament_index/resource_index/packages")
+# install(FILES "/home/angel/ros2_ws/build/hiwin_dual_arm/ament_cmake_index/share/ament_index/resource_index/packages/hiwin_dual_arm" "DESTINATION" "share/ament_index/resource_index/packages")
+ament_cmake_symlink_install_files("/home/angel/ros2_ws/src/hiwin_dual_arm" FILES "/home/angel/ros2_ws/build/hiwin_dual_arm/ament_cmake_index/share/ament_index/resource_index/packages/hiwin_dual_arm" "DESTINATION" "share/ament_index/resource_index/packages")
 
-# install(FILES "/home/angel/0710_code/build/hiwin_dual_arm/ament_cmake_core/hiwin_dual_armConfig.cmake" "/home/angel/0710_code/build/hiwin_dual_arm/ament_cmake_core/hiwin_dual_armConfig-version.cmake" "DESTINATION" "share/hiwin_dual_arm/cmake")
-ament_cmake_symlink_install_files("/home/angel/0710_code/src/0710_code/hiwin_dual_arm" FILES "/home/angel/0710_code/build/hiwin_dual_arm/ament_cmake_core/hiwin_dual_armConfig.cmake" "/home/angel/0710_code/build/hiwin_dual_arm/ament_cmake_core/hiwin_dual_armConfig-version.cmake" "DESTINATION" "share/hiwin_dual_arm/cmake")
+# install(FILES "/home/angel/ros2_ws/build/hiwin_dual_arm/ament_cmake_core/hiwin_dual_armConfig.cmake" "/home/angel/ros2_ws/build/hiwin_dual_arm/ament_cmake_core/hiwin_dual_armConfig-version.cmake" "DESTINATION" "share/hiwin_dual_arm/cmake")
+ament_cmake_symlink_install_files("/home/angel/ros2_ws/src/hiwin_dual_arm" FILES "/home/angel/ros2_ws/build/hiwin_dual_arm/ament_cmake_core/hiwin_dual_armConfig.cmake" "/home/angel/ros2_ws/build/hiwin_dual_arm/ament_cmake_core/hiwin_dual_armConfig-version.cmake" "DESTINATION" "share/hiwin_dual_arm/cmake")
 
-# install(FILES "/home/angel/0710_code/src/0710_code/hiwin_dual_arm/package.xml" "DESTINATION" "share/hiwin_dual_arm")
-ament_cmake_symlink_install_files("/home/angel/0710_code/src/0710_code/hiwin_dual_arm" FILES "/home/angel/0710_code/src/0710_code/hiwin_dual_arm/package.xml" "DESTINATION" "share/hiwin_dual_arm")
+# install(FILES "/home/angel/ros2_ws/src/hiwin_dual_arm/package.xml" "DESTINATION" "share/hiwin_dual_arm")
+ament_cmake_symlink_install_files("/home/angel/ros2_ws/src/hiwin_dual_arm" FILES "/home/angel/ros2_ws/src/hiwin_dual_arm/package.xml" "DESTINATION" "share/hiwin_dual_arm")
 
 # install(DIRECTORY "launch" "DESTINATION" "share/hiwin_dual_arm" "PATTERN_EXCLUDE" "setup_assistant.launch")
-ament_cmake_symlink_install_directory("/home/angel/0710_code/src/0710_code/hiwin_dual_arm" DIRECTORY "launch" "DESTINATION" "share/hiwin_dual_arm" "PATTERN_EXCLUDE" "setup_assistant.launch")
+ament_cmake_symlink_install_directory("/home/angel/ros2_ws/src/hiwin_dual_arm" DIRECTORY "launch" "DESTINATION" "share/hiwin_dual_arm" "PATTERN_EXCLUDE" "setup_assistant.launch")
 
 # install(DIRECTORY "config" "DESTINATION" "share/hiwin_dual_arm")
-ament_cmake_symlink_install_directory("/home/angel/0710_code/src/0710_code/hiwin_dual_arm" DIRECTORY "config" "DESTINATION" "share/hiwin_dual_arm")
+ament_cmake_symlink_install_directory("/home/angel/ros2_ws/src/hiwin_dual_arm" DIRECTORY "config" "DESTINATION" "share/hiwin_dual_arm")
 
 # install(FILES ".setup_assistant" "DESTINATION" "share/hiwin_dual_arm")
-ament_cmake_symlink_install_files("/home/angel/0710_code/src/0710_code/hiwin_dual_arm" FILES ".setup_assistant" "DESTINATION" "share/hiwin_dual_arm")
+ament_cmake_symlink_install_files("/home/angel/ros2_ws/src/hiwin_dual_arm" FILES ".setup_assistant" "DESTINATION" "share/hiwin_dual_arm")

@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/angel/0710_code/src/0710_code/hiwin_description
+CMAKE_SOURCE_DIR = /home/angel/ros2_ws/src/hiwin_description
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/angel/0710_code/build/hiwin_description
+CMAKE_BINARY_DIR = /home/angel/ros2_ws/build/hiwin_description
 
 # Utility rule file for uninstall.
 
@@ -78,6 +78,6 @@ CMakeFiles/uninstall.dir/clean:
 .PHONY : CMakeFiles/uninstall.dir/clean
 
 CMakeFiles/uninstall.dir/depend:
-	cd /home/angel/0710_code/build/hiwin_description && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/angel/0710_code/src/0710_code/hiwin_description /home/angel/0710_code/src/0710_code/hiwin_description /home/angel/0710_code/build/hiwin_description /home/angel/0710_code/build/hiwin_description /home/angel/0710_code/build/hiwin_description/CMakeFiles/uninstall.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/angel/ros2_ws/build/hiwin_description && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/angel/ros2_ws/src/hiwin_description /home/angel/ros2_ws/src/hiwin_description /home/angel/ros2_ws/build/hiwin_description /home/angel/ros2_ws/build/hiwin_description /home/angel/ros2_ws/build/hiwin_description/CMakeFiles/uninstall.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/uninstall.dir/depend
 

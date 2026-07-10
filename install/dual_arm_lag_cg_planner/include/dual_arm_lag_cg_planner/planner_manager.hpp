@@ -1,1 +1,1 @@
-/home/angel/0710_code/src/0710_code/dual_arm_lag_cg_planner/include/dual_arm_lag_cg_planner/planner_manager.hpp
+/home/angel/ros2_ws/src/dual_arm_lag_cg_planner/include/dual_arm_lag_cg_planner/planner_manager.hpp

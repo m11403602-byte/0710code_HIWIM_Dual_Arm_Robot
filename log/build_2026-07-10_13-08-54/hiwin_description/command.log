@@ -1,0 +1,2 @@
+Invoking command in '/home/angel/ros2_ws/build/hiwin_description': /usr/bin/cmake /home/angel/ros2_ws/src/hiwin_description -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/angel/ros2_ws/install/hiwin_description
+Invoked command in '/home/angel/ros2_ws/build/hiwin_description' returned '1': /usr/bin/cmake /home/angel/ros2_ws/src/hiwin_description -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/angel/ros2_ws/install/hiwin_description

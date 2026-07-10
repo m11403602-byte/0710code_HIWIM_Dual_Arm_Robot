@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/angel/0710_code/src/0710_code/dual_arm_lag_gd_planner
+CMAKE_SOURCE_DIR = /home/angel/ros2_ws/src/dual_arm_lag_gd_planner
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/angel/0710_code/build/dual_arm_lag_gd_planner
+CMAKE_BINARY_DIR = /home/angel/ros2_ws/build/dual_arm_lag_gd_planner
 
 # Utility rule file for dual_arm_lag_gd_planner_uninstall.
 
@@ -67,7 +67,7 @@ include CMakeFiles/dual_arm_lag_gd_planner_uninstall.dir/compiler_depend.make
 include CMakeFiles/dual_arm_lag_gd_planner_uninstall.dir/progress.make
 
 CMakeFiles/dual_arm_lag_gd_planner_uninstall:
-	/usr/bin/cmake -P /home/angel/0710_code/build/dual_arm_lag_gd_planner/ament_cmake_uninstall_target/ament_cmake_uninstall_target.cmake
+	/usr/bin/cmake -P /home/angel/ros2_ws/build/dual_arm_lag_gd_planner/ament_cmake_uninstall_target/ament_cmake_uninstall_target.cmake
 
 dual_arm_lag_gd_planner_uninstall: CMakeFiles/dual_arm_lag_gd_planner_uninstall
 dual_arm_lag_gd_planner_uninstall: CMakeFiles/dual_arm_lag_gd_planner_uninstall.dir/build.make
@@ -82,6 +82,6 @@ CMakeFiles/dual_arm_lag_gd_planner_uninstall.dir/clean:
 .PHONY : CMakeFiles/dual_arm_lag_gd_planner_uninstall.dir/clean
 
 CMakeFiles/dual_arm_lag_gd_planner_uninstall.dir/depend:
-	cd /home/angel/0710_code/build/dual_arm_lag_gd_planner && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/angel/0710_code/src/0710_code/dual_arm_lag_gd_planner /home/angel/0710_code/src/0710_code/dual_arm_lag_gd_planner /home/angel/0710_code/build/dual_arm_lag_gd_planner /home/angel/0710_code/build/dual_arm_lag_gd_planner /home/angel/0710_code/build/dual_arm_lag_gd_planner/CMakeFiles/dual_arm_lag_gd_planner_uninstall.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/angel/ros2_ws/build/dual_arm_lag_gd_planner && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/angel/ros2_ws/src/dual_arm_lag_gd_planner /home/angel/ros2_ws/src/dual_arm_lag_gd_planner /home/angel/ros2_ws/build/dual_arm_lag_gd_planner /home/angel/ros2_ws/build/dual_arm_lag_gd_planner /home/angel/ros2_ws/build/dual_arm_lag_gd_planner/CMakeFiles/dual_arm_lag_gd_planner_uninstall.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/dual_arm_lag_gd_planner_uninstall.dir/depend
 

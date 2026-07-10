@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/angel/0710_code/src/0710_code/hiwin_dual_arm
+CMAKE_SOURCE_DIR = /home/angel/ros2_ws/src/hiwin_dual_arm
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/angel/0710_code/build/hiwin_dual_arm
+CMAKE_BINARY_DIR = /home/angel/ros2_ws/build/hiwin_dual_arm
 
 # Utility rule file for hiwin_dual_arm_uninstall.
 
@@ -67,7 +67,7 @@ include CMakeFiles/hiwin_dual_arm_uninstall.dir/compiler_depend.make
 include CMakeFiles/hiwin_dual_arm_uninstall.dir/progress.make
 
 CMakeFiles/hiwin_dual_arm_uninstall:
-	/usr/bin/cmake -P /home/angel/0710_code/build/hiwin_dual_arm/ament_cmake_uninstall_target/ament_cmake_uninstall_target.cmake
+	/usr/bin/cmake -P /home/angel/ros2_ws/build/hiwin_dual_arm/ament_cmake_uninstall_target/ament_cmake_uninstall_target.cmake
 
 hiwin_dual_arm_uninstall: CMakeFiles/hiwin_dual_arm_uninstall
 hiwin_dual_arm_uninstall: CMakeFiles/hiwin_dual_arm_uninstall.dir/build.make
@@ -82,6 +82,6 @@ CMakeFiles/hiwin_dual_arm_uninstall.dir/clean:
 .PHONY : CMakeFiles/hiwin_dual_arm_uninstall.dir/clean
 
 CMakeFiles/hiwin_dual_arm_uninstall.dir/depend:
-	cd /home/angel/0710_code/build/hiwin_dual_arm && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/angel/0710_code/src/0710_code/hiwin_dual_arm /home/angel/0710_code/src/0710_code/hiwin_dual_arm /home/angel/0710_code/build/hiwin_dual_arm /home/angel/0710_code/build/hiwin_dual_arm /home/angel/0710_code/build/hiwin_dual_arm/CMakeFiles/hiwin_dual_arm_uninstall.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/angel/ros2_ws/build/hiwin_dual_arm && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/angel/ros2_ws/src/hiwin_dual_arm /home/angel/ros2_ws/src/hiwin_dual_arm /home/angel/ros2_ws/build/hiwin_dual_arm /home/angel/ros2_ws/build/hiwin_dual_arm /home/angel/ros2_ws/build/hiwin_dual_arm/CMakeFiles/hiwin_dual_arm_uninstall.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/hiwin_dual_arm_uninstall.dir/depend
 

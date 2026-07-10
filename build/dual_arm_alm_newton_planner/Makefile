@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/angel/0710_code/src/0710_code/dual_arm_alm_newton_planner
+CMAKE_SOURCE_DIR = /home/angel/ros2_ws/src/dual_arm_alm_newton_planner
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/angel/0710_code/build/dual_arm_alm_newton_planner
+CMAKE_BINARY_DIR = /home/angel/ros2_ws/build/dual_arm_alm_newton_planner
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -142,9 +142,9 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/angel/0710_code/build/dual_arm_alm_newton_planner/CMakeFiles /home/angel/0710_code/build/dual_arm_alm_newton_planner//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/angel/ros2_ws/build/dual_arm_alm_newton_planner/CMakeFiles /home/angel/ros2_ws/build/dual_arm_alm_newton_planner//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/angel/0710_code/build/dual_arm_alm_newton_planner/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/angel/ros2_ws/build/dual_arm_alm_newton_planner/CMakeFiles 0
 .PHONY : all
 
 # The main clean target

@@ -1,1 +1,1 @@
-/home/angel/0710_code/build/hiwin_description/ament_cmake_core/hiwin_descriptionConfig-version.cmake
+/home/angel/ros2_ws/build/hiwin_description/ament_cmake_core/hiwin_descriptionConfig-version.cmake

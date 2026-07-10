@@ -1,1 +1,1 @@
-/home/angel/0710_code/src/0710_code/hiwin_dual_arm/launch/static_virtual_joint_tfs.launch.py
+/home/angel/ros2_ws/src/hiwin_dual_arm/launch/static_virtual_joint_tfs.launch.py

@@ -1,8 +1,8 @@
-# Install script for directory: /home/angel/0710_code/src/0710_code/dual_arm_alm_cg_planner
+# Install script for directory: /home/angel/ros2_ws/src/dual_arm_alm_cg_planner
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/angel/0710_code/install/dual_arm_alm_cg_planner")
+  set(CMAKE_INSTALL_PREFIX "/home/angel/ros2_ws/install/dual_arm_alm_cg_planner")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -43,7 +43,7 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  include("/home/angel/0710_code/build/dual_arm_alm_cg_planner/ament_cmake_symlink_install/ament_cmake_symlink_install.cmake")
+  include("/home/angel/ros2_ws/build/dual_arm_alm_cg_planner/ament_cmake_symlink_install/ament_cmake_symlink_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -54,5 +54,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/angel/0710_code/build/dual_arm_alm_cg_planner/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/angel/ros2_ws/build/dual_arm_alm_cg_planner/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

@@ -1,1 +1,1 @@
-ament_cmake_symlink_install_targets("TARGET_FILES" "/home/angel/0710_code/build/dual_arm_lag_gd_planner/libdual_arm_lag_gd_planner.so" "TARGETS" "dual_arm_lag_gd_planner" "ARCHIVE_DESTINATION" "lib" "LIBRARY_DESTINATION" "lib" "RUNTIME_DESTINATION" "bin")
+ament_cmake_symlink_install_targets("TARGET_FILES" "/home/angel/ros2_ws/build/dual_arm_lag_gd_planner/libdual_arm_lag_gd_planner.so" "TARGETS" "dual_arm_lag_gd_planner" "ARCHIVE_DESTINATION" "lib" "LIBRARY_DESTINATION" "lib" "RUNTIME_DESTINATION" "bin")
