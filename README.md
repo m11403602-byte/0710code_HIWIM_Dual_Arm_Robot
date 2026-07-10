@@ -1,27 +1,25 @@
-# HIWIN 雙臂機械手 ROS 2 (Humble) 避障路徑規劃工作區
+# HIWIN 雙臂機械手 ROS 2 (Humble) 避障路徑規劃工作區 — 使用手冊
 
-本 README 說明整個 workspace（`src/0710_code/`）底下 **8 個 ROS 2 package** 彼此的關係，
-以及各個「規劃器（planner）方案」在解什麼問題、差異在哪。內容整理自各 package 自己的
-`README.md` / `PARAMETERS.md`，供快速掌握全貌用；細節請仍以各 package 內文件為準。
+`src/0710_code/` 底下共 **8 個 ROS 2 package**：1 個機器人描述包
+（`hiwin_description`）、1 個 MoveIt2 設定總包（`hiwin_dual_arm`），以及 6 個可插拔的
+雙臂避障「規劃器」方案。各規劃器的演算法推導、參數對照表請見其自己的
+`README.md` / `PARAMETERS.md`；本文件只講**整體怎麼跑起來**。
 
 ---
 
 ## 1. 這個 workspace 在做什麼
 
-HIWIN 雙臂機械手（A 臂 RA610 + B 臂 RA605，面對面對裝、相距 1400mm）在共用工作空間內
-動作時，兩隻手臂的關節軌跡可能互相撞到。這個 workspace 的目標是：
-
-> 給定兩臂各自的起點關節角與終點關節角，自動規劃出一條**兩臂互不碰撞**的關節空間軌跡，
-> 並包成 **MoveIt2 規劃器插件**，可直接在 `move_group` 裡當作 `planning_plugin` 使用。
-
----
+HIWIN 雙臂機械手（A 臂 RA610 + B 臂 RA605，面對面對裝、相距 1400mm）共用工作空間時，
+兩臂關節軌跡可能互撞。這個 workspace 給定兩臂各自的起點/終點關節角，自動規劃出一條
+**兩臂互不碰撞**的關節空間軌跡，並包成 **MoveIt2 規劃器插件**，在 `move_group` 裡當作
+`planning_plugin` 使用。
 
 ## 2. Package 總覽
 
 ```
 src/0710_code/
 ├── hiwin_dual_arm/                  ← 機器人描述 + MoveIt2 設定總包（非演算法）
-├── hiwin_description/               ← 機器人 URDF/mesh 描述包（被 hiwin_dual_arm 引用）
+├── hiwin_description/               ← 機器人 URDF/mesh 描述包
 ├── dual_arm_alm_newton_planner/     ┐
 ├── dual_arm_alm_cg_planner/         │  ALM 譜系（增廣拉格朗日）
 ├── dual_arm_alm_gd_planner/         ┘
@@ -30,86 +28,111 @@ src/0710_code/
 └── dual_arm_lag_gd_planner/         ┘
 ```
 
-也就是說：**2 個機器人/MoveIt 設定包 + 6 個「規劃器（方案）」**。
-這 6 個規劃器全部在解「同一個雙臂避障問題」，差別只在**內層最佳化演算法**用哪一種
-數學模型／哪一種求解方法 —— 可視為 2（數學模型）× 3（求解方法）的組合矩陣：
+6 個規劃器解的是同一個雙臂避障問題，差別只在內層最佳化用哪種數學模型／求解方法：
 
-| | Newton（二階，含 Hessian） | CG（共軛梯度） | GD（最陡下降） |
+| | Newton | CG（共軛梯度） | GD（最陡下降） |
 |---|---|---|---|
-| **ALM 模型**（增廣拉格朗日） | `dual_arm_alm_newton_planner` | `dual_arm_alm_cg_planner` | `dual_arm_alm_gd_planner` |
+| **ALM 模型** | `dual_arm_alm_newton_planner` | `dual_arm_alm_cg_planner` | `dual_arm_alm_gd_planner` |
 | **純 Lagrangian 模型** | `dual_arm_lag_newton_planner` | `dual_arm_lag_cg_planner` | `dual_arm_lag_gd_planner` |
 
-⚠️ 兩個譜系（ALM vs 純 Lagrangian）是**不同的數學模型**，各自 package 的
-README 都特別註明「不可混用」。
+⚠️ ALM 與純 Lagrangian 是不同數學模型，不可混用參數。
+
+`hiwin_dual_arm/config/dual_arm_*_planning.yaml` 這 6 個檔案各自指定
+`planning_plugin` 指向對應的 `DualArmXxxPlannerManager`，並帶入該規劃器的參數；
+MoveIt 依檔名（`*_planning.yaml`）自動掃描註冊成 planning pipeline，不用另外維護清單。
+`ompl_planning.yaml` 只放 OMPL 官方演算法設定，不要混入自訂規劃器參數。
 
 ---
 
-## 上銀（HIWIN）官方 ROS 2 Humble 程式庫
+## 3. 環境安裝與建置（ROS 2 Humble + distrobox）
 
-本 workspace 中的 `hiwin_dual_arm`（機器人描述 + MoveIt2 設定）與上銀官方發布的 ROS 2
-驅動程式庫並非同一個專案，但屬於同一生態系、可互相搭配使用。上銀官方 GitHub 組織
-（[HIWINCorporation](https://github.com/HIWINCorporation)）目前維護以下與 ROS 2 Humble
-相關的程式庫：
+本機的 ROS 2 Humble 跑在 **distrobox 容器**（`hiwin-humble-env`）裡，使用前務必先進
+容器、清掉 host 殘留的 ROS 環境變數，否則 `colcon build` 可能抓錯 ROS distro 而編譯
+失敗（例如誤用 host 上的 Jazzy 工具鏈）。
 
-| 程式庫 | 連結 | 說明 |
-|---|---|---|
-| **hiwin_ros2** | [github.com/HIWINCorporation/hiwin_ros2](https://github.com/HIWINCorporation/hiwin_ros2) | 官方 ROS 2 Humble 主力程式庫。提供 `ros2_control` 硬體介面（可對實體機器人做即時控制/監控）與 MoveIt2 整合（運動規劃、軌跡執行），底層基於 `hiwin_robot_client_library`，支援 RA6 / RS4 系列機器人，可切換模擬或實機連線。 |
-| **hiwin_robot_client_library** | [github.com/HIWINCorporation/hiwin_robot_client_library](https://github.com/HIWINCorporation/hiwin_robot_client_library) | 提供給開發者的簡化介面函式庫，封裝與 HIWIN 機器人控制器的底層通訊，供上層（如 `hiwin_ros2`）呼叫。 |
-| **hiwin_ros** | [github.com/HIWINCorporation/hiwin_ros](https://github.com/HIWINCorporation/hiwin_ros) | 舊版 ROS 1（含 Windows ROS）程式庫，用於控制/監控 HIWIN 機器人與電動夾爪，非 ROS 2 版本。 |
+```bash
+# 1. 進入 Humble 容器
+distrobox enter hiwin-humble-env
 
-> 本 workspace 的 6 個避障規劃器（`dual_arm_*_planner_1`）是自行開發的 MoveIt2
-> `planning_plugin`，用來取代/搭配官方 `hiwin_ros2` 中預設的 MoveIt2 規劃管線；
-> 若要接實體 HIWIN 雙臂機器人（而非僅在 rviz/MoveIt 中模擬），需另外整合官方
-> `hiwin_ros2`（或 `hiwin_robot_client_library`）提供的硬體驅動與通訊介面。
+# 2. 清掉可能干擾 distro 判斷的殘留環境變數
+unset ROS_VERSION ROS_ROOT AMENT_PREFIX_PATH CMAKE_PREFIX_PATH COLCON_PREFIX_PATH
 
----
+# 3. 載入 Humble 環境
+source /opt/ros/humble/setup.bash
 
-所有原始碼（核心演算法 + MoveIt 插件介面）都編進**單一 .so**（例如
-`libdual_arm_alm_newton_planner_1.so`），刻意不拆成獨立核心庫 + 插件庫兩個 .so —— 
-因為含 Eigen 矩陣的物件跨 .so 邊界傳遞，容易和 MoveIt 的記憶體對齊假設衝突而崩潰。
-同理，編譯選項固定 `-O3`、**不可加 `-march=native`**（會讓 Eigen 用 32-byte AVX 對齊，
-與標準編譯的 MoveIt .so 對齊不一致，於軌跡物件析構時 segfault）。
-
----
-
-
-
-# 4. 回到 workspace 根目錄，清掉舊的編譯產物（非必要，但遇到怪問題時的第一招）
+# 4. 回到 workspace 根目錄
 cd ~/0710_code
+
+# 5.（非必要，遇到怪問題時的第一招）清掉舊的編譯產物
 rm -rf build/ install/ log/
 
-# 5. 編譯整個 workspace（含 6 個規劃器 + hiwin_dual_arm/hiwin_description）
+# 6. 編譯整個 workspace
 colcon build --symlink-install
 
-# 6. 載入這個 workspace 自己的環境（每開一個新終端機都要重做這步）
+# 7. 載入這個 workspace 的環境（每開一個新終端機都要重做）
 source install/setup.bash
 ```
 
-> `--symlink-install` 讓 `config/*.yaml`、`launch/*.py` 用 symlink 安裝到 `install/`，
-> 之後**改 yaml/launch 檔不用重新 colcon build**，改完存檔、重啟對應節點就生效；但
-> C++ 原始碼（`src/*.cpp`）修改後仍然要重新 `colcon build`。若沒加
-> `--symlink-install`（純 copy 安裝），任何 `src/` 底下的修改都要重跑 `colcon build`
-> 才會反映到 `install/`，這是「明明改了設定，行為卻沒變」最常見的原因。
+> `--symlink-install` 讓 `config/*.yaml`、`launch/*.py` 用 symlink 安裝，之後**改
+> yaml/launch 不用重新 build**，存檔、重啟節點就生效；但改 `src/*.cpp` 仍要重新
+> `colcon build`。
 
-### 10.2 日常啟動（只改過 yaml，不用重建的情況）
+---
+
+## 4. 啟動與使用
 
 ```bash
 distrobox enter hiwin-humble-env
 source /opt/ros/humble/setup.bash
 cd ~/0710_code && source install/setup.bash
 
-# 統一網域 ID（多人共用網路時避免互相干擾/搶 topic）
+# 統一網域 ID（多人共用網路時避免互相干擾）
 export ROS_DOMAIN_ID=24
 
 # 一鍵啟動：TF + robot_state_publisher + move_group + RViz
 ros2 launch hiwin_dual_arm brain.launch.py
 
-# 只想跑後端、不開 RViz（例如純程式互動、或另開視窗自己啟動 RViz）
+# 只跑後端、不開 RViz
 ros2 launch hiwin_dual_arm brain.launch.py use_rviz:=false
 ```
 
+**切換規劃器**：RViz 左側 **MotionPlanning** 面板 → **Planning** 分頁 →
+**Planning Library** 下拉選單，可選擇 `ompl`、`chomp`、`pilz_industrial_motion_planner`
+或 6 個 `dual_arm_*` 之一，選定後按 **Plan** 測試。
 
+---
 
-## 11. 授權
+## 5. 常見問題排查
+
+- **改了 `config/*.yaml` 但行為沒變**：確認是否用 `--symlink-install` 建置；不是的話要
+  重跑 `colcon build --packages-select hiwin_dual_arm` 讓檔案複製進 `install/`。
+- **選了 `dual_arm_*` pipeline，但 log 印出 `Multiple planning plugins available...
+  Using 'chomp_interface/CHOMPPlanner' for now`**：代表該插件在當下環境找不到，通常是
+  終端機沒有 `source install/setup.bash`（或只 source 了單一 package 的
+  `local_setup.bash`），或該規劃器 package 沒編譯成功（檢查 build log 有無
+  `Failed <<<` / `Aborted <<<`）。
+- **`colcon build` 出現 `rosidl_typesupport_c` 找不到之類的 CMake 錯誤**：通常是忘記
+  `unset` host 殘留的環境變數，或根本沒進 `distrobox enter hiwin-humble-env`。
+- **多個終端機互相干擾**：檢查每個終端機的 `ROS_DOMAIN_ID`（`echo $ROS_DOMAIN_ID`）
+  是否一致。
+
+---
+
+## 6. 上銀（HIWIN）官方 ROS 2 Humble 程式庫
+
+`hiwin_dual_arm` 與官方驅動程式庫不是同一個專案，但可搭配使用：
+
+| 程式庫 | 說明 |
+|---|---|
+| [hiwin_ros2](https://github.com/HIWINCorporation/hiwin_ros2) | 官方 ROS 2 Humble 主力庫，提供 `ros2_control` 硬體介面與 MoveIt2 整合，支援 RA6/RS4 系列，可切模擬/實機。 |
+| [hiwin_robot_client_library](https://github.com/HIWINCorporation/hiwin_robot_client_library) | 封裝與機器人控制器底層通訊的介面庫，供 `hiwin_ros2` 呼叫。 |
+| [hiwin_ros](https://github.com/HIWINCorporation/hiwin_ros) | 舊版 ROS 1 程式庫，非 ROS 2。 |
+
+若要接實體雙臂機器人（非僅 RViz/MoveIt 模擬），需另外整合官方 `hiwin_ros2` 提供的
+硬體驅動。
+
+---
+
+## 7. 授權
 
 各 package 內文件標示為 MIT。
