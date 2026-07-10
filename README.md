@@ -2,8 +2,8 @@
 
 `~/ros2_ws/src/` 底下共 **8 個 ROS 2 package**：1 個機器人描述包
 （`hiwin_description`）、1 個 MoveIt2 設定總包（`hiwin_dual_arm`），以及 6 個可插拔的
-雙臂避障「規劃器」方案。各規劃器的演算法推導、參數對照表請見其自己的
-`README.md` / `PARAMETERS.md`；本文件只講**整體怎麼跑起來**。
+雙臂避障「規劃器」方案。各規劃器的演算法推導、參數對照表請見個規劃器的
+`README.md` / `PARAMETERS.md`；
 
 ---
 
@@ -42,7 +42,7 @@ HIWIN 雙臂機械手（A 臂 RA610 + B 臂 RA605，面對面對裝、相距 140
 `hiwin_dual_arm/config/dual_arm_*_planning.yaml` 這 6 個檔案各自指定
 `planning_plugin` 指向對應的 `DualArmXxxPlannerManager`，並帶入該規劃器的參數；
 MoveIt 依檔名（`*_planning.yaml`）自動掃描註冊成 planning pipeline，不用另外維護清單。
-`ompl_planning.yaml` 只放 OMPL 官方演算法設定，不要混入自訂規劃器參數。
+`ompl_planning.yaml`  OMPL 有附上官方演算法設定。
 
 ---
 
@@ -70,11 +70,11 @@ source install/setup.bash
 
 ## 4. 啟動與使用
 
-建置完成後，日常使用只需重新載入環境、不用每次重新編譯：
-
 ```bash
+
 source /opt/ros/humble/setup.bash
-cd ~/ros2_ws && source install/setup.bash
+cd ~/ros2_ws
+colcon build --symlink-install && source install/setup.bash
 
 # 一鍵啟動：TF + robot_state_publisher + move_group + RViz
 ros2 launch hiwin_dual_arm brain.launch.py
