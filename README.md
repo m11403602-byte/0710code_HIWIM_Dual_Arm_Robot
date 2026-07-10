@@ -140,9 +140,6 @@ vim src/hiwin_dual_arm/config/dual_arm_alm_newton_planning.yaml
 ros2 launch hiwin_dual_arm brain.launch.py
 ```
 
-⚠️ ALM 系列與純 Lagrangian 系列參數欄位不同，不可把 `dual_arm_alm_*_planning.yaml`
-的參數複製貼到 `dual_arm_lag_*_planning.yaml`（反之亦然）。
-
 `hiwin_dual_arm/config/` 底下另外還有幾個檔名帶 `_copy` / `.yaml.txt` 的檔案
 （`ros2_controllers_copy.yaml`、`moveit_controllers_copy.yaml`、
 `moveit_controllers .yaml.txt`）是備份/暫存用，**不會被任何 launch 檔讀取**，
@@ -169,9 +166,6 @@ ros2 launch hiwin_dual_arm brain.launch.py
 - **只想看某條軌跡的關節角 / 危險因子數值變化**：規劃器內建 `data_io` CSV 輸出工具
   （見 `src/dual_arm_*_planner/src/data_io.cpp`），可依 `PARAMETERS.md` 說明開啟輸出路徑
   參數，跑完一次 Plan 後到指定路徑查看 CSV。
-- 目前 workspace 尚未附自動化測試（無 `colcon test` / gtest），驗證規劃器正確性需靠
-  RViz 手動 Plan 或上述 CSV 輸出人工檢查。
-
 ---
 
 ## 6. 上銀（HIWIN）官方 ROS 2 Humble 程式庫
