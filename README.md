@@ -121,9 +121,12 @@ RViz 左側 **MotionPlanning** 面板 → **Planning** 分頁 → **Planning Lib
 | `big_ori` | `big`（A 臂） | 6 軸全 0 |
 | `small_ori` | `small`（B 臂） | 6 軸全 0 |
 
-可在 Start/Goal State 下拉選單直接選這些名稱做快速測試，不必每次手動輸入角度。
+可在 Planning 的 Query Start/Goal State 下拉選單直接選這些名稱做快速測試
 
-![RViz 規劃畫面](docs/images/rviz_planning.png)
+![RViz 規劃畫面 Planning](docs/images/rviz_planning.png)
+
+首先先要在Planning 點選 Start/Goal State , 接著在Joint頁面滑桿角度或輸入角度。
+![RViz 規劃畫面 Joints](docs/images/rviz_Joints.png)
 
 ## 4. 調整規劃器參數
 
