@@ -1,6 +1,4 @@
 #!/bin/bash
-進入到容器裡面
-distrobox enter hiwin_user_controller
 #
 # 這個腳本用於設定 ROS 2 Humble 環境並編譯工作區。
 # 請在進入 distrobox 容器後，於 ros2_ws 目錄下執行此腳本。
